@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { Form } from "react-bootstrap";
 import { supabase } from "./supabase";
+import { FormUser } from "./components/FormUser";
 // import { Route } from 'wouter'
-// import './App.css'
 
 async function getUsers() {
   const users = await supabase.from("users").select("name");
@@ -16,7 +15,7 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div className="App container">
       <FormUser />
     </div>
   );
