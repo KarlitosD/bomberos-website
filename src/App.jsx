@@ -11,6 +11,7 @@ async function getUsers() {
 
 function App() {
   useEffect(() => {
+    
     getUsers().then((res) => console.log(res.data))
   }, [])
 
