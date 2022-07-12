@@ -12,11 +12,11 @@ code {
     monospace;
 } */
 
-:root{
+/* :root{
   --bs-danger-rgb: 138, 64, 81 !important; 
 }
 
 .btn-danger{
   background-color: rgb(var(--bs-danger-rgb));
   border-color: rgb(var(--bs-danger-rgb));
-}
+} */
