@@ -1,8 +1,7 @@
 // import { useEffect } from "react";
 import { Redirect, Route } from "wouter";
-import { Container, Navbar } from "react-bootstrap";
 import { supabase } from "./supabase";
-import { FormUser } from "./components/FormUser";
+import { Form } from "./pages/form.jsx";
 
 async function getUsers() {
   const users = await supabase.from("users").select("name");
@@ -16,19 +15,12 @@ function App() {
 
   return (
     <>
-      <Navbar bg="danger" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Algun logo</Navbar.Brand>
-        </Container>
-      </Navbar>
-      <Container>
         <Route path="/">
           <Redirect to="/form" />
         </Route>
         <Route path="/form">
-          <FormUser />
+          <Form/>
         </Route>
-      </Container>
     </>
   );
 }
