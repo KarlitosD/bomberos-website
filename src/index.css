@@ -20,7 +20,26 @@ code {
   background-color: rgb(var(--bs-danger-rgb));
   border-color: rgb(var(--bs-danger-rgb));
 } */
-
+*{
+  margin: 0;
+  padding: 0;
+}
+header{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  transition: 0.7s;
+  padding: 30px 20px;
+  z-index: 10;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+header.abajo{
+  background-color: aliceblue;
+  padding: 15px 20px;
+}
 :root {
    --color-primary: #dc3545;
 }
