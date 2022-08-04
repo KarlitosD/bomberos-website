@@ -20,3 +20,7 @@ code {
   background-color: rgb(var(--bs-danger-rgb));
   border-color: rgb(var(--bs-danger-rgb));
 } */
+
+:root {
+   --color-primary: #dc3545;
+}
