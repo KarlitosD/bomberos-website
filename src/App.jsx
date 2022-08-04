@@ -2,6 +2,7 @@
 import { Redirect, Route } from "wouter";
 import { supabase } from "./supabase";
 import { Form } from "./pages/form.jsx";
+import Home from "./pages/Home.jsx"
 
 async function getUsers() {
   const users = await supabase.from("users").select("name");
@@ -16,10 +17,14 @@ function App() {
   return (
     <>
         <Route path="/">
-          <Redirect to="/form" />
+          <Home />
         </Route>
         <Route path="/form">
-          <Form/>
+
+        </Route>
+        <Route path="/info">
+          {/* <Info /> */}
+          <h1>Info</h1>
         </Route>
     </>
   );
