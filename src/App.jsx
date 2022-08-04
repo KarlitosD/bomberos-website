@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
 import { Redirect, Route } from "wouter";
 import { supabase } from "./supabase";
-import { Form } from "./pages/form.jsx";
+import { Form } from "./pages/form/form.jsx";
 import Home from "./pages/Home.jsx"
 
 async function getUsers() {
@@ -20,7 +20,7 @@ function App() {
           <Home />
         </Route>
         <Route path="/form">
-
+          <Form/>
         </Route>
         <Route path="/info">
           {/* <Info /> */}
