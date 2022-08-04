@@ -40,3 +40,6 @@ header.abajo{
   background-color: aliceblue;
   padding: 15px 20px;
 }
+:root {
+   --color-primary: #dc3545;
+}
