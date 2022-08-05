@@ -39,7 +39,7 @@ export function Carousel(props) {
     return (
     <>
         <div>
-            <img src={getImageUrl(selectedImage)} alt="no" className={`carousel ${loaded ? "loaded" : ""}`} onLoad={() => setLoaded(true)}/>
+            <img src={getImgUrl(selectedImage)} alt="no" className={`carousel ${loaded ? "loaded" : ""}`} onLoad={() => setLoaded(true)}/>
             <button className="btnCarousel" onClick={previous}>{'<'}</button>
             <button className="btnCarousel" onClick={next}>{'>'}</button>
         </div>
