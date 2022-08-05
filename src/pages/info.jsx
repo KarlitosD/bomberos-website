@@ -1,6 +1,6 @@
-import bomberosImg from "../assets/img/bomberosimg1.img"
+import bomberosImg from "../assets/img/bomberosimg1.jpg"
 
-function Home() {
+function Info() {
     return (
       <div>Informacion
         <h1>Bomberos de Lanus</h1>
@@ -10,6 +10,6 @@ function Home() {
         <img src={bomberosImg} />
       </div>
     )
-  }
+}
   
-  export default Home
+export default Info
