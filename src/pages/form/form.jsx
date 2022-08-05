@@ -1,3 +1,5 @@
+import "./form.css";
+
 export function Form() {
   return (
     <form>
