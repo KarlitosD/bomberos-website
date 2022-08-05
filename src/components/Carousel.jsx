@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { getImgUrl } from "../utils/getImgUrl";
+
 
 export function Carousel(props) {
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -10,7 +12,7 @@ export function Carousel(props) {
         if(props.autoplay){
             interval = setInterval(() => {
                 selectNewImage(selectedIndex, props.images);
-            }, 1000);
+            }, 1800);
         }
         return () => clearInterval(interval);
     })
@@ -37,7 +39,7 @@ export function Carousel(props) {
     return (
     <>
         <div>
-            <img src={import(`../assets/img/${selectedImage}`)} alt="no" className={`carousel ${loaded ? "loaded" : ""}`} onLoad={() => setLoaded(true)}/>
+            <img src={getImageUrl(selectedImage)} alt="no" className={`carousel ${loaded ? "loaded" : ""}`} onLoad={() => setLoaded(true)}/>
             <button className="btnCarousel" onClick={previous}>{'<'}</button>
             <button className="btnCarousel" onClick={next}>{'>'}</button>
         </div>
