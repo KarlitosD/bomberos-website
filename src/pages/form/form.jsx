@@ -1,5 +1,5 @@
 import "./form.css";
-import { Header } from ".../components/Header.jsx";
+import { Header } from "../../components/Header.jsx";
 
 export function Form() {
   return (
