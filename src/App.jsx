@@ -20,6 +20,9 @@ function App() {
           <Route path="/info">
             <Info />
           </Route>
+          <Route>
+            Pagina 404
+          </Route>
         </Switch>
     </>
   );
