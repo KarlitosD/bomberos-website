@@ -1,47 +1,39 @@
 import "./style.css";
-import { Header } from "../../components/Header.jsx";
+import { Header } from "@/components/Header";
 
 export function Form() {
   return (
     <>
       <Header />
       <form>
-        <input
-          name="name"
-          text="Nombre"
-          placeholder="Ingrese su nombre"
-          type="label"
-        />
-        <input
-          name="surname"
-          text="Apellido"
-          placeholder="Ingrese su apellido"
-          type="label"
-        />
-        <input
-          name="email"
-          text="Correo Electrónico"
-          placeholder="Ingrese su correo electrónico"
-          type="label"
-        />
-        <input
-          name="phone_num"
-          text="Número de teléfono"
-          placeholder="Ingrese su número de teléfono"
-          type="label"
-        />
-        <input
-          name="dni"
-          text="DNI"
-          placeholder="Ingrese su DNI"
-          type="number"
-        />
-        <input
-          name="people_amount"
-          text="Cantidad de personas a asociar"
-          placeholder="Ingrese la cantidad de personas a asociar"
-          type="label"
-        />
+        <label>
+          Nombre/s:
+          <input name="name" placeholder="Ingrese su nombre" type="text" />
+        </label>
+        <label>
+          Apellido/s:
+          <input name="surname" placeholder="Ingrese su apellido" type="text" />
+        </label>
+        <label>
+          Correo Electrónico:
+          <input
+            name="email"
+            placeholder="Ingrese su correo electrónico"
+            type="email"
+          />
+        </label>
+        <label>
+          Número de Teléfono:
+          <input
+            name="phone_num"
+            placeholder="Ingrese su número de teléfono"
+            type="tel"
+          />
+        </label>
+        <label>
+          DNI:
+          <input name="dni" placeholder="Ingrese su DNI" type="number" />
+        </label>
         <button>Enviar</button>
       </form>
     </>
