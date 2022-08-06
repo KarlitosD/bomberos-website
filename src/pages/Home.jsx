@@ -10,7 +10,7 @@ window.addEventListener("scroll", function(){
 })
 
 function Home() {
-  const [images, setImage] = useState(['c1.jpg','c2.png','c3.jpg'])
+  const [images, setImage] = useState(['c1.jpg','c2.jpg','c3.jpg'])
   return (
     <>
     <Header/>

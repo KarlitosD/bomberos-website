@@ -58,12 +58,10 @@ header .logo{
   background-size: cover;
 }
 .carousel{
-  margin-left: 15%;
-  margin-top: 10%;
-  max-width: 900px;
-  width: 900px;
-  max-height: 300px;
-  height: 300px;
+  margin-top: 7%;
+  width: 1350px;
+  max-height: 400px;
+  height: 400px;
   opacity: 0;
   transition: 1s;
 }   
@@ -93,8 +91,8 @@ header .logo{
   background-color: #dc3545;
   height: 300px;
   width: 300px;
-  margin-bottom: 10px;
-  margin-left: 10px;
+  margin-bottom: 15px;
+  margin-left: 100px;
 }
 
 .containerR123{
