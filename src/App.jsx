@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
 // import { supabase } from "./supabase";
 import { Route } from "wouter";
-import { Form } from "./pages/form/form"
+import { Form } from "./pages/form"
 import Home from "./pages/Home"
 import Info from "./pages/info/info"
 

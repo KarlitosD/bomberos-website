@@ -1,4 +1,4 @@
-import "./form.css";
+import "./style.css";
 import { Header } from "../../components/Header.jsx";
 
 export function Form() {

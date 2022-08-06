@@ -104,3 +104,6 @@ header .logo{
 :root {
    --color-primary: #dc3545;
 }
+.blankSpace{
+  height: 97px;
+}
