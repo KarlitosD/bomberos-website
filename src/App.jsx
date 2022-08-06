@@ -3,7 +3,7 @@
 import { Route } from "wouter";
 import { Form } from "./pages/form/form"
 import Home from "./pages/Home"
-import Info from "./pages/info"
+import Info from "./pages/info/info"
 
 
 function App() {
