@@ -5,6 +5,7 @@ import "./info.css";
 function Info() {
     return (
     <>
+    
     <Header/>
       <div>Informacion
         <h1>Bomberos de Lanus</h1>
