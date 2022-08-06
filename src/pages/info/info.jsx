@@ -1,7 +1,11 @@
-import bomberosImg from "../assets/img/bomberosimg1.jpg"
+import bomberosImg from ".../src/assets/img/bomberosimg1.jpg";
+import Header from "../components/Header";
+import "./info.css";
 
 function Info() {
     return (
+    <>
+    <Header/>
       <div>Informacion
         <h1>Bomberos de Lanus</h1>
         <p>Info</p> <br></br>
@@ -9,6 +13,7 @@ function Info() {
         <p>4241-2211</p>
         <img src={bomberosImg} />
       </div>
+      </>
     )
 }
   
