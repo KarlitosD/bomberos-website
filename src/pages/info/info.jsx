@@ -1,11 +1,10 @@
-import bomberosImg from ".../src/assets/img/bomberosimg1.jpg";
+import bomberosImg from "../src/assets/img/bomberosimg1.jpg";
 import Header from "../components/Header";
 import "./info.css";
 
 function Info() {
     return (
     <>
-    
     <Header/>
       <div>Informacion
         <h1>Bomberos de Lanus</h1>
