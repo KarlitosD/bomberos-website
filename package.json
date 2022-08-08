@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "serve dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
@@ -18,12 +19,14 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0-beta.1",
     "react-dom": "^18.2.0",
+    "serve": "^14.0.1",
     "wouter": "^2.8.0-alpha.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^1.3.0",
+    "sirv-cli": "^2.0.2",
     "vite": "^2.9.9"
   }
 }
