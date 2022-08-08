@@ -6,7 +6,10 @@ export function Form() {
     <>
       <Header />
       <form id="mainForm">
-        <div id="box">
+        <div id="tittleBox">
+          <h1 id="tittle">FORMULARIO DE INSCRIPCIÓN</h1>
+        </div>
+        <div id="ansBox">
           <div className="row">
             <label className="rowLabel">
               Nombre:
@@ -37,7 +40,7 @@ export function Form() {
               <input className="rowInput" name="dni" type="number" />
             </label>
           </div>
-          <button id="btnSend">Enviar</button>
+          <button id="btnSend">ENVIAR</button>
         </div>
       </form>
     </>
