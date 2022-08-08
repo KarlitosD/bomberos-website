@@ -1,48 +1,44 @@
 import "./style.css";
-import { Header } from "../../components/Header.jsx";
+import { Header } from "@/components/Header";
 
 export function Form() {
   return (
     <>
       <Header />
-      <form>
-        <input
-          name="name"
-          text="Nombre"
-          placeholder="Ingrese su nombre"
-          type="label"
-        />
-        <input
-          name="surname"
-          text="Apellido"
-          placeholder="Ingrese su apellido"
-          type="label"
-        />
-        <input
-          name="email"
-          text="Correo Electrónico"
-          placeholder="Ingrese su correo electrónico"
-          type="label"
-        />
-        <input
-          name="phone_num"
-          text="Número de teléfono"
-          placeholder="Ingrese su número de teléfono"
-          type="label"
-        />
-        <input
-          name="dni"
-          text="DNI"
-          placeholder="Ingrese su DNI"
-          type="number"
-        />
-        <input
-          name="people_amount"
-          text="Cantidad de personas a asociar"
-          placeholder="Ingrese la cantidad de personas a asociar"
-          type="label"
-        />
-        <button>Enviar</button>
+      <form id="mainForm">
+        <div id="box">
+          <div className="row">
+            <label className="rowLabel">
+              Nombre:
+              <input className="rowInput" name="name" type="text" />
+            </label>
+          </div>
+          <div className="row">
+            <label className="rowLabel">
+              Apellido:
+              <input className="rowInput" name="surname" type="text" />
+            </label>
+          </div>
+          <div className="row">
+            <label className="rowLabel">
+              Correo Electrónico:
+              <input className="rowInput" name="email" type="email" />
+            </label>
+          </div>
+          <div className="row">
+            <label className="rowLabel">
+              Número de Teléfono:
+              <input className="rowInput" name="phone_num" type="tel" />
+            </label>
+          </div>
+          <div className="row">
+            <label className="rowLabel">
+              DNI:
+              <input className="rowInput" name="dni" type="number" />
+            </label>
+          </div>
+          <button id="btnSend">Enviar</button>
+        </div>
       </form>
     </>
   );
