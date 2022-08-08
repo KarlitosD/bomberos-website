@@ -1,6 +1,6 @@
 #mainForm {
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 15px;
   margin: auto;
   margin-top: 200px;
   width: 50%;
@@ -10,10 +10,11 @@
 }
 #tittleBox {
   background-color: var(--color-primary);
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
   text-align: center;
   width: 35%;
   padding-top: 19%;
-  justify-self: start;
 }
 #tittle {
   font-family: Arial, Helvetica, sans-serif;
@@ -26,12 +27,12 @@
 }
 .row {
   margin: 5px;
-    margin-top: 10px;
+  margin-top: 10px;
 }
 .rowLabel {
   display: flex;
   flex-direction: column;
-  font-family: Helvetica, Arial, sans-serif;;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: large;
   font-weight: bold;
 }
@@ -51,10 +52,10 @@
 .rowInput::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-.rowInput:focus{
-    outline: none;
-    border-bottom: 4px solid var(--color-primary);
-    margin-bottom: 0;
+.rowInput:focus {
+  outline: none;
+  border-bottom: 4px solid var(--color-primary);
+  margin-bottom: 0;
 }
 #btnSend {
   width: 195%;
@@ -69,6 +70,12 @@
   background-color: var(--color-primary);
   color: white;
 }
+#btnSend:hover {
+  -webkit-box-shadow: 0 0 10px #888888;
+  -moz-box-shadow: 0 0 10px #888888;
+  box-shadow: 0 0 10px #888888;
+}
 #btnSend:active {
   background-color: rgb(165, 9, 9);
+  box-shadow: none;
 }
