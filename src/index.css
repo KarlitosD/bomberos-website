@@ -35,10 +35,10 @@ header{
   padding: 30px 20px;
   z-index: 10;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #da2d3f
+  background-color: var(--color-primary);
 }
 header.abajo{
-  background-color: #dc3545;
+  background-color: var(--color-primary);
   padding: 15px 20px;
 }
 header .logo{
@@ -88,7 +88,7 @@ header .logo{
   margin-left: 10px;
 }
 .r1, .r2, .r3{
-  background-color: #dc3545;
+  background-color: var(--color-primary);
   height: 300px;
   width: 300px;
   margin-bottom: 15px;
