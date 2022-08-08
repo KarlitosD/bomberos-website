@@ -4,7 +4,7 @@ import { Route, Switch } from "wouter";
 import { Form } from "./pages/form"
 import Home from "./pages/Home"
 import Info from "./pages/info/info"
-
+import { MercadoPago } from "./pages/mercadopago";
 
 function App() {
 
@@ -19,6 +19,9 @@ function App() {
           </Route>
           <Route path="/info">
             <Info />
+          </Route>
+          <Route path="/mp">
+            <MercadoPago />
           </Route>
           <Route>
             Pagina 404
