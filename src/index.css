@@ -83,8 +83,8 @@ header .logo{
   background-color: #3b3b3b;
   margin-left: 10px;
 }
-.r1, .r2, .r3{
-  background-color: #dc3545;
+
+.imgMiddle{
   height: 300px;
   width: 400px;
   max-width: 400px;
