@@ -169,7 +169,6 @@ hr{
 .Nav{
   display:flex;
   align-items: center;
-  
 }
 
 .Nav h2{
@@ -202,4 +201,8 @@ hr{
 }
 .icono:hover{
   cursor:pointer;
+}
+
+.Nav a{
+  color: #fefefe;
 }
