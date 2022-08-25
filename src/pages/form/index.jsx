@@ -1,46 +1,133 @@
 import "./style.css";
 import { Header } from "@/components/Header";
+import { useState, useEffect } from "react";
+import { getAssociates, createAssociate } from "@/services/associates";
 
+const initNewAssociate = {
+  dni: "",
+  name: "",
+  surname: "",
+  phone_num: "",
+  address: "",
+};
 export function Form() {
+  const [associates, setAssociates] = useState([]);
+  const [newAssociate, setNewAssociate] = useState(initNewAssociate);
+  useEffect(() => {
+    fetchAssociates();
+  }, []);
+  async function fetchAssociates() {
+    const { data } = getAssociates();
+    setAssociates(data);
+    console.log("data", data);
+  }
+  async function createNewAssociate() {
+    await createAssociate(newAssociate);
+    setNewAssociate(initNewAssociate);
+    fetchAssociates();
+  }
+  function handleForm(e) {
+    e.preventDefault();
+    createNewAssociate();
+  }
   return (
     <>
       <Header />
-      <form id="mainForm">
+      <form id="mainForm" onSubmit={handleForm}>
         <div id="tittleBox">
           <h1 id="tittle">FORMULARIO DE INSCRIPCIÓN</h1>
         </div>
         <div id="ansBox">
           <div className="row">
             <label className="rowLabel">
-              Nombre:
-              <input className="rowInput" name="name" type="text" />
+              Nombre/s:
+              <input
+                className="rowInput"
+                value={newAssociate.name}
+                type="text"
+                onChange={(e) =>
+                  setNewAssociate({ ...newAssociate, name: e.target.value })
+                }
+                required
+              />
             </label>
           </div>
           <div className="row">
             <label className="rowLabel">
               Apellido:
-              <input className="rowInput" name="surname" type="text" />
+              <input
+                className="rowInput"
+                value={newAssociate.surname}
+                type="text"
+                onChange={(e) =>
+                  setNewAssociate({ ...newAssociate, surname: e.target.value })
+                }
+                required
+              />
             </label>
           </div>
           <div className="row">
             <label className="rowLabel">
               Correo Electrónico:
-              <input className="rowInput" name="email" type="email" />
+              <input
+                className="rowInput"
+                value={newAssociate.email}
+                type="email"
+                onChange={(e) =>
+                  setNewAssociate({ ...newAssociate, email: e.target.value })
+                }
+                required
+              />
             </label>
           </div>
           <div className="row">
             <label className="rowLabel">
               Número de Teléfono:
-              <input className="rowInput" name="phone_num" type="tel" />
+              <input
+                className="rowInput"
+                value={newAssociate.phone_num}
+                type="tel"
+                onChange={(e) =>
+                  setNewAssociate({
+                    ...newAssociate,
+                    phone_num: e.target.value,
+                  })
+                }
+                required
+              />
             </label>
           </div>
           <div className="row">
             <label className="rowLabel">
               DNI:
-              <input className="rowInput" name="dni" type="number" />
+              <input
+                className="rowInput"
+                value={newAssociate.dni}
+                type="number"
+                onChange={(e) =>
+                  setNewAssociate({ ...newAssociate, dni: e.target.value })
+                }
+                required
+              />
             </label>
           </div>
-          <button id="btnSend">ENVIAR</button>
+          <div className="row">
+            <label className="rowLabel">
+              Domicilio:
+              <input
+                className="rowInput"
+                value={newAssociate.address}
+                type="text"
+                onChange={(e) =>
+                  setNewAssociate({ ...newAssociate, address: e.target.value })
+                }
+                required
+              />
+            </label>
+          </div>
+          <button id="btnSend" type="submit">
+            ENVIAR
+          </button>
         </div>
       </form>
     </>
