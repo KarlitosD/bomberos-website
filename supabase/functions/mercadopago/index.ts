@@ -4,51 +4,54 @@
 
 import { serve } from "https://deno.land/std@0.131.0/http/server.ts"
 
-type mercadoPagoBody = {
-  reason: string,
-  auto_recurring: {
-    frequency: number,
-    frequency_type: "months" | "",
-    transaction_amount: number,
-    currency_id: "ARS"
-  },
-  back_url: string,
-  payer_email: string
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey',
 }
 
-const fetcher = (path, body) => {
+const fetcher = (path: string, body: any) => {
   return fetch(`https://api.mercadopago.com/${path}`, {
+    method: "POST",
     headers: {
-      Authorization: `Bearer ${Deno.env.get("MP_ACCESS_TOKEN")} `
+      "Authorization": `Bearer ${Deno.env.get("MP_ACCESS_TOKEN")} `,
+      "Content-Type": "application/json charset=utf-8"
     },
-    body: JSON.stringify(body)
-  }).then(res => res.json())
+    body: JSON.stringify(body),
+  }).then((res) => res.json())
 }
-
 
 serve(async (req) => {
-  const { email, _plan, amount } = await req.json()
-  const back_url = Deno.env.get("BACK_URL") || "https://www.google.com"
+  // CORS
+  if (req.method === 'OPTIONS') {
+    return new Response('ok', { headers: corsHeaders })
+  }
+  try {
+    const  { amount, email } = await req.json()
+    const back_url = Deno.env.get("BACK_URL") || "https://www.google.com"
 
-  const body: mercadoPagoBody = {
-    reason: "Asociacion a los bomberos de lanus",
-    auto_recurring: {
-      frequency: 1,
-      frequency_type: "months",
-      transaction_amount: amount,
-      currency_id: "ARS"
-    },
-    back_url,
-    payer_email: email
-  };
-  
-  const data = await fetcher("preapproval", body)
+    const body = {
+      reason: "Asociacion a los bomberos de lanus",
+      auto_recurring: {
+        frequency: 1,
+        frequency_type: "months",
+        transaction_amount: amount,
+        currency_id: "ARS",
+      },
+      back_url,
+      payer_email: email
+    }
 
+    const { init_point, ...pago } = await fetcher("preapproval", body)
 
-  return new Response(
-    JSON.stringify(data),
-    { headers: { "Content-Type": "application/json" } },
-  )
+    return new Response(JSON.stringify({ init_point, pago }),
+      { headers: { ...corsHeaders, "Content-Type": "application/json" } },
+    )
+  } catch (error) {
+    console.log(error?.message || error)
+    return new Response("Algo salio mal :(", {
+      headers: { ...corsHeaders }
+    })
+  }
 })
 
 console.log("Hello from Functions!")
