@@ -22,11 +22,15 @@ export function MercadoPago() {
             body: JSON.stringify(example)
           };
           
-        const { init_point, pago } = await fetch(import.meta.env.VITE_SUPABASE_FUNCTIONS, options)
+        fetch(import.meta.env.VITE_SUPABASE_FUNCTIONS, options)
             .then(response => response.json())
-            .catch(err => console.error(err));
+            .then(({ init_point }) => window.open(init_point))
+            .catch(err => {
+                console.error(err)
+                alert("Algo salio mal")
+            });
         
-        window.open(init_point)
+        
     }
     return (
         <>
