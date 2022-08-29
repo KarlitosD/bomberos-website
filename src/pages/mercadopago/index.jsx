@@ -24,7 +24,10 @@ export function MercadoPago() {
           
         fetch(import.meta.env.VITE_SUPABASE_FUNCTIONS, options)
             .then(response => response.json())
-            .then(({ init_point }) => window.open(init_point))
+            .then(({ init_point }) => {
+                console.log(init_point)
+                window.open(init_point)
+            })
             .catch(err => {
                 console.error(err)
                 alert("Algo salio mal")
