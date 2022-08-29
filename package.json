@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "serve": "sirv dist"
+    "serve": "sirv dist",
+    "supabase": "supabase functions serve mercadopago --env-file ./supabase/.env.local"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
