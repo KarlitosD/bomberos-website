@@ -22,7 +22,7 @@ export function MercadoPago() {
             body: JSON.stringify(example)
           };
           
-        const { init_point, pago } = await fetch('http://localhost:54321/functions/v1/', options)
+        const { init_point, pago } = await fetch(import.meta.env.VITE_SUPABASE_FUNCTIONS, options)
             .then(response => response.json())
             .catch(err => console.error(err));
         
