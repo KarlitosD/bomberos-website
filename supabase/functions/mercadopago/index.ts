@@ -6,6 +6,18 @@ import { serve } from "https://deno.land/std@0.131.0/http/server.ts"
 
 console.log("Hello from Functions!")
 
+const _body = {
+  reason: "Suscripción de ejemplo",
+  auto_recurring: {
+    frequency: 1,
+    frequency_type: "months",
+    transaction_amount: 10,
+    currency_id: "ARS"
+  },
+  back_url: "https://yoursite.com.ar/success",
+  payer_email: "comprador@gmail.com.ar"
+};
+
 serve(async (req) => {
   const { name } = await req.json()
   const data = {
