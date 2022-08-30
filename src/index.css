@@ -43,7 +43,7 @@ code {
 .fontCS{
   color: #fff;
   text-align: center;
-  margin-top: 13%;
+  margin-top: 45px;
   font-size: xx-large;
   font-weight: 900;
   font-family: sans-serif;
@@ -58,6 +58,9 @@ code {
   width: 100%;
   position: absolute;
   background: rgba(0, 0, 0, 0.356);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .c-f{
   font-family: sans-serif;
@@ -82,6 +85,8 @@ code {
   display: flex;
   /* justify-content: center; */
   align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 .map{
   margin-top: 20px;
