@@ -18,11 +18,6 @@ function Home() {
      <Carousel className="carousel" images={images} autoplay={true}/>
     </section>
     <section className="mid">
-      <div className='frase'>
-       <hr />
-         <p>Desde hace 105 años al servicio de la comunidad</p>
-       <hr />
-      </div>
       <Middle/>
     </section>
     <section className="c-f">
