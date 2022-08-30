@@ -1,4 +1,3 @@
-import { } from "react";
 import { supabase } from "../../supabase.js"
 
 const example = {
@@ -17,21 +16,15 @@ export function MercadoPago() {
         const options = {
             method: 'POST',
             headers: {
-              "Authorization": `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+              Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24ifQ.625_WdcF3KHqz5amU0x2X5WWHP-OEs_4qj0ssLNHzTs'
             },
-            body: JSON.stringify(example)
+            body: '{"email":"test_user_36861694@testuser.com","amount":100}'
           };
           
-        fetch(import.meta.env.VITE_SUPABASE_FUNCTIONS, options)
+          fetch('http://localhost:54321/functions/v1/', options)
             .then(response => response.json())
-            .then(({ init_point }) => {
-                console.log(init_point)
-                window.open(init_point)
-            })
-            .catch(err => {
-                console.error(err)
-                alert("Algo salio mal")
-            });
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
         
         
     }
