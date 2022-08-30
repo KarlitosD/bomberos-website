@@ -135,4 +135,14 @@ code {
   height: 70px;
 }
 
+.iframes {
+  display: flex; 
+  gap: 50px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
 
+.elfsight-app-4de3859e-5d51-4a6b-aa31-d6d1b9d95bdd { 
+  flex-basis: 40%;
+}
