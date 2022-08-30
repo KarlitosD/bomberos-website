@@ -1,32 +1,45 @@
-import { mp } from "@/mercadopago"
-import { useLayoutEffect, useRef } from "react";
+import { } from "react";
+import { supabase } from "../../supabase.js"
 
-const bricksBuilder = mp.bricks();
+const example = {
+    "email": "test_user_36861694@testuser.com",
+    "amount": 100
+}
 
 export function MercadoPago() {
-useLayoutEffect(() => {
-    console.log("Hola")
-    bricksBuilder.create("cardPayment", "cardPaymentBrick_container", {
-        initialization: {
-            amount: 10,
-        },
-        callbacks: {
-            onsubmit: async formData => {
-                console.log(formData)
-                return
+
+    const handleClick = async () => {
+        //TODO: Deploy supabase function
+        // const { data, error } = await supabase.functions.invoke("mercadopago", {
+        //     body: JSON.stringify(example)
+        // })
+        // console.log(data)
+        const options = {
+            method: 'POST',
+            headers: {
+              "Authorization": `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
             },
-            onReady() {
-                console.log("ready")
-            },
-            onError(error){
-                console.error(error.message)
-            }
-        }
-    }).then(() => console.log("hola"))
-  }, [])
-  return (
-    <div id="cardPaymentBrick_container"></div>
-  )
+            body: JSON.stringify(example)
+          };
+          
+        fetch(import.meta.env.VITE_SUPABASE_FUNCTIONS, options)
+            .then(response => response.json())
+            .then(({ init_point }) => {
+                console.log(init_point)
+                window.open(init_point)
+            })
+            .catch(err => {
+                console.error(err)
+                alert("Algo salio mal")
+            });
+        
+        
+    }
+    return (
+        <>
+            <button onClick={handleClick}>Click</button>
+        </>
+    )
 }
 
 
