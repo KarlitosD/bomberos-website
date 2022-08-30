@@ -20,17 +20,8 @@ function Home() {
     <section className="mid">
       <Middle/>
     </section>
-    <section className="c-f">
-        <p>
-          <br/>
-        ©️ de1999-2022 Pelados, Inc. Todos los derechos reservados <a className="acuerdos" href="#">Privacidad</a> <a className="acuerdos" href="#">Acuerdos Legales</a>
-        <br/>
-        <br/>
-        Pte de Pelados. Ltd. ("3PL") ha solicitado una licencia en virtud de la Ley de servicios
-        de pago de Singapur ("Ley de PS") con las autoridades monetarias de Singapur. Durante este 
-        período legal, la 3PL opera bajo una exención de retención de licencia y tiene permitido continuar 
-        dando servicios de pago específicos.
-        </p>
+      <section className="c-f">
+        <p>Todos los derechos reservados a la <b>Sociedad Bomberos Voluntarios de Lanus</b></p> 
       </section>
     </>
   )

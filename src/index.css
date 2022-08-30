@@ -69,8 +69,12 @@ code {
   align-items: center;
   color:rgb(119, 119, 119);
   background-color: #3b3b3b;
-  width: 100%;
   max-height: 300px;
+  height: 100px;
+}
+
+.c-f b {
+  color: rgb(194, 194, 194);
 }
 
 .imgMiddle{
