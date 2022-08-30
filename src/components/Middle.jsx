@@ -4,6 +4,11 @@ import { getImgUrl } from "../utils/getImgUrl";
 export function Middle() {
   return (
     <>
+
+      <div className="info">
+
+      </div>
+
       <div className="containerR123">
         <div className="r1">
           <img className="imgMiddle" src={getImgUrl("a1.jpg")} />
