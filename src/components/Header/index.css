@@ -93,6 +93,7 @@ header .logo{
 .headerLink:hover::after{
   transform: scale(400);
   background: #dc3545;
+  color: white;
 }
 .blankSpace{
   height: 84px;
