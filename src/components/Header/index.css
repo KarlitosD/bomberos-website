@@ -94,7 +94,9 @@ header .logo{
   transform: scale(400);
   background: #dc3545;
 }
-
+.blankSpace{
+  height: 84px;
+}
 
 /*.headerBtn::after{
   content: "";
