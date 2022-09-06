@@ -4,12 +4,22 @@ import { useState, useEffect } from "react";
 import { getAssociates } from "@/services/associates";
 
 export function Admin() {
-    
-    return (
-      <>
-        <Header />
-        
-      </>
-    );
+  const [associates, setAssociates] = useState([]);
+  useEffect(() => {
+    fetchAssociates();
+  }, []);
+
+  async function fetchAssociates() {
+    const data = await getAssociates();
+    setAssociates(data);
   }
-  
+  useEffect(() =>{
+    console.log("data:", associates)
+  },[associates])
+  return(
+    <>
+      <Header />
+      
+    </>
+  );
+}

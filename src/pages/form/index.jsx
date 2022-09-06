@@ -11,7 +11,7 @@ const initNewAssociate = {
   address: "",
 };
 export function Form() {
-  const [associates, setAssociates] = useState([]);
+  const [ , setAssociates] = useState([]);
   const [newAssociate, setNewAssociate] = useState(initNewAssociate);
   useEffect(() => {
     fetchAssociates();
@@ -19,7 +19,6 @@ export function Form() {
   async function fetchAssociates() {
     const { data } = getAssociates();
     setAssociates(data);
-    console.log("data", data);
   }
   async function createNewAssociate() {
     await createAssociate(newAssociate);

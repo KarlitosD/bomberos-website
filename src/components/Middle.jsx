@@ -37,7 +37,7 @@ export function Middle() {
           style={{ border: 0 }}
         >
         </iframe>
-        <div class="elfsight-app-4de3859e-5d51-4a6b-aa31-d6d1b9d95bdd"></div>
+        <div className="elfsight-app-4de3859e-5d51-4a6b-aa31-d6d1b9d95bdd"></div>
       </div>
     </>
   );
