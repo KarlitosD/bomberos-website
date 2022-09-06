@@ -10,10 +10,13 @@ export function Header() {
     <>
       <div className="blankSpace"></div>
       <header>
-        <img className="logo" src={getImgUrl("logo.png")} />
-        <a className="headerLink" href=""><span>Inicio</span></a>
-        <a className="headerLink" href=""><span>Formulario</span></a>
-        <a className="headerLink" href=""><span>Donaciones</span></a>
+        <a href="/">
+          <img className="logo" src={getImgUrl("logo.png")} />
+        </a>
+        <a className="headerLink" href="/"><span>Inicio</span></a>
+        <a className="headerLink" href="/form"><span>Formulario</span></a>
+        <a className="headerLink" href="/admin"><span>Administración</span></a>
+        <a className="headerLink" href="/mp"><span>Donaciones</span></a>
       </header>
     </>
   );
