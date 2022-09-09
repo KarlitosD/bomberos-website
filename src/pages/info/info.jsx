@@ -1,5 +1,5 @@
-import bomberosImg from "../src/assets/img/bomberosimg1.jpg";
-import Header from "../components/Header";
+import bomberosImg from "@/assets/img/bomberosimg1.jpg";
+import { Header } from "@/components/Header";
 import "./info.css";
 
 function Info() {
