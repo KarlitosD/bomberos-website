@@ -9,7 +9,7 @@ export function Carousel(props) {
 
     useEffect(() => {
         let interval
-        if(props.autoplay){
+        if (props.autoplay) {
             interval = setInterval(() => {
                 selectNewImage(selectedIndex, props.images);
             }, 1800);
@@ -20,29 +20,30 @@ export function Carousel(props) {
     const selectNewImage = (index, images, next = true) => {
         setLoaded(false);
         setTimeout(() => {
-         const condition = next ? selectedIndex < images.length - 1 : selectedIndex > 0;
-         const nextIndex = next ? (condition ? selectedIndex + 1 : 0) : condition ? selectedIndex - 1 : images.lengt - 1
-         setSelectedImage(images[nextIndex]);
-         setSelectedIndex(nextIndex);
-        },500);
+            const condition = next ? selectedIndex < images.length - 1 : selectedIndex > 0;
+            const nextIndex = next ? (condition ? selectedIndex + 1 : 0) : condition ? selectedIndex - 1 : images.lengt - 1
+            setSelectedImage(images[nextIndex]);
+            setSelectedIndex(nextIndex);
+        }, 500);
     };
 
 
-    const previous = () => {
+    /* const previous = () => {
         selectNewImage(selectedIndex, props.images, false);
     };
 
     const next = () => {
         selectNewImage(selectedIndex, props.images);
-    };
+    }; */
 
     return (
-    <>
-        <div>
-            <img src={getImgUrl(selectedImage)} alt="no" className={`carousel ${loaded ? "loaded" : ""}`} onLoad={() => setLoaded(true)}/>
-            <button className="btnCarousel" onClick={previous}>{'<'}</button>
-            <button className="btnCarousel" onClick={next}>{'>'}</button>
-        </div>
-    </>
+        <>
+            <div className="contenedorCarousel">
+                <img src={getImgUrl(selectedImage)} alt="no" className={`carousel ${loaded ? "loaded" : ""}`} onLoad={() => setLoaded(true)} />
+                <div className="decorationCs">
+                    <h1 className="fontCS">Hace más de 100 años con vos</h1>
+                </div>
+            </div>
+        </>
     )
 }
