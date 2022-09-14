@@ -2,7 +2,7 @@
 // import { supabase } from "./supabase";
 import { Route, Switch } from "wouter";
 import { Form } from "./pages/form"
-import Home from "./pages/Home"
+import Home from "./pages/home"
 import Info from "./pages/info/info"
 import { Admin } from "./pages/admin"
 import { MercadoPago } from "./pages/mercadopago";
