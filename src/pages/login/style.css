@@ -1,0 +1,82 @@
+#mainForm {
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 200px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #tittleBox {
+    background-color: var(--color-primary);
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    text-align: center;
+    width: 35%;
+    padding-top: 19%;
+  }
+  #tittle {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+  }
+  #ansBox {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-right: 36%;
+  }
+  .row {
+    margin: 5px;
+    margin-top: 10px;
+  }
+  .rowLabel {
+    display: flex;
+    flex-direction: column;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
+  }
+  .rowInput {
+    width: 200%;
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 3px;
+    font-size: large;
+    border: none;
+    border-bottom: 2px solid rgb(139, 139, 139);
+    /* Firefox */
+    -moz-appearance: textfield;
+    margin-bottom: 2px;
+  }
+  /* Chrome, Safari, Edge, Opera */
+  .rowInput::-webkit-outer-spin-button,
+  .rowInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .rowInput:focus {
+    outline: none;
+    border-bottom: 4px solid var(--color-primary);
+    margin-bottom: 0;
+  }
+  #btnSend {
+    width: 195%;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    font-weight: bolder;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-primary);
+    color: white;
+  }
+  #btnSend:hover {
+    -webkit-box-shadow: 0 0 10px #888888;
+    -moz-box-shadow: 0 0 10px #888888;
+    box-shadow: 0 0 10px #888888;
+  }
+  #btnSend:active {
+    background-color: rgb(165, 9, 9);
+    box-shadow: none;
+  }
+  

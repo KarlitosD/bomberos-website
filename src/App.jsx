@@ -2,10 +2,12 @@
 // import { supabase } from "./supabase";
 import { Route, Switch } from "wouter";
 import { Form } from "./pages/form"
+import { Login } from "./pages/login";
 import Home from "./pages/Home"
 import Info from "./pages/info/info"
 import { Admin } from "./pages/admin"
 import { MercadoPago } from "./pages/mercadopago";
+import { Profile } from "./pages/profile";
 
 function App() {
 
@@ -18,6 +20,9 @@ function App() {
           <Route path="/form">
             <Form/>
           </Route>
+          <Route path="/login">
+            <Login/>
+          </Route>
           <Route path="/info">
             <Info />
           </Route>
@@ -26,6 +31,9 @@ function App() {
           </Route>
           <Route path="/mp">
             <MercadoPago />
+          </Route>
+          <Route path="/profile">
+            <Profile/>
           </Route>
           <Route>
             Pagina 404
