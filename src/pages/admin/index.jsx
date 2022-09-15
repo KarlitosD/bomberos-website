@@ -1,7 +1,11 @@
 import "./style.css";
 import { Header } from "@/components/Header";
 import { useState, useEffect } from "react";
-import { getAssociates } from "@/services/associates";
+import {
+  getAssociates,
+  deleteAssociate,
+  updateAssociate,
+} from "@/services/associates";
 
 export function Admin() {
   const [associates, setAssociates] = useState([]);
@@ -9,13 +13,21 @@ export function Admin() {
     fetchAssociates();
   }, []);
 
+  useEffect(() => {
+    console.log("data:", associates);
+  }, [associates]);
+
   async function fetchAssociates() {
     const data = await getAssociates();
     setAssociates(data);
   }
-  useEffect(() => {
-    console.log("data:", associates);
-  }, [associates]);
+  async function dropAssociate(dni) {
+    await deleteAssociate(dni);
+    await fetchAssociates()
+  }
+  function handleDel(dni) {
+    dropAssociate(dni);
+  }
   return (
     <>
       <Header />
@@ -44,7 +56,13 @@ export function Admin() {
               <td>{associate.phone_num}</td>
               <td>{associate.associate_num}</td>
               <td>
-                <input type="checkbox" checked={associate.approved} disabled />
+                <input type="checkbox" checked={associate.approved} />
+              </td>
+              <td>
+                <button className="delBtn"
+                  onClick={() => handleDel(associate.dni)}>
+                  ELIMINAR
+                </button>
               </td>
             </tr>
           ))}
