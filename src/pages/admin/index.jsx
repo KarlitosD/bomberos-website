@@ -46,7 +46,7 @@ export function Admin() {
           </tr>
         </thead>
         <tbody>
-          {associates.map((associate) => (
+          {associates?.map((associate) => (
             <tr key={associate.dni}>
               <td>{associate.dni}</td>
               <td>{associate.name}</td>

@@ -56,6 +56,10 @@ header .logo{
   position:relative;
   overflow: hidden;
   border-radius: 5px;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: black;
 }
 .headerLink::after{
   content: '';
@@ -67,7 +71,7 @@ header .logo{
   transform: scaleX(0);
   transform-origin:bottom right;
   transition: transform 0.6s ease-out;
-  background: red
+  background: red;
 }
 .headerLink:hover::after{
   transform: scaleX(1);
@@ -75,4 +79,7 @@ header .logo{
 }
 body{
   background-color: #ffffff;
+}
+.blankSpace{
+  height: 80px;
 }

@@ -67,14 +67,9 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
   color:rgb(204, 201, 201);
-  background-color: #3d1313;
+  background-color: #414141;
   width: 100%;
-=======
-  color:rgb(119, 119, 119);
-  background-color: #3b3b3b;
->>>>>>> 29eda06b80b520c3cdbb36ce557d58c62fddc75f
   max-height: 300px;
   height: 100px;
 }
@@ -91,16 +86,6 @@ code {
   margin-left: 20px;
   border:5px solid var(--color-primary) ;
 }
-<<<<<<< HEAD
-=======
-.containerR123{
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
->>>>>>> 29eda06b80b520c3cdbb36ce557d58c62fddc75f
 .map{
   margin-top: 20px;
   margin-left: 10px;
@@ -149,7 +134,6 @@ code {
    --facebook:#0A6DCF;
    --instagram:#DF14B1;
 }
-
 .iframes {
   display: flex; 
   gap: 50px;
@@ -157,10 +141,6 @@ code {
   align-items: center;
   justify-content: center;
 }
-
-<<<<<<< HEAD
-=======
 .elfsight-app-4de3859e-5d51-4a6b-aa31-d6d1b9d95bdd { 
   flex-basis: 40%;
 }
->>>>>>> 29eda06b80b520c3cdbb36ce557d58c62fddc75f
