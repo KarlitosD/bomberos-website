@@ -1,0 +1,23 @@
+.bging-1 {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image:url('bomb.jpg');
+}
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #ffff;
+}
+.caption .border {
+    background-color:rgb(105, 105, 105);
+    color: #ffff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
