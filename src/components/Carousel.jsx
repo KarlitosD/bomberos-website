@@ -28,13 +28,13 @@ export function Carousel(props) {
     };
 
 
-    const previous = () => {
+    /* const previous = () => {
         selectNewImage(selectedIndex, props.images, false);
     };
 
     const next = () => {
         selectNewImage(selectedIndex, props.images);
-    };
+    }; */
 
     return (
         <>

@@ -43,7 +43,7 @@ code {
 .fontCS{
   color: #fff;
   text-align: center;
-  margin-top: 13%;
+  margin-top: 45px;
   font-size: xx-large;
   font-weight: 900;
   font-family: sans-serif;
@@ -58,16 +58,29 @@ code {
   width: 100%;
   position: absolute;
   background: rgba(0, 0, 0, 0.356);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .c-f{
   font-family: sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   color:rgb(204, 201, 201);
   background-color: #3d1313;
   width: 100%;
+=======
+  color:rgb(119, 119, 119);
+  background-color: #3b3b3b;
+>>>>>>> 29eda06b80b520c3cdbb36ce557d58c62fddc75f
   max-height: 300px;
+  height: 100px;
+}
+
+.c-f b {
+  color: rgb(194, 194, 194);
 }
 
 .imgMiddle{
@@ -78,6 +91,16 @@ code {
   margin-left: 20px;
   border:5px solid var(--color-primary) ;
 }
+<<<<<<< HEAD
+=======
+.containerR123{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+>>>>>>> 29eda06b80b520c3cdbb36ce557d58c62fddc75f
 .map{
   margin-top: 20px;
   margin-left: 10px;
@@ -126,7 +149,18 @@ code {
    --facebook:#0A6DCF;
    --instagram:#DF14B1;
 }
-.blankSpace{
-  height: 70px;
+
+.iframes {
+  display: flex; 
+  gap: 50px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
+<<<<<<< HEAD
+=======
+.elfsight-app-4de3859e-5d51-4a6b-aa31-d6d1b9d95bdd { 
+  flex-basis: 40%;
+}
+>>>>>>> 29eda06b80b520c3cdbb36ce557d58c62fddc75f
