@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { getImgUrl } from "../utils/getImgUrl";
 
+const images = ["c1.jpg", "c2.jpg", "c3.jpg"]
 
 export function Carousel(props) {
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [selectedImage, setSelectedImage] = useState(props.images[0]);
+    const [selectedImage, setSelectedImage] = useState(images[0]);
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
         let interval
         if (props.autoplay) {
             interval = setInterval(() => {
-                selectNewImage(selectedIndex, props.images);
+                selectNewImage(selectedIndex, images);
             }, 1800);
         }
         return () => clearInterval(interval);
