@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css";
-import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Carousel } from "@/components/Carousel";
 import { Middle } from "@/components/Middle";
@@ -15,7 +14,7 @@ function Home() {
     <>
       <Header />
       <section className="cuerpo">
-        <Carousel className="carousel" images={images} autoplay={true} />
+        <Carousel className="carousel" autoplay={true} />
       </section>
       <section className="mid">
         <Middle />
