@@ -40,7 +40,7 @@ export function Carousel(props) {
     return (
         <>
             <div className="contenedorCarousel">
-                <img src={getImgUrl(selectedImage)} alt="no" className={`carousel ${loaded ? "loaded" : ""}`} onLoad={() => setLoaded(true)} />
+                <img src={getImgUrl(selectedImage)} alt="no" className={`carousel ${loaded ? "loaded" : ""}`} onLoad={() => setLoaded(true)} height="380" />
                 <div className="decorationCs">
                     <h1 className="fontCS">Hace más de 100 años con vos</h1>
                 </div>
