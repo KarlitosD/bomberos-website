@@ -51,6 +51,7 @@ code {
 }
 .contenedorCarousel{
   position: relative;
+  height: 380px;
 }
 .decorationCs{
   top:0%;
