@@ -11,10 +11,7 @@ function blobToDataUrl(blob) {
 }
 
 export function getImgUrl(fileName) {
-    if(cache.has(fileName)) {
-        console.log("Hola hermosa")
-        return cache.get(fileName)
-    }
+    if(cache.has(fileName)) return cache.get(fileName)
     const imageUrl = new URL(`/src/assets/img/${fileName}`, import.meta.url).href
     // const imageBlob = await fetch(imageUrl).then(res => res.blob())
     // const dataUrl = await blobToDataUrl(imageBlob)
