@@ -42,7 +42,7 @@ header .logo{
   text-decoration: none;
 }
 .headerLink{
-  display: inline-block;
+  display: flex;
   align-items: center;
   width: 150px;
   height: 50px;

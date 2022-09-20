@@ -32,7 +32,7 @@ export function Admin() {
     <>
       <Header />
       <div className="blank"></div>
-      <table>
+      <table className="registros">
         <thead>
           <tr>
             <th>dni</th>
@@ -43,6 +43,7 @@ export function Admin() {
             <th>número de teléfono</th>
             <th>número de socio</th>
             <th>aprobado</th>
+            <th>eliminar</th>
           </tr>
         </thead>
         <tbody>
