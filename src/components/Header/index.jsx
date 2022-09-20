@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { getImgUrl } from "../../utils/getImgUrl";
+import logoUrl from "@/assets/img/logo.png"
 import "./index.css"
 import { Link } from "wouter"
 
@@ -11,7 +11,7 @@ export function Header() {
       <div className="blankSpace"></div>
       <header>
         <a href="/">
-          <img className="logo" src={getImgUrl("logo.png")} />
+          <img className="logo" src={logoUrl} />
         </a>
         <a className="headerLink" href="/"><span>Inicio</span></a>
         <a className="headerLink" href="/form"><span>Formulario</span></a>

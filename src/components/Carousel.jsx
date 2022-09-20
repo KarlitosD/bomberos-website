@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { getImgUrl } from "../utils/getImgUrl";
 
+const images = ["c1.jpg", "c2.jpg", "c3.jpg"]
 
 export function Carousel(props) {
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [selectedImage, setSelectedImage] = useState(props.images[0]);
+    const [selectedImage, setSelectedImage] = useState(images[0]);
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
         let interval
         if (props.autoplay) {
             interval = setInterval(() => {
-                selectNewImage(selectedIndex, props.images);
+                selectNewImage(selectedIndex, images);
             }, 1800);
         }
         return () => clearInterval(interval);
@@ -39,7 +40,7 @@ export function Carousel(props) {
     return (
         <>
             <div className="contenedorCarousel">
-                <img src={getImgUrl(selectedImage)} alt="no" className={`carousel ${loaded ? "loaded" : ""}`} onLoad={() => setLoaded(true)} />
+                <img src={getImgUrl(selectedImage)} alt="no" className={`carousel ${loaded ? "loaded" : ""}`} onLoad={() => setLoaded(true)} height="380" />
                 <div className="decorationCs">
                     <h1 className="fontCS">Hace más de 100 años con vos</h1>
                 </div>

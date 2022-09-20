@@ -1,13 +1,13 @@
 .parallax {
-    margin-top: 400px;
-    margin-bottom:400px;
+    margin-top: 80px;
+    margin-bottom:80px;
     position: relative;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-image:url('/src/assets/img/bomb.jpg');
-    height: 200px;
+    height: 300px;
 }
 .caption {
     position: absolute;

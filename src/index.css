@@ -43,7 +43,6 @@ code {
 .fontCS{
   color: #fff;
   text-align: center;
-  margin-top: 45px;
   font-size: xx-large;
   font-weight: 900;
   font-family: sans-serif;
@@ -51,6 +50,7 @@ code {
 }
 .contenedorCarousel{
   position: relative;
+  height: 380px;
 }
 .decorationCs{
   top:0%;
@@ -85,12 +85,6 @@ code {
   margin-bottom: 15px;
   margin-left: 20px;
   border:5px solid var(--color-primary) ;
-}
-.map{
-  margin-top: 20px;
-  margin-left: 10px;
-  height: 700px;
-  width: 500px;
 }
 .social{
   display: flex;
@@ -139,8 +133,14 @@ code {
   gap: 50px;
   padding: 20px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+}
+.map{
+  margin-top: 20px;
+  margin-left: 10px;
+  height: 600px;
+  width: min(700px, 50%);
 }
 .elfsight-app-4de3859e-5d51-4a6b-aa31-d6d1b9d95bdd { 
-  flex-basis: 40%;
+  flex-basis: 50%;
 }
