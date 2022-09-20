@@ -31,31 +31,30 @@ export function Admin() {
   return (
     <>
       <Header />
-      <div className="blank"></div>
-      <table className="registros">
+      <table className="table">
         <thead>
           <tr>
-            <th>dni</th>
-            <th>nombre</th>
-            <th>apellido</th>
-            <th>correo electrónico</th>
-            <th>dirección</th>
-            <th>número de teléfono</th>
-            <th>número de socio</th>
-            <th>aprobado</th>
-            <th>eliminar</th>
+            <th className="theadItem">DNI</th>
+            <th className="theadItem">NOMBRE</th>
+            <th className="theadItem">APELLIDO</th>
+            <th className="theadItem">CORREO ELECTRÓNICO</th>
+            <th className="theadItem">DIRECCIÓN</th>
+            <th className="theadItem">NÚMERO DE TELÉFONO</th>
+            <th className="theadItem">NÚMERO DE SOCIO</th>
+            <th className="theadItem">APROBADO</th>
+            <th className="theadItem">ELIMINAR SOCIO</th>
           </tr>
         </thead>
         <tbody>
           {associates?.map((associate) => (
-            <tr key={associate.dni}>
-              <td>{associate.dni}</td>
-              <td>{associate.name}</td>
-              <td>{associate.surname}</td>
-              <td>{associate.email}</td>
-              <td>{associate.address}</td>
-              <td>{associate.phone_num}</td>
-              <td>{associate.associate_num}</td>
+            <tr className="dataRow" key={associate.dni}>
+              <td className="tdata">{associate.dni}</td>
+              <td className="tdata">{associate.name}</td>
+              <td className="tdata">{associate.surname}</td>
+              <td className="tdata">{associate.email}</td>
+              <td className="tdata">{associate.address}</td>
+              <td className="tdata">{associate.phone_num}</td>
+              <td className="tdata">{associate.associate_num}</td>
               <td>
                 <input type="checkbox" checked={associate.approved} />
               </td>

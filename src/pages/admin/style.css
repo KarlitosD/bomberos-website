@@ -7,19 +7,28 @@ thead{
     border-bottom: solid 5px rgb(39, 39, 39);
     width: auto;
 }
-.delBtn{
-    background-color: rgb(170, 0, 0);
-    color: white;
-    padding: 2px;
-    border: none;
-}
-.registros{
-    text-align: left;
+.table{
+	text-align: left;
     width: 100%;
     margin: 150px auto;
     border-collapse:collapse;
     font-family: sans-serif;
 }
+.theadItem{
+	text-align: center;
+}
+.dataRow{
+	text-align: center;
+}
+.tdata{
+
+}
 tr:nth-child(even){
-    background-color: #ddd;
+	background-color: #ddd;
+}
+.delBtn{
+	background-color: rgb(165, 9, 9);
+	color: white;
+	padding: 2px;
+	border: none;
 }
