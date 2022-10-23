@@ -6,7 +6,6 @@ import { Login } from "./pages/login";
 import Home from "./pages/home"
 import Info from "./pages/info/info"
 import { Admin } from "./pages/admin"
-import { MercadoPago } from "./pages/mercadopago";
 import { Profile } from "./pages/profile";
 
 function App() {
@@ -28,9 +27,6 @@ function App() {
           </Route>
           <Route path="/admin">
             <Admin/>
-          </Route>
-          <Route path="/mp">
-            <MercadoPago />
           </Route>
           <Route path="/profile">
             <Profile/>
