@@ -1,16 +1,18 @@
 import "./style.css";
 import { Header } from "@/components/Header";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { supabase } from "@/supabase.js"
-// import { createAssociate, getAssociates } from "@/services/associates";
+import { useAuth } from "@/hooks/useAuth";
+import { Redirect } from "wouter";
 
 export function Login() {
+  const { session } = useAuth()
   const [loading, setLoading] = useState(false)
   const [credentials, setCredentials] = useState({
     email: "",
     password: ""
   })
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
@@ -27,9 +29,12 @@ export function Login() {
   const createHandleChange = name => event => {
     setCredentials(credentials => ({ ...credentials, [name]: event.target.value }))
   } 
-  
+
+  if(session) return <Redirect to="/" />
+
   return (
     <>
+      <Header />
       <form onSubmit={handleSubmit}>
         <h1>Iniciar Sesion</h1>
         <label>

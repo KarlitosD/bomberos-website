@@ -1,7 +1,10 @@
-import "./style.css";
+import { useState } from "react";
+import { Redirect } from "wouter";
 import { Header } from "@/components/Header";
-import { useState, useEffect } from "react";
-import { getAssociates, createAssociate } from "@/services/associates";
+import { createAssociate } from "@/services/associates";
+import { useAuth } from "@/hooks/useAuth";
+import "./style.css";
+
 
 const initNewAssociate = {
   dni: "",
@@ -13,7 +16,9 @@ const initNewAssociate = {
 };
 
 export function Form() {
+  const { session } = useAuth()
   const [newAssociate, setNewAssociate] = useState(initNewAssociate);
+  
   async function createNewAssociate() {
     await createAssociate(newAssociate);
     setNewAssociate(initNewAssociate);
@@ -26,6 +31,9 @@ export function Form() {
   const createHandleChange = property => event => {
     setNewAssociate({ ...newAssociate, [property]: event.target.value })
   }
+
+  if(session) return <Redirect to="/" />
+
   return (
     <>
       <Header />
