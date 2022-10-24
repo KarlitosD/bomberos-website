@@ -31,12 +31,32 @@ export function Faq(){
 		<div>
 			<div className="acordion">
 				<Pregunta
-				pregunta={"Hola"}
-				respuesta={"hi"}
+				pregunta={"¿Que diferencia hay entre ser Socio, y  solamente Donar?"}
+				respuesta={"No se amigo, me mataste"}
 				/>
 				<Pregunta
-				pregunta={"Hola"}
-				respuesta={"chau"}
+				pregunta={"Al inscribirme como bombero ¿Tengo un salario o pago?"}
+				respuesta={"No"}
+				/>
+				<Pregunta
+				pregunta={"¿Con que beneficios cuenta un bombero?"}
+				respuesta={"Algo de la jubilacion y honor"}
+				/>
+				<Pregunta
+				pregunta={"¿Como bombero, puedo contar con otro oficio?"}
+				respuesta={"Si"}
+				/>
+				<Pregunta
+				pregunta={"¿Que diferencia hay entre un bombero voluntario, y de la ciudad?"}
+				respuesta={"uno es voluntario y otro de la ciudad"}
+				/>
+				<Pregunta
+				pregunta={"¿Los bomberos se manejan con horarios de trabajo?"}
+				respuesta={"no"}
+				/>
+				<Pregunta
+				pregunta={"¿En donde se encuentran repartido los destacamentos?"}
+				respuesta={"por ahi"}
 				/>
 			</div>
 				
