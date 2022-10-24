@@ -1,6 +1,6 @@
 import { Router, useRouter, useLocation } from "wouter";
 
-export const NestedRoutes = (props) => {
+export const NestedRouter = (props) => {
   const router = useRouter();
   const [parentLocation] = useLocation();
 
