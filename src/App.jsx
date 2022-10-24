@@ -8,6 +8,8 @@ import Info from "./pages/info/info"
 import { Admin } from "./pages/admin"
 import { MercadoPago } from "./pages/mercadopago";
 import { Profile } from "./pages/profile";
+import { FormApp } from "./pages/formApp";
+
 
 function App() {
 
@@ -19,6 +21,9 @@ function App() {
           </Route>
           <Route path="/form">
             <Form/>
+          </Route>
+          <Route path="/formApp">
+            <FormApp/>
           </Route>
           <Route path="/login">
             <Login/>
