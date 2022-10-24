@@ -12,9 +12,7 @@ export const NestedRouter = (props) => {
   // we need key to make sure the router will remount when base changed
   return (
     <Router base={nestedBase} key={nestedBase}>
-      <Switch>
         {props.children}
-      </Switch>
     </Router>
   );
 };
