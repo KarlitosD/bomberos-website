@@ -1,7 +1,6 @@
 import "./style.css";
 import { Header } from "@/components/Header";
 import { useEffect, useState } from "react";
-import { LateralMenu } from "@/components/LateralMenu";
 import {
   deleteAssociate,
   getAssociates,
