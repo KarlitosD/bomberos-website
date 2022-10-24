@@ -3,6 +3,7 @@
 import { Route, Switch } from "wouter";
 import { Form } from "./pages/form";
 import { Login } from "./pages/login";
+import { Faq } from "./pages/faqPage"
 import Home from "./pages/home";
 import Info from "./pages/info/info";
 import { NestedRouter } from "@/components/NestedRouter";
@@ -24,6 +25,9 @@ function App() {
           <Route path="/form">
             <Form/>
           </Route>
+		  <Route path="/faq">
+			<Faq/>
+		  </Route>
           <Route path="/formApp">
             <FormApp/>
           </Route>
@@ -36,9 +40,7 @@ function App() {
           <Route path="/admin">
             <Admin/>
           </Route>
-          <Route path="/mp">
-            <MercadoPago />
-          </Route>
+        
           <Route path="/profile">
             <Profile/>
           </Route>
