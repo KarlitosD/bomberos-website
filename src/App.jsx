@@ -1,18 +1,14 @@
-// import { useEffect } from "react";
-// import { supabase } from "./supabase";
 import { Route, Switch } from "wouter";
-import { Form } from "./pages/form";
-import { Login } from "./pages/login";
-import { Faq } from "./pages/faqPage";
-import Home from "./pages/home";
-import Info from "./pages/info/info";
+import { Form } from "@/pages/form";
+import { Login } from "@/pages/login";
+import { Faq } from "@/pages/faqPage";
+import Home from "@/pages/home";
+import Info from "@/pages/info/info";
+import { Admin } from "@/pages/admin";
+import { Profile } from "@/pages/profile";
+import { FormApp } from "@/pages/formApp";
 import { NestedRouter } from "@/components/NestedRouter";
-import { LateralMenu } from "@/components/LateralMenu";
-
 import { Header } from "@/components/Header";
-import { Admin } from "./pages/admin";
-import { Profile } from "./pages/profile";
-import { FormApp } from "./pages/formApp";
 
 function App() {
   return (
@@ -36,13 +32,12 @@ function App() {
         <Route path="/info">
           <Info />
         </Route>
-        <Route path="/admin">
-          <Admin />
-        </Route>
-
         <Route path="/profile">
           <Profile />
         </Route>
+        <NestedRouter base="/admin">
+          <Admin />
+        </NestedRouter>
         <Route>
           Pagina 404
         </Route>
