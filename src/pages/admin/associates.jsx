@@ -1,5 +1,6 @@
+import { useEffect, useState, useMemo } from "react";
+import { orderBy } from "json-function";
 import { supabase } from "@/supabase.js";
-import { useEffect, useState } from "react";
 import {
   deleteAssociate,
   getAssociates,
@@ -8,6 +9,7 @@ import {
 
 export const Associates = () => {
     const [associates, setAssociates] = useState([]);
+
     useEffect(() => {
       fetchAssociates();
     }, []);
@@ -24,51 +26,62 @@ export const Associates = () => {
       await deleteAssociate(dni);
       await fetchAssociates();
     }
-  
     const [ascending, setAscending] = useState(false)
-    async function orderField(field){
-      const { data } = await supabase.from("associates").select('*').order(field ,{ascending});
-      setAssociates(data);
+    const [selectedField, setSelectedField] = useState("")
+
+    const visibleAssociates = useMemo(() => {
+      const copyAssociates = structuredClone(associates)
+      return orderBy(copyAssociates, selectedField, ascending ? "ASC": "DESC")
+    }, [associates, ascending, selectedField]) 
+
+    // async function orderField(field){
+    //   const { data } = await supabase.from("associates").select('*').order(field ,{ascending});
+    //   setAssociates(data);
+    //   setAscending(!ascending)
+    //   return data;
+    // }
+
+    const createHandleClick = field => () => {
+      setSelectedField(field)
       setAscending(!ascending)
-      return data;
     }
   return (
     <>
       <table className="table">
         <thead>
           <tr>
-            <th onClick={() => orderField("dni")} className="theadItem">
+            <th onClick={createHandleClick("dni")} className="theadItem">
               DNI
             </th>
-            <th onClick={() => orderField("name")} className="theadItem">
+            <th onClick={createHandleClick("name")} className="theadItem">
               NOMBRE
             </th>
-            <th onClick={() => orderField("surname")} className="theadItem">
+            <th onClick={createHandleClick("surname")} className="theadItem">
               APELLIDO
             </th>
-            <th onClick={() => orderField("email")} className="theadItem">
+            <th onClick={createHandleClick("email")} className="theadItem">
               CORREO ELECTRÓNICO
             </th>
-            <th onClick={() => orderField("address")} className="theadItem">
+            <th onClick={createHandleClick("address")} className="theadItem">
               DIRECCIÓN
             </th>
-            <th onClick={() => orderField("phone_num")} className="theadItem">
+            <th onClick={createHandleClick("phone_num")} className="theadItem">
               NÚMERO DE TELÉFONO
             </th>
             <th
-              onClick={() => orderField("associate_num")}
+              onClick={createHandleClick("associate_num")}
               className="theadItem"
             >
               NÚMERO DE SOCIO
             </th>
-            <th onClick={() => orderField("approved")} className="theadItem">
+            <th onClick={createHandleClick("approved")} className="theadItem">
               APROBADO
             </th>
             <th className="theadItem">ELIMINAR SOCIO</th>
           </tr>
         </thead>
         <tbody>
-          {associates?.map((associate) => (
+          {visibleAssociates?.map((associate) => (
             <tr className="dataRow" key={associate.dni}>
               <td className="tdata">{associate.dni}</td>
               <td className="tdata">{associate.name}</td>
