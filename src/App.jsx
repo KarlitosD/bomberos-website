@@ -28,7 +28,7 @@ function App() {
         <Route path="/info">
           <Info />
         </Route>
-        <Route path="/admin" component={<Admin />} />
+        <Route path="/admin"><Admin /></Route>
         <Route path="/profile">
           <Profile />
         </Route>
