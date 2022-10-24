@@ -1,4 +1,4 @@
-import { Router, useRouter, useLocation } from "wouter";
+import { Router, useRouter, useLocation, Switch } from "wouter";
 
 export const NestedRouter = (props) => {
   const router = useRouter();
@@ -12,7 +12,9 @@ export const NestedRouter = (props) => {
   // we need key to make sure the router will remount when base changed
   return (
     <Router base={nestedBase} key={nestedBase}>
-      {props.children}
+      <Switch>
+        {props.children}
+      </Switch>
     </Router>
   );
 };
