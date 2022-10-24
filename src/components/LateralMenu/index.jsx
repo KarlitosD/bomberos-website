@@ -5,10 +5,10 @@ export const LateralMenu = () => {
     return (
         <>
             <div className="menu">
-                <Link to="/admin">Mi perfil</Link>
-                <Link to="/admin/socios">Socios</Link>
-                <Link to="/admin/pagos">Pagos</Link>
-                <Link to="/admin/aspirantes">Aspirantes</Link>
+                <Link to="/">Mi perfil</Link>
+                <Link to="/socios">Socios</Link>
+                <Link to="/aspirantes">Aspirantes</Link>
+                <Link to="/pagos">Pagos</Link>
             </div>
         </>
     )
