@@ -1,15 +1,17 @@
 import { Header } from "@/components/Header";
+import {useState} from "react"
 import "./style.css"
 
 export function Faq(){
-	const [isClicked, setIsClicked] = useState(false)
+	
 
 	const Pregunta = (props) =>{
+		const [isClicked, setIsClicked] = useState(false)
 		return(
 			<div className="pregunta">
-				<div className="barra1">
-					<h3>{props.pregunta}</h3>
-					<button onClick={() => setIsClicked(!isClicked)}>Mostrar</button>				
+				<div className="barra1" onClick={() => setIsClicked(!isClicked)}>
+					<h3>{props.pregunta}</h3>		
+					{isClicked ? <h2>-</h2> : <h2>+</h2>}		
 				</div>
 				<div className="barra2">
 					{
@@ -29,8 +31,12 @@ export function Faq(){
 		<div>
 			<div className="acordion">
 				<Pregunta
-				pregunta={<h1>Hola</h1>}
-				respuesta={<p>lorem ipsum doloreASOIDHASIOdhnbasouigbfuoAHNB FGUIOasd hiofj aspoifjaips</p>}
+				pregunta={"Hola"}
+				respuesta={"hi"}
+				/>
+				<Pregunta
+				pregunta={"Hola"}
+				respuesta={"chau"}
 				/>
 			</div>
 				
