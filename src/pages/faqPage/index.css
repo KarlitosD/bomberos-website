@@ -83,17 +83,25 @@
   .blankSpace{
 	height: 80px;
   }
+  .pregunta{
+	height: fit-content;
+	min-width: 70%;
+	margin: 10%;
+	padding: 10px 20px;
+	background-color: #feeeee;
+	box-sizing: border-box;
+  }
+  
 
-  input + ul {
-	display: none;
-	}
-	input:checked + ul {
-	display: block;
-	}
+  .barra1{
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+  }
 
-.pregunta ul{
-	color:blue
-}
-.pregunta ul li:first-child{
-	display: none;
-}
+  .barra1 button{
+	height: fit-content;
+  }
+  .barra1 img{
+	height: 300px;
+  }
