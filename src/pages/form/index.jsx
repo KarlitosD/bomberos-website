@@ -5,7 +5,6 @@ import { createAssociate } from "@/services/associates";
 import { useAuth } from "@/hooks/useAuth";
 import "./style.css";
 
-
 const initNewAssociate = {
   dni: "",
   name: "",

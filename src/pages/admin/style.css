@@ -1,3 +1,7 @@
+.admin-container {
+    display: flex;
+}
+
 th, td{
     padding: 20px;
 }
