@@ -1,7 +1,9 @@
-import "./style.css";
+import { useState } from "react";
+import { Redirect } from "wouter";
 import { Header } from "@/components/Header";
-import { useState, useEffect } from "react";
-import { getAssociates, createAssociate } from "@/services/associates";
+import { createAssociate } from "@/services/associates";
+import { useAuth } from "@/hooks/useAuth";
+import "./style.css";
 
 const initNewAssociate = {
   dni: "",
@@ -9,26 +11,28 @@ const initNewAssociate = {
   surname: "",
   phone_num: "",
   address: "",
+  email: ""
 };
+
 export function Form() {
-  const [ , setAssociates] = useState([]);
+  const { session } = useAuth()
   const [newAssociate, setNewAssociate] = useState(initNewAssociate);
-  useEffect(() => {
-    fetchAssociates();
-  }, []);
-  async function fetchAssociates() {
-    const { data } = getAssociates();
-    setAssociates(data);
-  }
+  
   async function createNewAssociate() {
     await createAssociate(newAssociate);
     setNewAssociate(initNewAssociate);
-    fetchAssociates();
   }
   function handleForm(e) {
     e.preventDefault();
     createNewAssociate();
   }
+
+  const createHandleChange = property => event => {
+    setNewAssociate({ ...newAssociate, [property]: event.target.value })
+  }
+
+  if(session) return <Redirect to="/" />
+
   return (
     <>
       <Header />
@@ -44,9 +48,7 @@ export function Form() {
                 className="rowInput"
                 value={newAssociate.name}
                 type="text"
-                onChange={(e) =>
-                  setNewAssociate({ ...newAssociate, name: e.target.value })
-                }
+                onChange={createHandleChange("name") }
                 required
               />
             </label>
@@ -58,9 +60,7 @@ export function Form() {
                 className="rowInput"
                 value={newAssociate.surname}
                 type="text"
-                onChange={(e) =>
-                  setNewAssociate({ ...newAssociate, surname: e.target.value })
-                }
+                onChange={createHandleChange("surname")}
                 required
               />
             </label>
@@ -72,9 +72,7 @@ export function Form() {
                 className="rowInput"
                 value={newAssociate.email}
                 type="email"
-                onChange={(e) =>
-                  setNewAssociate({ ...newAssociate, email: e.target.value })
-                }
+                onChange={createHandleChange("email")}
                 required
               />
             </label>
@@ -87,10 +85,7 @@ export function Form() {
                 value={newAssociate.phone_num}
                 type="tel"
                 onChange={(e) =>
-                  setNewAssociate({
-                    ...newAssociate,
-                    phone_num: e.target.value,
-                  })
+                  setNewAssociate(createHandleChange("phone_num"))
                 }
                 required
               />
@@ -103,9 +98,7 @@ export function Form() {
                 className="rowInput"
                 value={newAssociate.dni}
                 type="number"
-                onChange={(e) =>
-                  setNewAssociate({ ...newAssociate, dni: e.target.value })
-                }
+                onChange={createHandleChange("dni")}
                 required
               />
             </label>
@@ -117,9 +110,7 @@ export function Form() {
                 className="rowInput"
                 value={newAssociate.address}
                 type="text"
-                onChange={(e) =>
-                  setNewAssociate({ ...newAssociate, address: e.target.value })
-                }
+                onChange={createHandleChange("address")}
                 required
               />
             </label>

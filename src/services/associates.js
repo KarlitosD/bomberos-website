@@ -4,7 +4,15 @@ export async function getAssociates() {
   return data;
 }
 export async function createAssociate(newAssociate) {
-  await supabase.from("associates").insert([newAssociate]).single();
+  try {
+    await supabase.auth.signUp({
+      email: newAssociate.email,
+      password: newAssociate.dni,
+    })
+    await supabase.from("associates").insert([newAssociate]).single();
+  } catch (error) {
+    alert(error.message)
+  }
 }
 export async function deleteAssociate(dni) {
   await supabase.from("associates").delete().match({ dni });
