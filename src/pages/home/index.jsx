@@ -16,8 +16,8 @@ export function Home() {
       <section className="cuerpo">
         <Carousel className="carousel" autoplay={true} />
       </section>
-      <a href="/formApp"><span>SOBRE SOCIOS</span></a>
-      <a href="/formApp"><span>SOBRE ASPIRANTES</span></a>
+      <a href="/infoAss"><span>SOBRE SOCIOS</span></a>
+      <a href="/infoApp"><span>SOBRE ASPIRANTES</span></a>
       <section className="mid">
         <Middle />
       </section>

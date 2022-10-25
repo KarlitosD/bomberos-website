@@ -28,13 +28,11 @@ function App() {
         <Route path="/profile">
           <Profile />
         </Route>
-        <NestedRouter base="/admin">
-          <Admin />
-        </NestedRouter>
         <Route path="/infoAss">
           <InfoAss />
         </Route>
         <Route path="/form">
+          <h1>HOla</h1>
           <Form />
         </Route>
         <Route path="/faq">
@@ -46,6 +44,9 @@ function App() {
         <Route path="/formApp">
           <FormApp />
         </Route>
+        <NestedRouter base="/admin">
+          <Admin />
+        </NestedRouter>
         <Route>
           Pagina 404
         </Route>
