@@ -2,13 +2,15 @@ import { Route, Switch } from "wouter";
 import { Form } from "@/pages/form";
 import { Login } from "@/pages/login";
 import { Faq } from "@/pages/faqPage";
-import Home from "@/pages/home";
-import Info from "@/pages/info/info";
+import { Home } from "@/pages/home";
 import { Admin } from "@/pages/admin";
 import { Profile } from "@/pages/profile";
 import { FormApp } from "@/pages/formApp";
+import { Donations } from "@/pages/donations"
+import { InfoApp } from "@/pages/infoApp"
+import { InfoAss } from "@/pages/infoAss"
 import { NestedRouter } from "@/components/NestedRouter";
-import { Header } from "@/components/Header";
+
 
 function App() {
   return (
@@ -17,20 +19,11 @@ function App() {
         <Route path="/">
           <Home />
         </Route>
-        <Route path="/form">
-          <Form />
-        </Route>
-        <Route path="/faq">
-          <Faq />
-        </Route>
-        <Route path="/formApp">
-          <FormApp />
+        <Route path="/donations">
+          <Donations />
         </Route>
         <Route path="/login">
           <Login />
-        </Route>
-        <Route path="/info">
-          <Info />
         </Route>
         <Route path="/profile">
           <Profile />
@@ -38,6 +31,21 @@ function App() {
         <NestedRouter base="/admin">
           <Admin />
         </NestedRouter>
+        <Route path="/infoAss">
+          <InfoAss />
+        </Route>
+        <Route path="/form">
+          <Form />
+        </Route>
+        <Route path="/faq">
+          <Faq />
+        </Route>
+        <Route path="/infoApp">
+          <InfoApp />
+        </Route>
+        <Route path="/formApp">
+          <FormApp />
+        </Route>
         <Route>
           Pagina 404
         </Route>
