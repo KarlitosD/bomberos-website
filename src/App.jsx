@@ -8,6 +8,7 @@ import Info from "./pages/info/info"
 import { Admin } from "./pages/admin"
 import { MercadoPago } from "./pages/mercadopago";
 import { Profile } from "./pages/profile";
+import { User } from "./pages/user";
 
 function App() {
 
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route path="/profile">
             <Profile/>
+          </Route>
+          <Route path="/user">
+            <User />
           </Route>
           <Route>
             Pagina 404

@@ -144,3 +144,19 @@ code {
 .elfsight-app-4de3859e-5d51-4a6b-aa31-d6d1b9d95bdd { 
   flex-basis: 50%;
 }
+.Form, .User, .Dona{
+  height: 300px;
+  max-height: 300px;
+  width: 300px;
+  margin-top: 15%;
+  margin-left: 25px;
+  margin-bottom: 15%;
+}
+.contenedorFUD{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.Dona{
+  background-image: url("../../assets/img/donaciones.png");
+}
