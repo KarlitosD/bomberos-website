@@ -11,8 +11,8 @@
 }
 .tittleBox {
   background-color: var(--color-primary);
-  /* border-top-left-radius: 14px; */
-  /* border-bottom-left-radius: 14px; */
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
   text-align: center;
   flex-basis: 35%;
   /* padding-top: 19%; */
