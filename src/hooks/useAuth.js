@@ -4,7 +4,6 @@ import { supabase } from "@/supabase";
 export const useAuth = () => {
   const [session, setSession] = useState(supabase.auth.session());
   const [user, setUser] = useState(supabase.auth.user());
-  console.log(session)
   useEffect(() => {
     supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
