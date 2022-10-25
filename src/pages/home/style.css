@@ -80,9 +80,6 @@
   body{
 	background-color: #ffffff;
   }
-  .blankSpace{
-	height: 80px;
-  }
 
   input + ul {
 	display: none;
