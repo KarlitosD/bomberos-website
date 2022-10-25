@@ -28,19 +28,20 @@ function App() {
         <Route path="/profile">
           <Profile />
         </Route>
-        <Route path="/infoAss">
+        <Route path="/informacion/socios">
           <InfoAss />
         </Route>
-        <Route path="/form">
-          <Form />
+        <Route path="/informacion/aspirantes">
+          <InfoApp />
         </Route>
+        
         <Route path="/faq">
           <Faq />
         </Route>
-        <Route path="/infoApp">
-          <InfoApp />
+        <Route path="/formulario/socios">
+          <Form />
         </Route>
-        <Route path="/formApp">
+        <Route path="/formulario/aspirantes">
           <FormApp />
         </Route>
         <NestedRouter base="/admin">
