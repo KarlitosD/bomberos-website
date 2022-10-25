@@ -32,7 +32,6 @@ function App() {
           <InfoAss />
         </Route>
         <Route path="/form">
-          <h1>HOla</h1>
           <Form />
         </Route>
         <Route path="/faq">
