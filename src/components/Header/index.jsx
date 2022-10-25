@@ -14,9 +14,9 @@ export function Header() {
           <img className="logo" src={logoUrl} />
         </a>
         <a className="headerLink" href="/"><span>Inicio</span></a>
-        <a className="headerLink" href="/form"><span>Formulario</span></a>
+        <a className="headerLink" href="/form"><span>Asociarse</span></a>
         <a className="headerLink" href="/admin"><span>Administración</span></a>
-        <a className="headerLink" href="/mp"><span>Donaciones</span></a>
+        <a className="headerLink" href="/donations"><span>Donaciones</span></a>
       </header>
     </>
   );

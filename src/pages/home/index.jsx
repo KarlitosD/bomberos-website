@@ -9,13 +9,15 @@ window.addEventListener("scroll", function () {
   header.classList.toggle("abajo", window.scrollY > 0);
 });
 
-function Home() {
+export function Home() {
   return (
     <>
       <Header />
       <section className="cuerpo">
         <Carousel className="carousel" autoplay={true} />
       </section>
+      <a href="/formApp"><span>SOBRE SOCIOS</span></a>
+      <a href="/formApp"><span>SOBRE ASPIRANTES</span></a>
       <section className="mid">
         <Middle />
       </section>
@@ -28,5 +30,3 @@ function Home() {
     </>
   );
 }
-
-export default Home;
