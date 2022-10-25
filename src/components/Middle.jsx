@@ -5,7 +5,12 @@ import Parallax from "./parallax";
 export function Middle() {
   return (
     <>
-      <Parallax/>
+      <div className="contenedorFUD">
+        <div className="Form"></div>
+        <div className="User"></div>
+        <div className="Dona"></div>
+      </div>
+      <Parallax />
       <div className="iframes">
         <iframe
           className="map"
