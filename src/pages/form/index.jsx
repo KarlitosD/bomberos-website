@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Redirect } from "wouter";
 import { Header } from "@/components/Header";
+import { Modal } from "@/components/Modal";
 import { createAssociate } from "@/services/associates";
 import { useAuth } from "@/hooks/useAuth";
 import "./style.css";
@@ -16,31 +17,39 @@ const initNewAssociate = {
 
 export function Form() {
   const { session } = useAuth()
+  const [newAssociates, setNewAssociates] = useState([]);
   const [newAssociate, setNewAssociate] = useState(initNewAssociate);
-  
-  async function createNewAssociate() {
-    await createAssociate(newAssociate);
-    setNewAssociate(initNewAssociate);
-  }
-  function handleForm(e) {
+  const [openModal, setOpenModal] = useState(false)
+  const [error, setError] = useState(null)
+
+  const handleForm = async (e) => {
     e.preventDefault();
-    createNewAssociate();
+    const { error } = await createAssociate(newAssociates.length < 1 ? newAssociate : newAssociates);
+    // setNewAssociate(initNewAssociate);
+    setOpenModal(true)
+    setError(error)
   }
 
   const createHandleChange = property => event => {
     setNewAssociate({ ...newAssociate, [property]: event.target.value })
   }
 
-  if(session) return <Redirect to="/" />
+  const addAssociate = () => {
+    setNewAssociates([...newAssociates, newAssociate])
+    setNewAssociate(initNewAssociate);
+  }
+
+  // if(session) return <Redirect to="/" />
 
   return (
     <>
       <Header />
-      <form id="mainForm" onSubmit={handleForm}>
-        <div id="tittleBox">
-          <h1 id="tittle">FORMULARIO DE INSCRIPCIÓN</h1>
+      <form className="mainForm" onSubmit={handleForm}>
+        <div className="tittleBox">
+          <h1>FORMULARIO DE INSCRIPCIÓN</h1>
+          <h3>Socios a agregar: {newAssociates.length + 1}</h3>
         </div>
-        <div id="ansBox">
+        <div className="ansBox">
           <div className="row">
             <label className="rowLabel">
               Nombre/s:
@@ -84,9 +93,7 @@ export function Form() {
                 className="rowInput"
                 value={newAssociate.phone_num}
                 type="tel"
-                onChange={(e) =>
-                  setNewAssociate(createHandleChange("phone_num"))
-                }
+                onChange={createHandleChange("phone_num") }
                 required
               />
             </label>
@@ -115,11 +122,16 @@ export function Form() {
               />
             </label>
           </div>
-          <button id="btnSend" type="submit">
+          <button className="btn btn-add" onClick={addAssociate}>Agregar otro socio</button>
+          <button className="btn" type="submit">
             ENVIAR
           </button>
         </div>
       </form>
+      <Modal open={openModal}>
+        <h1>{ error ? "a": "b" }</h1>
+        <button onClick={() => setOpenModal(false)}>Cerrar</button>
+      </Modal>
     </>
   );
 }
