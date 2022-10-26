@@ -5,6 +5,7 @@ import { Modal } from "@/components/Modal";
 import { createAssociate } from "@/services/associates";
 import { useAuth } from "@/hooks/useAuth";
 import "./style.css";
+import { useRef } from "react";
 
 const initNewAssociate = {
   dni: "",
@@ -21,31 +22,38 @@ export function Form() {
   const [newAssociate, setNewAssociate] = useState(initNewAssociate);
   const [openModal, setOpenModal] = useState(false)
   const [error, setError] = useState(null)
+  const form = useRef(null)
+
 
   const handleForm = async (e) => {
     e.preventDefault();
-    const action = e.target.getAttribute("action")
-    console.log(e.target)
-    if(action === "add"){
-      setNewAssociates(newAssociates.concat(newAssociate))
-    }else if(action === "submit"){
-      const { error } = await createAssociate(newAssociates.length < 1 ? [newAssociate] : newAssociates);
-      setOpenModal(true)
-      setError(error)
-    }
+    const action = e.target.act
+    console.log({ action })
+    // if(action === "add"){
+    //   setNewAssociates(newAssociates.concat(newAssociate))
+    // }else if(action === "submit"){
+    //   const { error } = await createAssociate(newAssociates.length < 1 ? [newAssociate] : newAssociates);
+    //   setOpenModal(true)
+    //   setError(error)
+    // }
     setNewAssociate(initNewAssociate);
   }
 
   const createHandleChange = property => event => {
     setNewAssociate({ ...newAssociate, [property]: event.target.value })
   }
+  const createHandleClick = action => event => {
+    form.current.act = action
+    form.current.submit()
+  } 
+
 
   if(session) return <Redirect to="/" />
 
   return (
     <>
       
-      <form className="mainForm" onSubmit={handleForm}>
+      <form className="mainForm" ref={form} onSubmit={handleForm}>
         <div className="tittleBox">
           <h1>FORMULARIO DE INSCRIPCIÓN</h1>
           <h3>Socios a agregar: {newAssociates.length + 1}</h3>
@@ -123,8 +131,8 @@ export function Form() {
               />
             </label>
           </div>
-          <button className="btn btn-add" type="submit" action="add">Agregar otro socio</button>
-          <button className="btn" type="submit" action="submit">
+          <button className="btn btn-add" type="submit" onClick={createHandleClick("add")}>Agregar otro socio</button>
+          <button className="btn" type="submit" onClick={createHandleClick("submit")} >
             ENVIAR
           </button>
         </div>
