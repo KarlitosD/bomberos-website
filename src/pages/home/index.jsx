@@ -19,10 +19,6 @@ export function Home() {
       </section>
       
       <section className="mid">
-        <div className="links">
-          <Link to="/informacion/socios">SOBRE SOCIOS</Link>
-          <Link to="/informacion/aspirantes">SOBRE ASPIRANTES</Link>
-        </div>
         <Middle />
       </section>
       <section className="c-f">
