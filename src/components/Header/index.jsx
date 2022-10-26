@@ -1,9 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "wouter";
 import logoUrl from "@/assets/img/logo.png";
 import "./index.css";
 
 export function Header() {
+
+  const [burguerClass, setBurguerClass] = useState("burguer-bar unclicked")
+  const [menu_class, setMenuClass] = useState("menu hidden")
+  const [isMenuClicked, setIsMenuClicked] = useState(false)
+
+  const updateMenu = () =>{
+    if(!isMenuClicked){
+      setBurguerClass("burguer-bar clicked")
+      setMenuClass("menu visible")
+    }else{
+      setBurguerClass("burguer-bar unclicked")
+      setMenuClass("menu hidden")
+    }
+    setIsMenuClicked(!isMenuClicked)
+  }
+
   return (
     <>
       <div className="blankSpace"></div>
@@ -33,28 +49,19 @@ export function Header() {
             <span>Donaciones</span>
           </a>
         </Link>
+        <div style={{width:"100px", height:"100%"}}>
+          <nav>
+            <div className="burguer-menu" onClick={updateMenu}>
+              <div className={burguerClass}></div>
+              <div className={burguerClass}></div>
+              <div className={burguerClass}></div>
+            </div>
+          </nav>
+          <div className="menu_class"></div>
+        </div>  
       </header>
     </>
   );
 }
 
-/*        <span className="Nav">
-          <h2>
-            <Link href="/">Inicio</Link>
-          </h2>
-        </span>
-        <span className="Nav">
-          <h2>
-            <Link href="/form">Formulario</Link>
-          </h2>
-        </span>
-        <span className="Nav">
-          <h2>
-            <Link href="/mp">Donaciones</Link>
-          </h2>
-        </span>
-        <span className="Nav">
-          <h2>
-            <Link href="/info">Quienes somos</Link>
-          </h2>
-        </span>*/
+/*        */
