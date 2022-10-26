@@ -1,22 +1,38 @@
 import React from "react";
-import { useState } from "react";
-import logoUrl from "@/assets/img/logo.png"
-import "./index.css"
-import { Link } from "wouter"
-
+import { Link } from "wouter";
+import logoUrl from "@/assets/img/logo.png";
+import "./index.css";
 
 export function Header() {
   return (
     <>
       <div className="blankSpace"></div>
       <header>
-        <a href="/">
-          <img className="logo" src={logoUrl} />
-        </a>
-        <a className="headerLink" href="/"><span>Inicio</span></a>
-        <a className="headerLink" href="/form"><span>Asociarse</span></a>
-        <a className="headerLink" href="/admin"><span>Administración</span></a>
-        <a className="headerLink" href="/donations"><span>Donaciones</span></a>
+        <Link to="/">
+          <a>
+            <img className="logo" src={logoUrl} />
+          </a>
+        </Link>
+        <Link to="/">
+          <a className="headerLink">
+            <span>Inicio</span>
+          </a>
+        </Link>
+        <Link to="/formulario/socios">
+          <a className="headerLink">
+            <span>Asociarse</span>
+          </a>
+        </Link>
+        <Link to="/admin">
+          <a className="headerLink">
+            <span>Administración</span>
+          </a>
+        </Link>
+        <Link to="/donaciones">
+          <a className="headerLink">
+            <span>Donaciones</span>
+          </a>
+        </Link>
       </header>
     </>
   );

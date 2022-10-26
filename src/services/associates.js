@@ -12,7 +12,7 @@ export async function createAssociate(newAssociates) {
     const newAssociatesReversed = structuredClone(newAssociates).reverse()
     console.log("first")
     const allPromises = await Promise.allSettled([
-      ...newAssociatesReversed.map(signUp),
+      // ...newAssociatesReversed.map(signUp),
       supabase.from("associates").insert(newAssociates)
     ]) 
     console.log(allPromises)

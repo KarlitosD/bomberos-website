@@ -90,16 +90,16 @@ export const Associates = () => {
               <td className="tdata">{associate.address}</td>
               <td className="tdata">{associate.phone_num}</td>
               <td className="tdata">{associate.associate_num}</td>
-              <td>
-                <input type="checkbox" checked={associate.approved} readOnly />
+              <td className="tdata">
+                <input type="checkbox" checked={associate.approved} readOnly  />
               </td>
-              <td>
+              <td className="tdata">
                 <button
                   className="delBtn"
                   onClick={() =>
                     handleDel(associate.dni)}
                 >
-                  ELIMINAR
+                  Dar de baja
                 </button>
               </td>
             </tr>

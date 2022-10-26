@@ -1,8 +1,9 @@
 import React from "react";
-import "./style.css";
+import { Link } from "wouter"
 import { Header } from "@/components/Header";
 import { Carousel } from "@/components/Carousel";
 import { Middle } from "@/components/Middle";
+import "./style.css";
 
 window.addEventListener("scroll", function () {
   const header = document.querySelector("header");
@@ -12,13 +13,16 @@ window.addEventListener("scroll", function () {
 export function Home() {
   return (
     <>
-      <Header />
+      
       <section className="cuerpo">
         <Carousel className="carousel" autoplay={true} />
       </section>
-      <a href="/informacion/socios"><span>SOBRE SOCIOS</span></a>
-      <a href="/informacion/aspirantes"><span>SOBRE ASPIRANTES</span></a>
+      
       <section className="mid">
+        <div className="links">
+          <Link to="/informacion/socios">SOBRE SOCIOS</Link>
+          <Link to="/informacion/aspirantes">SOBRE ASPIRANTES</Link>
+        </div>
         <Middle />
       </section>
       <section className="c-f">

@@ -10,16 +10,18 @@ import { Donations } from "@/pages/donations"
 import { InfoApp } from "@/pages/infoApp"
 import { InfoAss } from "@/pages/infoAss"
 import { NestedRouter } from "@/components/NestedRouter";
+import { Header } from "@/components/Header";
 
 
 function App() {
   return (
     <>
+      <Header />
       <Switch>
         <Route path="/">
           <Home />
         </Route>
-        <Route path="/donations">
+        <Route path="/donaciones">
           <Donations />
         </Route>
         <Route path="/login">

@@ -9,7 +9,7 @@ export function Admin() {
   return (
     <>
       {/* Parte que van a compartir todas las paginas de admin */}
-      <Header />
+      
       <section className="admin-container">
         <LateralMenu />
 

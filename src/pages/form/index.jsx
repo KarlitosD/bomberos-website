@@ -43,7 +43,7 @@ export function Form() {
 
   return (
     <>
-      <Header />
+      
       <form className="mainForm" onSubmit={handleForm}>
         <div className="tittleBox">
           <h1>FORMULARIO DE INSCRIPCIÓN</h1>

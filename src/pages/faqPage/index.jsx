@@ -20,7 +20,7 @@ const Question = (props) => {
 export function Faq() {
   return (
     <>
-      <Header />
+      
       <div>
         <div className="acordion">
           <Question

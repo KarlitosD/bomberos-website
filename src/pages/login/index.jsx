@@ -34,7 +34,7 @@ export function Login() {
 
   return (
     <>
-      <Header />
+      
       <form onSubmit={handleSubmit}>
         <h1>Iniciar Sesion</h1>
         <label>

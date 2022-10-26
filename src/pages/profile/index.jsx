@@ -16,7 +16,7 @@ export function Profile() {
 console.log(associate)
   return (
     <>
-      <Header />
+      
       <div className="blank"></div>
       <table>
         <thead>
