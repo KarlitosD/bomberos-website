@@ -1,45 +1,33 @@
+import { useState, useEffect } from "react";
+import { Redirect } from "wouter";
+import { useAuth } from "@/hooks/useAuth.js"
+import { getAssociate } from "@/services/associates";
 import "./style.css";
 
-import { useState, useEffect } from "react";
-import { getData } from "@/services/profile";
-
 export function Profile() {
-    const [associate, setAssociate] = useState({});
-  async function searchAssociate() {
-    const data = await getData(4)
-    console.log(data)
-    setAssociate(data[0])
-  }
+  const { user } = useAuth()
+  const [associate, setAssociate] = useState({})
+
   useEffect(() => {
-    searchAssociate();
-  }, []);
-console.log(associate)
+    if(user)
+      getAssociate(user.id).then(associate => setAssociate(associate))
+  }, [])
+
+  if(associate?.role === "admin")
+    return <Redirect to="/admin" />
+
   return (
     <>
-      
-      <div className="blank"></div>
-      <table>
-        <thead>
-          <tr>
-            <th>dni</th>
-            <th>nombre</th>
-            <th>apellido</th>
-            <th>correo electrónico</th>
-            <th>dirección</th>
-            <th>número de teléfono</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr>
-              <td>{associate.dni}</td>
-              <td>{associate.name}</td>
-              <td>{associate.surname}</td>
-              <td>{associate.email}</td>
-              <td>{associate.address}</td>
-              <td>{associate.phone_num}</td>
-            </tr>
-        </tbody>
-      </table>
+      <div>
+        <h1>Hola</h1>
+        <button>Cerrar session</button>
+      </div>
+
+      <div>
+        Carnet
+        <button>Descargar carnet</button>
+      </div>
+
     </>
   );
 }

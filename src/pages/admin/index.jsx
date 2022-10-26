@@ -1,4 +1,5 @@
-import { Route, Switch } from "wouter";
+import { useLocation } from "wouter";
+import { Route, Switch,  } from "wouter";
 
 import { LateralMenu } from "@/components/LateralMenu";
 import { Associates } from "./associates.jsx";
@@ -6,10 +7,20 @@ import { Applicants } from "./applicants.jsx";
 import "./style.css";
 
 export function Admin() {
+  const { user } = useAuth()
+  const [associate, setAssociate] = useState({})
+  const [location, setLocation] = useLocation()
+  useEffect(() => {
+    if(user)
+      getAssociate(user.id).then(associate => {
+        setAssociate(associate)
+        if(associate?.role !== "associate")
+          setLocation("/profile")
+      })
+  }, [])
+
   return (
-    <>
-      {/* Parte que van a compartir todas las paginas de admin */}
-      
+    <>      
       <section className="admin-container">
         <LateralMenu />
 
