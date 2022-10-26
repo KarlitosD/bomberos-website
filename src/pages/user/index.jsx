@@ -6,7 +6,6 @@ export function User() {
         <>
             <div className="contenedor">
                 <div className="credencial"></div>
-                <div className="sombra"></div>
             </div>
         </>
     )

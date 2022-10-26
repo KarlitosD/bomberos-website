@@ -5,14 +5,10 @@
     margin-top: 50px;
     margin-left: 40%;
     height: 400px;
+    width: 700px;
 }
 .credencial:hover{
     background-image: url("../../assets/img/credencial2.png");
-}
-.sombra{
-    background-color: rgb(61, 61, 61);
-    height: 400px;
-    margin-top: 70px;
 }
 .contenedor{
     display: flex;
