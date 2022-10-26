@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import { useAtom } from "jotai";
 import { orderBy } from "json-function";
 import { supabase } from "@/supabase.js";
 import {
@@ -6,12 +7,15 @@ import {
   getAssociates,
   updateAssociate,
 } from "@/services/associates";
+import { associatesAtom } from "@/atoms/associates";
 
 export const Associates = () => {
-    const [associates, setAssociates] = useState([]);
+    const [associates, setAssociates] = useAtom(associatesAtom);
 
     useEffect(() => {
-      fetchAssociates();
+      if(associates.length === 0) {
+        fetchAssociates();
+      }
     }, []);
   
     useEffect(() => {
@@ -33,13 +37,6 @@ export const Associates = () => {
       const copyAssociates = structuredClone(associates)
       return orderBy(copyAssociates, selectedField, ascending ? "ASC": "DESC")
     }, [associates, ascending, selectedField]) 
-
-    // async function orderField(field){
-    //   const { data } = await supabase.from("associates").select('*').order(field ,{ascending});
-    //   setAssociates(data);
-    //   setAscending(!ascending)
-    //   return data;
-    // }
 
     const createHandleClick = field => () => {
       setSelectedField(field)
