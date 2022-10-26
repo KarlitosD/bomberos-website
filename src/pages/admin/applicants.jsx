@@ -111,7 +111,7 @@
 // };
 
 
-export const applicants = () => {
+export const Applicants = () => {
 
   return (<>
     <h1>Mantenimiento</h1>
