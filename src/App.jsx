@@ -10,6 +10,7 @@ import { Donations } from "@/pages/donations"
 import { InfoApp } from "@/pages/infoApp"
 import { InfoAss } from "@/pages/infoAss"
 import { NestedRouter } from "@/components/NestedRouter";
+import { User } from "@/pages/user"
 
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
         </Route>
         <Route path="/formApp">
           <FormApp />
+        </Route>
+        <Route path="/user">
+         <User />
         </Route>
         <NestedRouter base="/admin">
           <Admin />

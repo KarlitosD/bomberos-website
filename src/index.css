@@ -151,6 +151,8 @@ code {
   margin-top: 15%;
   margin-left: 25px;
   margin-bottom: 15%;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 .contenedorFUD{
   display: flex;
@@ -158,5 +160,5 @@ code {
   justify-content: space-around;
 }
 .Dona{
-  background-image: url("../../assets/img/donaciones.png");
+  background-image: url("./assets/img/donaciones.png");
 }
