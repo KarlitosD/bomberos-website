@@ -5,6 +5,9 @@ export async function getAssociates() {
   return data;
 }
 
+export async function getAssociate(userId) {
+  const { data } = await supabase.from("associates").select().match({ user_id: userId })
+}
 
 export async function createAssociate(newAssociates) {
   try {
