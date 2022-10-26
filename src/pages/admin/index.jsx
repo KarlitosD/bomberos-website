@@ -1,5 +1,5 @@
 import { Route, Switch } from "wouter";
-import { Header } from "@/components/Header";
+
 import { LateralMenu } from "@/components/LateralMenu";
 import { Associates } from "./associates.jsx";
 import { Applicants } from "./applicants.jsx";

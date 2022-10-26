@@ -1,11 +1,11 @@
-import { Header } from "@/components/Header";
+import { Link } from "wouter"
 
 export function InfoApp() {
     return (
     <>
     
       <p>EXPLICACION</p>
-      <a href="/formulario/aspirantes"><span>QUIERO INSCRIBIRME</span></a>
+        <Link to="/formulario/aspirantes"><span>QUIERO INSCRIBIRME</span></Link>
       </>
     )
 }

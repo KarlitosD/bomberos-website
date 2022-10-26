@@ -13,6 +13,6 @@ export async function createApplicant(newApplicant) {
 export async function deleteApplicant(dni) {
   await supabase.from("applicants").delete().match({ dni });
 }
-export async function updateAssociate(updatedData) {
-  console.log("hola :)");
-}
+// export async function updateAssociate(updatedData) {
+  // console.log("hola :)");
+// }

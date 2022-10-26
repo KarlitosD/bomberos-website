@@ -1,13 +1,13 @@
 import { Link } from "wouter"
-import { menu, link} from "./style.module.css"
+import * as styles from "./style.module.css"
 
 export const LateralMenu = () => {
     return (
         <>
-            <div className={menu}>
-                <Link to="/" className={link}>Mi perfil</Link>
-                <Link to="/socios" className={link}>Socios</Link>
-                <Link to="/aspirantes" className={link}>Aspirantes</Link>
+            <div className={styles.menu}>
+                <Link to="/" className={styles.link}>Mi perfil</Link>
+                <Link to="/socios" className={styles.link}>Socios</Link>
+                <Link to="/aspirantes" className={styles.link}>Aspirantes</Link>
                 {/* <Link to="/pagos" className={link}>Pagos</Link> */}
             </div>
         </>

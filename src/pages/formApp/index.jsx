@@ -1,5 +1,5 @@
 import "./style.css";
-import { Header } from "@/components/Header";
+
 import { useState, useEffect } from "react";
 import { getApplicants, createApplicant } from "@/services/applicants";
 

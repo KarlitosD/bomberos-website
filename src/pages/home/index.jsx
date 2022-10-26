@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "wouter"
-import { Header } from "@/components/Header";
+
 import { Carousel } from "@/components/Carousel";
 import { Middle } from "@/components/Middle";
 import "./style.css";

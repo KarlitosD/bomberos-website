@@ -10,7 +10,7 @@ import { Donations } from "@/pages/donations"
 import { InfoApp } from "@/pages/infoApp"
 import { InfoAss } from "@/pages/infoAss"
 import { NestedRouter } from "@/components/NestedRouter";
-import { Header } from "@/components/Header";
+import { Header } from "@/components/Header"
 
 
 function App() {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Redirect } from "wouter";
-import { Header } from "@/components/Header";
+
 import { Modal } from "@/components/Modal";
 import { createAssociate } from "@/services/associates";
 import { useAuth } from "@/hooks/useAuth";
@@ -24,22 +24,23 @@ export function Form() {
 
   const handleForm = async (e) => {
     e.preventDefault();
-    const { error } = await createAssociate(newAssociates.length < 1 ? newAssociate : newAssociates);
-    // setNewAssociate(initNewAssociate);
-    setOpenModal(true)
-    setError(error)
+    const action = e.target.getAttribute("action")
+    console.log(e.target)
+    if(action === "add"){
+      setNewAssociates(newAssociates.concat(newAssociate))
+    }else if(action === "submit"){
+      const { error } = await createAssociate(newAssociates.length < 1 ? [newAssociate] : newAssociates);
+      setOpenModal(true)
+      setError(error)
+    }
+    setNewAssociate(initNewAssociate);
   }
 
   const createHandleChange = property => event => {
     setNewAssociate({ ...newAssociate, [property]: event.target.value })
   }
 
-  const addAssociate = () => {
-    setNewAssociates([...newAssociates, newAssociate])
-    setNewAssociate(initNewAssociate);
-  }
-
-  // if(session) return <Redirect to="/" />
+  if(session) return <Redirect to="/" />
 
   return (
     <>
@@ -122,8 +123,8 @@ export function Form() {
               />
             </label>
           </div>
-          <button className="btn btn-add" onClick={addAssociate}>Agregar otro socio</button>
-          <button className="btn" type="submit">
+          <button className="btn btn-add" type="submit" action="add">Agregar otro socio</button>
+          <button className="btn" type="submit" action="submit">
             ENVIAR
           </button>
         </div>
