@@ -5,18 +5,10 @@ export async function getAssociates() {
   return data;
 }
 
-const signUp = ({ email, dni: password }) => supabase.auth.signUp({ email, password})
 
 export async function createAssociate(newAssociates) {
   try {
-    const newAssociatesReversed = structuredClone(newAssociates).reverse()
-    console.log("first")
-    const allPromises = await Promise.allSettled([
-      // ...newAssociatesReversed.map(signUp),
-      supabase.from("associates").insert(newAssociates)
-    ]) 
-    console.log(allPromises)
-    const { error } = allPromises.at(-1)
+    const { error } = await supabase.from("associates").insert(newAssociates)
     if(error) throw error
     return { error: false }
   } catch (error) {
