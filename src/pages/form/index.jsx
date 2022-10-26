@@ -27,15 +27,14 @@ export function Form() {
 
   const handleForm = async (e) => {
     e.preventDefault();
-    const action = e.target.act
-    console.log({ action })
-    // if(action === "add"){
-    //   setNewAssociates(newAssociates.concat(newAssociate))
-    // }else if(action === "submit"){
-    //   const { error } = await createAssociate(newAssociates.length < 1 ? [newAssociate] : newAssociates);
-    //   setOpenModal(true)
-    //   setError(error)
-    // }
+    const action = e.nativeEvent.submitter.getAttribute("action")
+    if(action === "add"){
+      setNewAssociates(newAssociates.concat(newAssociate))
+    }else if(action === "submit"){
+      const { error } = await createAssociate(newAssociates.length < 1 ? [newAssociate] : newAssociates);
+      setOpenModal(true)
+      setError(error)
+    }
     setNewAssociate(initNewAssociate);
   }
 
@@ -43,6 +42,7 @@ export function Form() {
     setNewAssociate({ ...newAssociate, [property]: event.target.value })
   }
   const createHandleClick = action => event => {
+    event.preventDefault()
     form.current.act = action
     form.current.submit()
   } 
@@ -131,8 +131,8 @@ export function Form() {
               />
             </label>
           </div>
-          <button className="btn btn-add" type="submit" onClick={createHandleClick("add")}>Agregar otro socio</button>
-          <button className="btn" type="submit" onClick={createHandleClick("submit")} >
+          <button className="btn btn-add" type="submit" action="add">Agregar otro socio</button>
+          <button className="btn" type="submit" action="submit">
             ENVIAR
           </button>
         </div>
