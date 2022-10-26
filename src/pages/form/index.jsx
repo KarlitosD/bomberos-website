@@ -131,6 +131,32 @@ export function Form() {
               />
             </label>
           </div>
+          <div className="row">
+            <label className="rowLabel">
+              Metodo de pago:
+            </label>
+            <div className="rowPayment">
+            <input
+            className="rowCheckbox"
+            type="radio"
+            name="payOption"
+            value="mercado pago"
+             />
+             <img 
+             className="rowImageIcon"
+             src="../src/assets/img/mp.png"
+             />
+             <input
+             className="rowCheckbox"
+             type="radio"
+             name="payOption"
+             value="fisico"
+             />
+             <img className="rowImageIcon"
+             src="../src/assets/img/dinero.png"
+             />
+             </div>
+          </div>
           <button className="btn btn-add" type="submit" action="add">Agregar otro socio</button>
           <button className="btn" type="submit" action="submit">
             ENVIAR

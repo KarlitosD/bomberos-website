@@ -94,3 +94,18 @@
   background-color: rgb(165, 9, 9);
   box-shadow: none;
 }
+
+.rowImageIcon{
+  max-height: 50px;
+  padding: 10px;
+  margin: 0px 2px 0px 2px;
+}
+
+.row .rowCheckbox .rowImageIcon{
+display: flex;
+}
+
+.rowPayment{
+  display: flex;
+  justify-content: center;
+}
