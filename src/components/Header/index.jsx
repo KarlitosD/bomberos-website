@@ -49,7 +49,7 @@ export function Header() {
             <span>Donaciones</span>
           </a>
         </Link>
-        <div style={{width:"100px", height:"100%"}}>
+        {/* <div style={{width:"200px", height:"0"}}>
           <nav>
             <div className="burguer-menu" onClick={updateMenu}>
               <div className={burguerClass}></div>
@@ -57,8 +57,10 @@ export function Header() {
               <div className={burguerClass}></div>
             </div>
           </nav>
-          <div className="menu_class"></div>
-        </div>  
+          <div className={menu_class}>
+            
+          </div>
+        </div>   */}
       </header>
     </>
   );
