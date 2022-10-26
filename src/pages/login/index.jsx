@@ -1,5 +1,5 @@
 import "./style.css";
-import { Header } from "@/components/Header";
+
 import { useState } from "react";
 import { supabase } from "@/supabase.js"
 import { useAuth } from "@/hooks/useAuth";
@@ -34,7 +34,7 @@ export function Login() {
 
   return (
     <>
-      <Header />
+      
       <form onSubmit={handleSubmit}>
         <h1>Iniciar Sesion</h1>
         <label>

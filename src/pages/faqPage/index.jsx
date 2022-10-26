@@ -1,4 +1,4 @@
-import { Header } from "@/components/Header";
+
 import { useState } from "react";
 import "./style.css";
 
@@ -20,7 +20,7 @@ const Question = (props) => {
 export function Faq() {
   return (
     <>
-      <Header />
+      
       <div>
         <div className="acordion">
           <Question

@@ -1,5 +1,5 @@
 import "./style.css";
-import { Header } from "@/components/Header";
+
 import { useState, useEffect } from "react";
 import { getData } from "@/services/profile";
 
@@ -16,7 +16,7 @@ export function Profile() {
 console.log(associate)
   return (
     <>
-      <Header />
+      
       <div className="blank"></div>
       <table>
         <thead>

@@ -1,11 +1,10 @@
-import { Header } from "@/components/Header";
+import { Link } from "wouter"
 
 export function InfoAss() {
     return (
     <>
-    <Header/>
       <p>EXPLICACION</p>
-      <a href="/formAss"><span>QUIERO ASOCIARME</span></a>
+      <a href="/formulario/socios"><span>QUIERO ASOCIARME</span></a>
       </>
     )
 }

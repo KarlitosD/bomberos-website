@@ -1,17 +1,27 @@
 import { supabase } from "@/supabase.js";
+
 export async function getAssociates() {
   const { data } = await supabase.from("associates").select();
   return data;
 }
-export async function createAssociate(newAssociate) {
+
+const signUp = ({ email, dni: password }) => supabase.auth.signUp({ email, password})
+
+export async function createAssociate(newAssociates) {
   try {
-    await supabase.auth.signUp({
-      email: newAssociate.email,
-      password: newAssociate.dni,
-    })
-    await supabase.from("associates").insert([newAssociate]).single();
+    const newAssociatesReversed = structuredClone(newAssociates).reverse()
+    console.log("first")
+    const allPromises = await Promise.allSettled([
+      // ...newAssociatesReversed.map(signUp),
+      supabase.from("associates").insert(newAssociates)
+    ]) 
+    console.log(allPromises)
+    const { error } = allPromises.at(-1)
+    if(error) throw error
+    return { error: false }
   } catch (error) {
-    alert(error.message)
+    console.log(error.message)
+    return { error }
   }
 }
 export async function deleteAssociate(dni) {

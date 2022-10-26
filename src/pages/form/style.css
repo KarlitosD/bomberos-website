@@ -1,43 +1,52 @@
-#mainForm {
+.mainForm {
   border: 1px solid black;
   border-radius: 15px;
   margin: auto;
-  margin-top: 200px;
-  width: 50%;
+  margin-top: 100px;
+  width: max(650px, 50%);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-#tittleBox {
+.tittleBox {
   background-color: var(--color-primary);
   border-top-left-radius: 14px;
   border-bottom-left-radius: 14px;
   text-align: center;
-  width: 35%;
-  padding-top: 19%;
-}
-#tittle {
-  font-family: Arial, Helvetica, sans-serif;
+  flex-basis: 35%;
+  /* padding-top: 19%; */
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
 }
-#ansBox {
-  padding-top: 40px;
-  padding-bottom: 30px;
-  padding-right: 36%;
+.tittle {
+  font-family: Arial, Helvetica, sans-serif;
 }
-.row {
-  margin: 5px;
-  margin-top: 10px;
+.ansBox {
+  padding: 40px 20px 30px;
+  width: 100%;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
 }
-.rowLabel {
+.mainForm .row {
+  margin: 10px auto;
+  flex-basis: 95%;
+}
+.mainForm .rowLabel {
   display: flex;
   flex-direction: column;
   font-family: Helvetica, Arial, sans-serif;
   font-size: large;
   font-weight: bold;
+  align-items: baseline;
+  width: 100%;
 }
-.rowInput {
-  width: 200%;
+.mainForm .rowInput {
+  width: 95%;
   font-family: Helvetica, Arial, sans-serif;
   padding: 3px;
   font-size: large;
@@ -57,19 +66,25 @@
   border-bottom: 4px solid var(--color-primary);
   margin-bottom: 0;
 }
-#btnSend {
-  width: 195%;
-  margin-top: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+.mainForm .btn {
+  width: 95%;
+  margin: 10px 3px 0;
+  padding-block: 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;
   font-weight: bolder;
   border-radius: 5px;
-  border: none;
+  border: 1px solid var(--color-primary);
   background-color: var(--color-primary);
   color: white;
+  cursor: pointer;
 }
+
+.mainForm .btn-add {
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
 #btnSend:hover {
   -webkit-box-shadow: 0 0 10px #888888;
   -moz-box-shadow: 0 0 10px #888888;
