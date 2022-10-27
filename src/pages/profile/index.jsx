@@ -14,7 +14,16 @@ export function Profile() {
       getAssociate(user.id).then(associate => setAssociate(associate))
   }, [])
 
-  if(!user)
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const newPassword = e.target.password.value
+    const { user, error } = await supabase.auth.update({
+      password: newPassword 
+    })
+    console.log({ user })
+  }
+
+  if(!!user)
     return <Redirect to="/admin" />
 
   if(associate?.role === "admin")
@@ -26,7 +35,12 @@ export function Profile() {
         <h1>Hola</h1>
         <button onClick={() => supabase.auth.signOut()}>Cerrar session</button>
       </div>
-
+      <form onSubmit={handleSubmit}>
+        <label>
+          <input type="password" placeholder="Nueva contraseña" name="password" />
+        </label>        
+        <button>Cambiar contraseña</button>
+      </form>
       <div>
         Carnet
         <button>Descargar carnet</button>
