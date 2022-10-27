@@ -31,7 +31,7 @@ export function Faq() {
           />
           <Question
             question={"Al inscribirme como bombero ¿Tengo un salario o pago?"}
-            answer={"No,La realidad es que a la hora de inscribirte como un bombero con nosotros, estas haciendolo de una manera voluntaria por tu cuenta. Sin contar con una remuneracion o dinero por tu trabajo. Por otra parte, mientras mas años de servicios tengas, los bomberos cuentan con una jubilacion diferente y mejor que la de ciudadanos comunes. Premiando a su servicio"}
+            answer={"No, La realidad es que a la hora de inscribirte como un bombero con nosotros, estas haciendolo de una manera voluntaria por tu cuenta. Sin contar con una remuneracion o dinero por tu trabajo. Por otra parte, mientras mas años de servicios tengas, los bomberos cuentan con una jubilacion diferente y mejor que la de ciudadanos comunes. Premiando a su servicio"}
           />
           <Question
             question={"¿Con que beneficios cuenta un bombero?"}
@@ -45,15 +45,15 @@ export function Faq() {
             question={
               "¿Que diferencia hay entre un bombero voluntario, y de la ciudad?"
             }
-            answer={"uno es voluntario y otro de la ciudad"}
+            answer={"respuesta"}
           />
           <Question
             question={"¿Los bomberos se manejan con horarios de trabajo?"}
-            answer={"no"}
+            answer={"respuesta"}
           />
           <Question
             question={"¿En donde se encuentran repartido los destacamentos?"}
-            answer={"por ahi"}
+            answer={"respuesta"}
           />
         </div>
       </div>
