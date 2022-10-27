@@ -1,6 +1,3 @@
-/* Nico Hijo de puta, haceme que los th tengan botones cuando le apoyas el mouse, te amo <3💋💋
-tambien ponele una flechita ⬆ ⬇ para ordenar de arriba o abajo💘
-*/
 .admin-container {
     display: flex;
     height: calc(98vh - 85px);
@@ -21,43 +18,3 @@ tambien ponele una flechita ⬆ ⬇ para ordenar de arriba o abajo💘
     justify-content: center;
     width: 100%;
 }
-/* th, td{
-    padding: 20px;
-}
-thead{
-    background-color: rgb(143, 5, 5);
-    color: #fff;
-    border-bottom: solid 5px rgb(39, 39, 39);
-    width: auto;
-}
-.table{
-    align-self: flex-start;
-	text-align: center;
-    width: 90%;
-    /* flex-basis: 60%;
-    margin: 150px auto;
-    border-collapse:collapse;
-    font-family: sans-serif;
-}
-.theadItem{
-	text-align: center;
-}
-.dataRow, tr{
-	text-align: center;
-    height: 100px;
-}
-
-.tdata {
-    height: 100%;
-}
-tr:nth-child(even){
-	background-color: #ddd;
-}
-.delBtn{
-	background-color: rgb(253, 59, 59);
-	color: white;
-	padding: 20px;
-	border-radius: 5px;
-	border: none;
-    cursor: pointer;
-} */
