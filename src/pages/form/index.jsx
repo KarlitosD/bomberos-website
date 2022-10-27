@@ -1,60 +1,54 @@
 import { useState } from "react";
-import { Redirect } from "wouter";
-
+import mpImage from "../../assets/img/mp.png";
+import moneyImage from "../../assets/img/dinero.png";
 import { Modal } from "@/components/Modal";
 import { createAssociate } from "@/services/associates";
-import { useAuth } from "@/hooks/useAuth";
 import "./style.css";
-import { useRef } from "react";
+import { useEffect } from "react";
 
 const initNewAssociate = {
   dni: "",
   name: "",
   surname: "",
-  phone_num: "",
+  phoneNumber: "",
+  cellphoneNumber: "",
   address: "",
-  email: ""
+  email: "",
+  paymentMethod: "mercadopago",
+  plane: "monthly"
 };
 
 export function Form() {
-  const { session } = useAuth()
   const [newAssociates, setNewAssociates] = useState([]);
   const [newAssociate, setNewAssociate] = useState(initNewAssociate);
-  const [openModal, setOpenModal] = useState(false)
-  const [error, setError] = useState(null)
-  const form = useRef(null)
-
+  const [openModal, setOpenModal] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleForm = async (e) => {
     e.preventDefault();
-    const action = e.nativeEvent.submitter.getAttribute("action")
-    if(action === "add"){
-      setNewAssociates(newAssociates.concat(newAssociate))
-    }else if(action === "submit"){
-      const { error } = await createAssociate(newAssociates.length < 1 ? [newAssociate] : newAssociates);
-      setOpenModal(true)
-      setError(error)
+    const action = e.nativeEvent.submitter.getAttribute("action");
+    console.log({ action })
+    if (action === "add") {
+      console.log("Hola")
+      setNewAssociates([...newAssociates, newAssociate]);
+    } else if (action === "submit") {
+      const { error } = await createAssociate([...newAssociates, newAssociate]);
+      setOpenModal(true);
+      setError(error);
+      setNewAssociates([])
     }
-    setNewAssociate(initNewAssociate);
-  }
+    setNewAssociate(initNewAssociate)
+  };
 
-  const createHandleChange = property => event => {
-    setNewAssociate({ ...newAssociate, [property]: event.target.value })
-  }
-  const createHandleClick = action => event => {
-    event.preventDefault()
-    form.current.act = action
-    form.current.submit()
-  } 
-
-
-  if(session) return <Redirect to="/" />
+  const createHandleChange = (property) =>
+    (event) => {
+      setNewAssociate({ ...newAssociate, [property]: event.target.value });
+    };
 
   return (
     <>
-      
-      <form className="mainForm" ref={form} onSubmit={handleForm}>
-        <div className="tittleBox">
+      <form className="mainForm" onSubmit={handleForm}>
+        <div className="titleBox">
           <h1>FORMULARIO DE INSCRIPCIÓN</h1>
           <h3>Socios a agregar: {newAssociates.length + 1}</h3>
         </div>
@@ -66,7 +60,7 @@ export function Form() {
                 className="rowInput"
                 value={newAssociate.name}
                 type="text"
-                onChange={createHandleChange("name") }
+                onChange={createHandleChange("name")}
                 required
               />
             </label>
@@ -100,9 +94,20 @@ export function Form() {
               Número de Teléfono:
               <input
                 className="rowInput"
-                value={newAssociate.phone_num}
+                value={newAssociate.phoneNumber}
                 type="tel"
-                onChange={createHandleChange("phone_num") }
+                onChange={createHandleChange("phoneNumber")}
+              />
+            </label>
+          </div>
+          <div className="row">
+            <label className="rowLabel">
+              Número de celular:
+              <input
+                className="rowInput"
+                value={newAssociate.cellphoneNumber}
+                type="tel"
+                onChange={createHandleChange("cellphoneNumber")}
                 required
               />
             </label>
@@ -133,38 +138,53 @@ export function Form() {
           </div>
           <div className="row">
             <label className="rowLabel">
+              Plan:
+              <select
+                className="rowInput"
+                value={newAssociate.plane}
+                type="text"
+                onChange={createHandleChange("plane")}
+                required
+              >
+                <option value="monthly">Mensual (Recurrente)</option>
+                <option value="annually">Anual (Un solo pago no recurrente)</option>
+              </select>
+            </label>
+          </div>
+          <div className="row">
+            <label className="rowLabel">
               Metodo de pago:
             </label>
             <div className="rowPayment">
-            <input
-            className="rowCheckbox"
-            type="radio"
-            name="payOption"
-            value="mercado pago"
-             />
-             <img 
-             className="rowImageIcon"
-             src="../src/assets/img/mp.png"
-             />
-             <input
-             className="rowCheckbox"
-             type="radio"
-             name="payOption"
-             value="fisico"
-             />
-             <img className="rowImageIcon"
-             src="../src/assets/img/dinero.png"
-             />
-             </div>
+              <input
+                className="rowCheckbox"
+                type="radio"
+                name="payOption"
+                value="mercado pago"
+                checked={true}
+                onChange={createHandleChange("paymentMethod")}
+                />
+              <img className="rowImageIcon" src={mpImage} />
+              <input
+                className="rowCheckbox"
+                type="radio"
+                name="payOption"
+                value="fisico"
+                onChange={createHandleChange("paymentMethod")}
+              />
+              <img className="rowImageIcon" src={moneyImage} />
+            </div>
           </div>
-          <button className="btn btn-add" type="submit" action="add">Agregar otro socio</button>
+          <button className="btn btn-add" type="submit" action="add">
+            Agregar otro socio
+          </button>
           <button className="btn" type="submit" action="submit">
             ENVIAR
           </button>
         </div>
       </form>
       <Modal open={openModal}>
-        <h1>{ error ? "a": "b" }</h1>
+        <h1>{error ? "Oh no, parece que hubo un error" :  "Perfecto, ahora tiene que esperar a ser aceptado"}</h1>
         <button onClick={() => setOpenModal(false)}>Cerrar</button>
       </Modal>
     </>

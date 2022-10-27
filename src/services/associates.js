@@ -6,12 +6,13 @@ export async function getAssociates() {
 }
 
 export async function getAssociate(userId) {
-  const { data } = await supabase.from("associates").select().match({ user_id: userId })
+  const { data } = await supabase.from("associates").select().match({ userId })
+  return data
 }
 
 export async function createAssociate(newAssociates) {
   try {
-    const { error } = await supabase.from("associates").insert(newAssociates)
+    const { data, error } = await supabase.from("associates").insert(newAssociates)
     if(error) throw error
     return { error: false }
   } catch (error) {
