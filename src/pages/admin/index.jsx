@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { Route, Switch,  } from "wouter";
 
 import { LateralMenu } from "@/components/LateralMenu";
+import { useAuth } from "@/hooks/useAuth"
 import { Associates } from "./associates.jsx";
 import { Applicants } from "./applicants.jsx";
 import "./style.css";
@@ -24,7 +26,7 @@ export function Admin() {
       <section className="admin-container">
         <LateralMenu />
 
-        <Switch>
+        <Switch>  
           <Route path="/">
             <h2>Perfil del admin</h2>
           </Route>
