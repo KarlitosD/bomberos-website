@@ -15,7 +15,7 @@ const initNewAssociate = {
   address: "",
   email: "",
   paymentMethod: "mercadopago",
-  plane: "monthly"
+  plan: "monthly"
 };
 
 export function Form() {
@@ -141,9 +141,9 @@ export function Form() {
               Plan:
               <select
                 className="rowInput"
-                value={newAssociate.plane}
+                value={newAssociate.plan}
                 type="text"
-                onChange={createHandleChange("plane")}
+                onChange={createHandleChange("plan")}
                 required
               >
                 <option value="monthly">Mensual (Recurrente)</option>
