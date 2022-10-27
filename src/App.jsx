@@ -12,7 +12,7 @@ import { InfoAss } from "@/pages/infoAss"
 import { NestedRouter } from "@/components/NestedRouter";
 import { User } from "@/pages/user"
 import { Header } from "@/components/Header"
-
+import 'uno.css'
 
 function App() {
   return (
