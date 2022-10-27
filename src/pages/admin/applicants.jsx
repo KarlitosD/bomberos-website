@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { orderBy } from "json-function";
 import { supabase } from "@/supabase.js";
+import { _ } from "gridjs-react";
 import {
   getApplicants,
 } from "@/services/applicants";
