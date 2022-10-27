@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { Route, Switch,  } from "wouter";
-
+import "gridjs/dist/theme/mermaid.css";
 import { LateralMenu } from "@/components/LateralMenu";
 import { useAuth } from "@/hooks/useAuth"
 import { Associates } from "./associates.jsx";
