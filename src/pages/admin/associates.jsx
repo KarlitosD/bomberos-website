@@ -29,40 +29,52 @@ export const Associates = () => {
           fixedHeader={true}
           columns={[
             {
-              id:"dni", name:"DNI"
+              id: "dni",
+              name: "DNI",
             },
             {
-              id:"name", name:"Nombre"
+              id: "name",
+              name: "Nombre",
             },
             {
-              id:"surname", name:"Apellido"
+              id: "surname",
+              name: "Apellido",
             },
             {
-              id:"email", name:"Email"
+              id: "email",
+              name: "Email",
             },
             {
-              id:"address", name:"Dirección"
+              id: "address",
+              name: "Dirección",
             },
             {
-              id:"phoneNumber", name:"Número de Teléfono"
+              id: "phoneNumber",
+              name: "Número de Teléfono",
             },
             {
-              id:"cellphoneNumber", name:"Número de Celular"
+              id: "cellphoneNumber",
+              name: "Número de Celular",
             },
             {
-              id:"plan", name:"Plan"
+              id: "plan",
+              name: "Plan",
             },
             {
-              id:"associateNumber", name:"Número de Socio"
+              id: "associateNumber",
+              name: "Número de Socio",
             },
             {
-              id:"paymentMethod", name:"Método de Pago"
+              id: "paymentMethod",
+              name: "Método de Pago",
             },
             {
-              id:"approved", name:"Aprobado"
+              id: "approved",
+              name: "Aprobado",
             },
             {
-              id:"role", name:"Rol"
+              id: "role",
+              name: "Rol",
             },
           ]}
           search={true}
