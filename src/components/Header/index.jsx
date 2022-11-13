@@ -21,7 +21,7 @@ export function Header() {
 
   return (
     <>
-      <div className={style.blackSpace}></div>
+      <div className={style.blankSpace}></div>
       <header>
         <Link to="/">
           <a>
