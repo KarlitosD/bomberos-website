@@ -28,18 +28,54 @@ export const Associates = () => {
           data={associates}
           fixedHeader={true}
           columns={[
-            "dni",
-            "name",
-            "surname",
-            "email",
-            "address",
-            "phoneNumber",
-            "cellphoneNumber",
-            "plan",
-            "associateNumber",
-            "paymentMethod",
-            "approved",
-            "role",
+            {
+              id: "dni",
+              name: "DNI",
+            },
+            {
+              id: "name",
+              name: "Nombre",
+            },
+            {
+              id: "surname",
+              name: "Apellido",
+            },
+            {
+              id: "email",
+              name: "Email",
+            },
+            {
+              id: "address",
+              name: "Dirección",
+            },
+            {
+              id: "phoneNumber",
+              name: "Número de Teléfono",
+            },
+            {
+              id: "cellphoneNumber",
+              name: "Número de Celular",
+            },
+            {
+              id: "plan",
+              name: "Plan",
+            },
+            {
+              id: "associateNumber",
+              name: "Número de Socio",
+            },
+            {
+              id: "paymentMethod",
+              name: "Método de Pago",
+            },
+            {
+              id: "approved",
+              name: "Aprobado",
+            },
+            {
+              id: "role",
+              name: "Rol",
+            },
           ]}
           search={true}
           pagination={{
