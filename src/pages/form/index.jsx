@@ -1,6 +1,6 @@
 import { useState } from "react";
-import mpImage from "../../assets/img/mp.png";
-import moneyImage from "../../assets/img/dinero.png";
+import mpImage from "@/assets/img/mp.png";
+import moneyImage from "@/assets/img/dinero.png";
 import { Modal } from "@/components/Modal";
 import { createAssociate } from "@/services/associates";
 import styles from "./style.module.css";
@@ -163,7 +163,7 @@ export function Form() {
                 checked={true}
                 onChange={createHandleChange("paymentMethod")}
                 />
-              <img className={styles.rowImageIcon} src={mpImage} />
+              <img className={styles.rowImageIcon} src={mpImage} width={50} height={50} />
               <input
                 className={styles.rowCheckbox}
                 type="radio"
@@ -171,7 +171,7 @@ export function Form() {
                 value="fisico"
                 onChange={createHandleChange("paymentMethod")}
               />
-              <img className={styles.rowImageIcon} src={moneyImage} />
+              <img className={styles.rowImageIcon} src={moneyImage} width={50} height={50} />
             </div>
           </div>
           <button className={styles.btnAdd} type="submit" action="add">

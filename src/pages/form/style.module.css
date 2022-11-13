@@ -32,11 +32,11 @@
   /* flex-direction: column; */
   /* align-items: center; */
 }
-.mainForm .row {
+.row {
   margin: 10px auto;
   flex-basis: 95%;
 }
-.mainForm .rowLabel {
+.rowLabel {
   display: flex;
   flex-direction: column;
   font-family: Helvetica, Arial, sans-serif;
@@ -45,7 +45,7 @@
   align-items: baseline;
   width: 100%;
 }
-.mainForm .rowInput {
+.rowInput {
   width: 95%;
   font-family: Helvetica, Arial, sans-serif;
   padding: 3px;
@@ -66,7 +66,7 @@
   border-bottom: 4px solid var(--color-primary);
   margin-bottom: 0;
 }
-.mainForm .btn {
+.btn {
   width: 95%;
   margin: 10px 3px 0;
   padding-block: 10px;
@@ -80,10 +80,14 @@
   cursor: pointer;
 }
 
-.mainForm .btnAdd {
-  compose: btn;
+.btnAdd {
+  composes: btn;
   color: var(--color-primary);
   background-color: transparent;
+}
+
+.btnSend {
+  composes: btn;
 }
 
 .btnSend:hover {
@@ -102,7 +106,7 @@
   margin: 0px 2px 0px 2px;
 }
 
-.row .rowCheckbox .rowImageIcon{
+.rowImageIcon{
 display: flex;
 }
 
