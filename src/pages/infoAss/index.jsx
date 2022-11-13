@@ -4,18 +4,18 @@ import styles from "./style.module.css";
 export function InfoAss() {
   const Card = ({ title, description }) => {
     return (
-      <div className={style.question}>
-        <div className={style.barra1}>
+      <div className={styles.question}>
+        <div className={styles.barra1}>
           <h2>{title}</h2>
         </div>
-        <div className={style.barra2}>{description}</div>
+        <div className={styles.barra2}>{description}</div>
       </div>
     );
   };
 
   return (
     <>
-      <div className={style.rowInfo}>
+      <div className={styles.rowInfo}>
         <h1>¡Bienvenido! Pareces estar interesado en ser socio</h1>
         <h2>Dejanos contarte: ¿Que son los socios?</h2>
         <Card
