@@ -1,15 +1,59 @@
 .credencial{
-    background-image: url("../../assets/img/credencial1.png");
-    background-repeat: no-repeat;
+    background-repeat: rgb(243, 242, 242);
     border-color: black;
     margin-top: 50px;
     margin-left: 40%;
     height: 400px;
     width: 700px;
 }
-.credencial:hover{
-    background-image: url("../../assets/img/credencial2.png");
-}
 .contenedor{
     display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.borderTop{
+    background-color: brown;
+    color: bisque;
+    font-family: serif;
+    text-align: left;
+}
+.foto{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 150px;
+    width: 180px;
+    background-color: rgb(182, 62, 62);
+}
+.centro{
+    display: flex;
+}
+.borderRight{
+    margin-top: 20px;
+    margin-left: 20px;
+    height: auto;
+    width: auto;
+    text-align: left;
+}
+.borderBottom{
+    margin-top: 10px;
+    background-color: brown;
+    height: 30px;
+}
+.cert{
+    font-size: xx-large;
+    color: rgb(163, 56, 56);
+    font-family:serif;
+}
+.cert1{
+    font-size: xx-large;
+    color: rgb(163, 56, 56);
+    font-family:serif;
+    margin-left: 330px;
+    margin-top:
+}
+.firm{
+    word-spacing: 300px;
+    color: brown;
+    font-weight: 600;
 }
