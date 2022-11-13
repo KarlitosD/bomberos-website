@@ -14,7 +14,7 @@ export const Applicants = () => {
     const data = await getApplicants();
     setApplicants(data);
   }
-  
+
   useEffect(() => {
     if (applicants.length === 0) {
       fetchApplicant();
@@ -28,22 +28,72 @@ export const Applicants = () => {
           data={applicants}
           fixedHeader={true}
           columns={[
-            "DNI",
-            "name",
-            "surname",
-            "email",
-            "cellphoneNumber",
-            "phoneNumber",
-            "birthDate",
-            "height",
-            "weight",
-            "bloodType",
-            "address",
-            "district",
-            "postcode",
-            "finishedStudies",
-            "firefighterSoc",
-            "firefighterSocName"
+            {
+              id: "DNI",
+              name: "DNI",
+            },
+            {
+              id: "name",
+              name: "Nombre",
+            },
+            {
+              id: "surname",
+              name: "Apellido",
+            },
+            {
+              id: "email",
+              name: "Email",
+            },
+            {
+              id: "cellphoneNumber",
+              name: "Número de Celular",
+            },
+            {
+              id: "phoneNumber",
+              name: "Número de Teléfono",
+            },
+            {
+              id: "birthDate",
+              name: "Fecha de Nacimiento",
+            },
+
+            {
+              id: "height",
+              name: "Altura",
+            },
+
+            {
+              id: "weight",
+              name: "Peso",
+            },
+            {
+              id: "bloodType",
+              name: "Grupo Sanguíneo",
+            },
+            {
+              id: "address",
+              name: "Dirección",
+            },
+            {
+              id: "district",
+              name: "Localidad",
+            },
+            {
+              id: "postCode",
+              name: "Código Postal",
+            },
+            {
+              id: "finishedStudies",
+              name: "Estudios Finalizados",
+            },
+            {
+              id: "firefighterSoc",
+              name: "Participó en una Sociedad de Bomberos",
+            },
+            {
+              id: "firefighterSocName",
+              name: "Nombre de Sociedad de Bomberos anterior",
+            },
           ]}
           search={true}
           pagination={{
@@ -57,6 +107,7 @@ export const Applicants = () => {
             table: "table",
             container: "tableContainer",
             td: "td",
+            th: "th",
           }}
         />
       </div>
