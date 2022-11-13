@@ -88,8 +88,8 @@ export const Associates = () => {
           resizable={true}
           className={{
             table: styles.table,
-            container: style.tableContainer,
-            td: style.td,
+            container: styles.tableContainer,
+            td: styles.td,
           }}
         />
       </div>
