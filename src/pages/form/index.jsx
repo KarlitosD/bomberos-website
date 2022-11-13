@@ -16,7 +16,7 @@ const initNewAssociate = {
   email: "",
   paymentMethod: "mercadopago",
   plan: "monthly"
-};
+}
 
 export function Form() {
   const [newAssociates, setNewAssociates] = useState([]);
@@ -29,7 +29,6 @@ export function Form() {
     const action = e.nativeEvent.submitter.getAttribute("action");
     console.log({ action })
     if (action === "add") {
-      console.log("Hola")
       setNewAssociates([...newAssociates, newAssociate]);
     } else if (action === "submit") {
       const { error } = await createAssociate([...newAssociates, newAssociate]);
@@ -160,7 +159,7 @@ export function Form() {
                 className="rowCheckbox"
                 type="radio"
                 name="payOption"
-                value="mercado pago"
+                value="mercadopago"
                 checked={true}
                 onChange={createHandleChange("paymentMethod")}
                 />
