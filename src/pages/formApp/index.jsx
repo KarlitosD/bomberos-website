@@ -40,12 +40,11 @@ export function FormApp() {
     };
   return (
     <>
-      
-      <form id="mainForm" onSubmit={handleForm}>
-        <div id="tittleBox">
-          <h1 id="tittle">FORMULARIO DE INSCRIPCIÓN PARA APLICANTES</h1>
+      <form className={styles.mainForm} onSubmit={handleForm}>
+        <div className={styles.titleBox}>
+          <h1 className={styles.title}>FORMULARIO DE INSCRIPCIÓN PARA APLICANTES</h1>
         </div>
-        <div id="ansBox">
+        <div className={styles.ansBox}>
           <div className={styles.row}>
             <label className={styles.rowLabel}>
               Documento de identidad:
@@ -241,7 +240,7 @@ export function FormApp() {
             </label>
           </div>
           {newApplicant.firefighterSoc && (
-            <div className={styles.row} id="hiddenDiv">
+            <div className={styles.row}>
               <label className={styles.rowLabel}>
                 ¿Cúal?:
                 <input
