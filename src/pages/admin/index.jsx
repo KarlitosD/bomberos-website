@@ -5,7 +5,7 @@ import { LateralMenu } from "@/components/LateralMenu";
 import { useAuth } from "@/hooks/useAuth"
 import { Associates } from "./associates.jsx";
 import { Applicants } from "./applicants.jsx";
-import "./style.css";
+import styles from "./style.module.css";
 import "gridjs/dist/theme/mermaid.css";
 
 export function Admin() {
@@ -23,7 +23,7 @@ export function Admin() {
 
   return (
     <>      
-      <section className="admin-container">
+      <section className={styles.adminContainer}>
         <LateralMenu />
 
         <Switch>  
