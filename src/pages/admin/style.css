@@ -11,7 +11,7 @@
     width: 100%;
 }
 .td{
-    width: fit-content;
+    width: 1000px;
 }
 .gridContainer{
     display: flex;
