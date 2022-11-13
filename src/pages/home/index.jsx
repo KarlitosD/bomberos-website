@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from "wouter"
-
+import { Link } from "wouter";
 import { Carousel } from "@/components/Carousel";
 import { Middle } from "@/components/Middle";
-import "./style.css";
+import styles from "./style.module.css";
 
 window.addEventListener("scroll", function () {
   const header = document.querySelector("header");
@@ -13,15 +12,15 @@ window.addEventListener("scroll", function () {
 export function Home() {
   return (
     <>
-      
-      <section className="cuerpo">
-        <Carousel className="carousel" autoplay={true} />
+      <section className={styles.body}>
+        <Carousel className={styles.carousel} autoplay={true} />
       </section>
-      
-      <section className="mid">
+
+      <section className={styles.mid}>
         <Middle />
       </section>
-      <section className="c-f">
+      
+      <section className={styles.footerNicoPuto}>
         <p>
           Todos los derechos reservados a la{" "}
           <b>Sociedad Bomberos Voluntarios de Lanus</b>

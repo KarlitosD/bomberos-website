@@ -62,7 +62,7 @@ code {
   justify-content: center;
   align-items: center;
 }
-.c-f{
+.footerNicoPuto{
   font-family: sans-serif;
   display: flex;
   justify-content: center;
@@ -74,7 +74,7 @@ code {
   height: 100px;
 }
 
-.c-f b {
+.footerNicoPuto b {
   color: rgb(194, 194, 194);
 }
 

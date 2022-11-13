@@ -1,22 +1,22 @@
 import { Link } from "wouter"
-import "./style.css"
+import style from "./style.module.css"
+
 export function InfoApp() {
 	const Card = ({title, description}) =>{
 		return(
-			<div className="question">
-				<div className="barra1">
+			<div className={style.question}>
+				<div className={style.barra1}>
 					<h2>{title}</h2>
 				</div>
-				<div className="barra2">
+				<div className={style.barra2}>
 					{description}
 				</div>
 			</div>
 		)
 	}
-
     return (
     <>
-      <div className="rowInfo">
+      <div className={style.rowInfo}>
 		<h1>¡Bienvenido! Pareces estar interesado en ser bombero</h1>
 		<h2>Dejanos contarte: ¿Que son los bomberos voluntarios?</h2>
 		<Card 
@@ -34,5 +34,4 @@ export function InfoApp() {
 	  </div>
       </>
     )
-
 }

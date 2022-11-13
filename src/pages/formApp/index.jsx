@@ -1,5 +1,4 @@
-import "./style.css";
-
+import styles from "../form/style.module.css";
 import { useState, useEffect } from "react";
 import { getApplicants, createApplicant } from "@/services/applicants";
 
@@ -47,11 +46,11 @@ export function FormApp() {
           <h1 id="tittle">FORMULARIO DE INSCRIPCIÓN PARA APLICANTES</h1>
         </div>
         <div id="ansBox">
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Documento de identidad:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newApplicant.DNI}
                 type="number"
                 onChange={createHandleChange("DNI")}
@@ -59,11 +58,11 @@ export function FormApp() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Nombre/s:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newApplicant.name}
                 type="text"
                 onChange={createHandleChange("name")}
@@ -71,11 +70,11 @@ export function FormApp() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Apellido/s:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newApplicant.surname}
                 type="text"
                 onChange={createHandleChange("surname")}
@@ -83,11 +82,11 @@ export function FormApp() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Fecha de Nacimiento:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newApplicant.birthDate}
                 type="date"
                 onChange={createHandleChange("birthDate")}
@@ -95,11 +94,11 @@ export function FormApp() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Altura(cm):
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newApplicant.height}
                 type="number"
                 onChange={createHandleChange("height")}
@@ -107,11 +106,11 @@ export function FormApp() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Peso(kg):
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newApplicant.weight}
                 type="number"
                 onChange={createHandleChange("weight")}
@@ -119,11 +118,11 @@ export function FormApp() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Grupo Sanguíneo:
               <select
-                className="rowInput"
+                className={styles.rowInput}
                 onChange={createHandleChange("bloodType")}
                 required
               >
@@ -138,11 +137,11 @@ export function FormApp() {
               </select>
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Correo Electrónico:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newApplicant.email}
                 type="email"
                 onChange={createHandleChange("email")}
@@ -150,11 +149,11 @@ export function FormApp() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Domicilio (Calle y Número):
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newApplicant.address}
                 type="text"
                 onChange={createHandleChange("address")}
@@ -162,11 +161,11 @@ export function FormApp() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Localidad:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newApplicant.district}
                 type="text"
                 onChange={createHandleChange("district")}
@@ -174,11 +173,11 @@ export function FormApp() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Código Postal:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newApplicant.postcode}
                 type="text"
                 onChange={createHandleChange("postcode")}
@@ -186,11 +185,11 @@ export function FormApp() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Estudios Finalizados:
               <select
-                className="rowInput"
+                className={styles.rowInput}
                 onChange={createHandleChange("finishedStudies")}
                 required
               >
@@ -201,11 +200,11 @@ export function FormApp() {
               </select>
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Número de Celular:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newApplicant.cellphoneNumber}
                 type="tel"
                 pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}"
@@ -216,11 +215,11 @@ export function FormApp() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Número de Teléfono:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newApplicant.phoneNumber}
                 type="tel"
                 pattern="[0-9]{4}-[0-9]{4}"
@@ -230,11 +229,11 @@ export function FormApp() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               INTEGRÓ o INTEGRA ALGUNA SOCIEDAD DE BOMBEROS?
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 checked={newApplicant.firefighterSoc}
                 type="checkbox"
                 onChange={createHandleChange("firefighterSoc", "checked")}
@@ -242,11 +241,11 @@ export function FormApp() {
             </label>
           </div>
           {newApplicant.firefighterSoc && (
-            <div className="row" id="hiddenDiv">
-              <label className="rowLabel">
+            <div className={styles.row} id="hiddenDiv">
+              <label className={styles.rowLabel}>
                 ¿Cúal?:
                 <input
-                  className="rowInput"
+                  className={styles.rowInput}
                   value={newApplicant.firefighterSocName}
                   type="text"
                   onChange={createHandleChange("firefighterSocName")}
@@ -254,7 +253,7 @@ export function FormApp() {
               </label>
             </div>
           )}
-          <button id="btnSend" type="submit">
+          <button className={styles.btnSend} type="submit">
             ENVIAR
           </button>
         </div>

@@ -1,30 +1,34 @@
 import React from "react";
-import "./style.css";
+import style from "./style.module.css";
 
 export function User() {
-    return (
-        <>
-            <div className="contenedor">
-                <div className="credencial">
-                    <div className="borderTop">
-                        <h1>SOCIO</h1>
-                        <h1>del cuerpo activo de la sociedad de Bomberos Voluntarios de Lanús</h1>
-                    </div>
-                    <div className="centro">
-                        <div className="foto" />
-                        <div className="borderRight">
-                            <p className="cert">Certifico que el titular de la presente Señor/a</p>
-                            <p>Nombre:</p>
-                            <p>Apellido:</p>
-                            <p>DNI:</p>
-                            <p>Numero de socio:</p>
-                            <p className="cert1">es SOCIO</p>
-                        </div>
-                    </div>
-                    <p className="firm">Jefe_de_cuerpo Presidente</p>
-                    <div className="borderBottom"/>
-                </div>
+  return (
+    <>
+      <div className={style.contenedorNicoPuto}>
+        <div className={style.credencialNicoPuto}>
+          <div className={style.borderTopNicoPuto}>
+            <h1>SOCIO</h1>
+            <h1>
+              del cuerpo activo de la sociedad de Bomberos Voluntarios de Lanús
+            </h1>
+          </div>
+          <div className={style.centroNicoPuto}>
+            <div className={style.fotoNicoPuto} />
+            <div className={style.borderRightNicoPuto}>
+              <p className={style.certNicoPuto}>
+                Certifico que el titular de la presente Señor/a
+              </p>
+              <p>Nombre:</p>
+              <p>Apellido:</p>
+              <p>DNI:</p>
+              <p>Numero de socio:</p>
+              <p className={style.cert1NicoPuto}>es SOCIO</p>
             </div>
-        </>
-    )
+          </div>
+          <p className={style.firmNicoPuto}>Jefe_de_cuerpo Presidente</p>
+          <div className={style.borderBottomNicoPuto} />
+        </div>
+      </div>
+    </>
+  );
 }

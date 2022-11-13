@@ -1,15 +1,15 @@
 import { useState } from "react";
-import "./style.css";
+import styles from "./style.module.css";
 
 const Question = (props) => {
   const [isClicked, setIsClicked] = useState(false);
   return (
-    <div className="question">
-      <div className="barra1" onClick={() => setIsClicked(!isClicked)}>
+    <div className={styles.question}>
+      <div className={styles.barra1} onClick={() => setIsClicked(!isClicked)}>
         <h3>{props.question}</h3>
         {isClicked ? <h2>-</h2> : <h2>+</h2>}
       </div>
-      <div className="barra2">
+      <div className={styles.barra2}>
         {isClicked ? <p>{props.answer}</p> : <p></p>}
       </div>
     </div>
@@ -20,7 +20,7 @@ export function Faq() {
   return (
     <>
       <div>
-        <div className="acordion">
+        <div className={styles.acordion}>
           <Question
             question={
               "¿Que diferencia hay entre ser Socio, y  solamente Donar?"

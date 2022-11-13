@@ -80,17 +80,18 @@
   cursor: pointer;
 }
 
-.mainForm .btn-add {
+.mainForm .btnAdd {
+  compose: btn;
   color: var(--color-primary);
   background-color: transparent;
 }
 
-#btnSend:hover {
+.btnSend:hover {
   -webkit-box-shadow: 0 0 10px #888888;
   -moz-box-shadow: 0 0 10px #888888;
   box-shadow: 0 0 10px #888888;
 }
-#btnSend:active {
+.btnSend:active {
   background-color: rgb(165, 9, 9);
   box-shadow: none;
 }
