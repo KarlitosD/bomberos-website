@@ -1,7 +1,7 @@
 .credential {
   background-color: rgb(243, 242, 242);
   border-color: black;
-  height: 400px;
+  /* height: 400px; */
   width: 700px;
 }
 .container {
@@ -40,16 +40,17 @@
   text-align: left;
 }
 .certi {
-  font-size: xx-large;
+  font-size: 24px;
   color: rgb(163, 56, 56);
   font-family: serif;
+  margin-top: 0;
 }
 .isAssociateContainer {
   display: flex;
   justify-content: flex-end;
 }
 .isAssociate {
-  margin-right: 20px;
+  margin: 0 20px 0 0;
   font-size: xx-large;
   color: rgb(163, 56, 56);
   font-family: serif;

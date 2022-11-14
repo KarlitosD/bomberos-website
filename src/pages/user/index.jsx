@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useLoaderData, redirect, json } from "react-router-dom";
+import { json, redirect, useLoaderData } from "react-router-dom";
 import { toJpeg } from "html-to-image";
 import { getAssociate } from "@/services/associates";
 import { supabase } from "@/supabase";
@@ -7,16 +7,16 @@ import { supabase } from "@/supabase";
 import style from "./style.module.css";
 
 export const loader = async () => {
-  const user = supabase.auth.user()
+  const user = supabase.auth.user();
   // if(!user) return redirect("/login")
-  if(!user) return null
-  const associate = await getAssociate(user?.id)
-  if(associate?.role) return redirect("/profile")
-  return json(associate)
-}
+  if (!user) return null;
+  const associate = await getAssociate(user?.id);
+  if (associate?.role) return redirect("/profile");
+  return json(associate);
+};
 
 export function User() {
-  const associate = useLoaderData()
+  const associate = useLoaderData();
   const ref = useRef(null);
   const onButtonClick = () => {
     if (ref.current === null) {
@@ -33,10 +33,11 @@ export function User() {
         console.log("uwu, tuwimos um peweuño ewowsito 👉👈" + err);
       });
   };
-
+  console.log(associate)
   return (
     <>
       <div className={style.container}>
+        <div>
         <div ref={ref} className={style.credential}>
           <div className={style.borderT}>
             <h1 className={style.title}>
@@ -56,17 +57,18 @@ export function User() {
               <p>DNI: {associate?.dni}</p>
               <p>Numero de socio: {associate?.associateNumber}</p>
               <div className={style.isAssociateContainer}>
-              <p className={style.isAssociate}>es SOCIO</p>
+                <p className={style.isAssociate}>es SOCIO</p>
               </div>
             </div>
           </div>
           <p className={style.signature}>Jefe_de_cuerpo Presidente</p>
           <div className={style.borderB} />
         </div>
+        <button onClick={onButtonClick} className={style.BtnDNLD}>
+          DESCARGAR
+        </button>
+        </div>
       </div>
-      <button onClick={onButtonClick} className={style.BtnDNLD}>
-        DESCARGAR
-      </button>
     </>
   );
 }
