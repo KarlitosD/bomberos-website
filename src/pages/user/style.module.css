@@ -1,0 +1,58 @@
+.credential {
+  background-repeat: rgb(243, 242, 242);
+  border-color: black;
+  margin-top: 50px;
+  margin-left: 40%;
+  height: 400px;
+  width: 700px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.borderT {
+  background-color: brown;
+  color: bisque;
+  font-family: serif;
+  text-align: left;
+}
+.photo {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 150px;
+  width: 180px;
+  background-color: rgb(182, 62, 62);
+}
+.center {
+  display: flex;
+}
+.borderR {
+  margin-top: 20px;
+  margin-left: 20px;
+  height: auto;
+  width: auto;
+  text-align: left;
+}
+.borderB {
+  margin-top: 10px;
+  background-color: brown;
+  height: 30px;
+}
+.certi {
+  font-size: xx-large;
+  color: rgb(163, 56, 56);
+  font-family: serif;
+}
+.isAssociate {
+  font-size: xx-large;
+  color: rgb(163, 56, 56);
+  font-family: serif;
+  margin-left: 330px;
+}
+.signature {
+  word-spacing: 300px;
+  color: brown;
+  font-weight: 600;
+}

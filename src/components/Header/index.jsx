@@ -1,51 +1,50 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "wouter";
 import logoUrl from "@/assets/img/logo.png";
-import "./index.css";
+import style from "./index.module.css";
 
 export function Header() {
+  const [burguerClass, setBurguerClass] = useState("burguer-bar unclicked");
+  const [menu_class, setMenuClass] = useState("menu hidden");
+  const [isMenuClicked, setIsMenuClicked] = useState(false);
 
-  const [burguerClass, setBurguerClass] = useState("burguer-bar unclicked")
-  const [menu_class, setMenuClass] = useState("menu hidden")
-  const [isMenuClicked, setIsMenuClicked] = useState(false)
-
-  const updateMenu = () =>{
-    if(!isMenuClicked){
-      setBurguerClass("burguer-bar clicked")
-      setMenuClass("menu visible")
-    }else{
-      setBurguerClass("burguer-bar unclicked")
-      setMenuClass("menu hidden")
+  const updateMenu = () => {
+    if (!isMenuClicked) {
+      setBurguerClass("burguer-bar clicked");
+      setMenuClass("menu visible");
+    } else {
+      setBurguerClass("burguer-bar unclicked");
+      setMenuClass("menu hidden");
     }
-    setIsMenuClicked(!isMenuClicked)
-  }
+    setIsMenuClicked(!isMenuClicked);
+  };
 
   return (
     <>
-      <div className="blankSpace"></div>
+      <div className={style.blankSpace}></div>
       <header>
         <Link to="/">
           <a>
-            <img className="logo" src={logoUrl} />
+            <img className={style.logo} src={logoUrl} />
           </a>
         </Link>
         <Link to="/">
-          <a className="headerLink">
+          <a className={style.headerLink}>
             <span>Inicio</span>
           </a>
         </Link>
         <Link to="/formulario/socios">
-          <a className="headerLink">
+          <a className={style.headerLink}>
             <span>Asociarse</span>
           </a>
         </Link>
         <Link to="/admin">
-          <a className="headerLink">
+          <a className={style.headerLink}>
             <span>Administración</span>
           </a>
         </Link>
         <Link to="/donaciones">
-          <a className="headerLink">
+          <a className={style.headerLink}>
             <span>Donaciones</span>
           </a>
         </Link>

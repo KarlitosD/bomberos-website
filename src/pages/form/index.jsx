@@ -1,9 +1,9 @@
 import { useState } from "react";
-import mpImage from "../../assets/img/mp.png";
-import moneyImage from "../../assets/img/dinero.png";
+import mpImage from "@/assets/img/mp.png";
+import moneyImage from "@/assets/img/dinero.png";
 import { Modal } from "@/components/Modal";
 import { createAssociate } from "@/services/associates";
-import "./style.css";
+import styles from "./style.module.css";
 import { useEffect } from "react";
 
 const initNewAssociate = {
@@ -16,7 +16,7 @@ const initNewAssociate = {
   email: "",
   paymentMethod: "mercadopago",
   plan: "monthly"
-};
+}
 
 export function Form() {
   const [newAssociates, setNewAssociates] = useState([]);
@@ -29,7 +29,6 @@ export function Form() {
     const action = e.nativeEvent.submitter.getAttribute("action");
     console.log({ action })
     if (action === "add") {
-      console.log("Hola")
       setNewAssociates([...newAssociates, newAssociate]);
     } else if (action === "submit") {
       const { error } = await createAssociate([...newAssociates, newAssociate]);
@@ -47,17 +46,17 @@ export function Form() {
 
   return (
     <>
-      <form className="mainForm" onSubmit={handleForm}>
-        <div className="titleBox">
+      <form className={styles.mainForm} onSubmit={handleForm}>
+        <div className={styles.titleBox}>
           <h1>FORMULARIO DE INSCRIPCIÓN</h1>
           <h3>Socios a agregar: {newAssociates.length + 1}</h3>
         </div>
-        <div className="ansBox">
-          <div className="row">
-            <label className="rowLabel">
+        <div className={styles.ansBox}>
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Nombre/s:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newAssociate.name}
                 type="text"
                 onChange={createHandleChange("name")}
@@ -65,11 +64,11 @@ export function Form() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Apellido:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newAssociate.surname}
                 type="text"
                 onChange={createHandleChange("surname")}
@@ -77,11 +76,11 @@ export function Form() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Correo Electrónico:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newAssociate.email}
                 type="email"
                 onChange={createHandleChange("email")}
@@ -89,22 +88,22 @@ export function Form() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Número de Teléfono:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newAssociate.phoneNumber}
                 type="tel"
                 onChange={createHandleChange("phoneNumber")}
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Número de celular:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newAssociate.cellphoneNumber}
                 type="tel"
                 onChange={createHandleChange("cellphoneNumber")}
@@ -112,11 +111,11 @@ export function Form() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               DNI:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newAssociate.dni}
                 type="number"
                 onChange={createHandleChange("dni")}
@@ -124,11 +123,11 @@ export function Form() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Domicilio:
               <input
-                className="rowInput"
+                className={styles.rowInput}
                 value={newAssociate.address}
                 type="text"
                 onChange={createHandleChange("address")}
@@ -136,11 +135,11 @@ export function Form() {
               />
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Plan:
               <select
-                className="rowInput"
+                className={styles.rowInput}
                 value={newAssociate.plan}
                 type="text"
                 onChange={createHandleChange("plan")}
@@ -151,34 +150,34 @@ export function Form() {
               </select>
             </label>
           </div>
-          <div className="row">
-            <label className="rowLabel">
+          <div className={styles.row}>
+            <label className={styles.rowLabel}>
               Metodo de pago:
             </label>
-            <div className="rowPayment">
+            <div className={styles.rowPayment}>
               <input
-                className="rowCheckbox"
+                className={styles.rowCheckbox}
                 type="radio"
                 name="payOption"
-                value="mercado pago"
+                value="mercadopago"
                 checked={true}
                 onChange={createHandleChange("paymentMethod")}
                 />
-              <img className="rowImageIcon" src={mpImage} />
+              <img className={styles.rowImageIcon} src={mpImage} width={50} height={50} />
               <input
-                className="rowCheckbox"
+                className={styles.rowCheckbox}
                 type="radio"
                 name="payOption"
                 value="fisico"
                 onChange={createHandleChange("paymentMethod")}
               />
-              <img className="rowImageIcon" src={moneyImage} />
+              <img className={styles.rowImageIcon} src={moneyImage} width={50} height={50} />
             </div>
           </div>
-          <button className="btn btn-add" type="submit" action="add">
+          <button className={styles.btnAdd} type="submit" action="add">
             Agregar otro socio
           </button>
-          <button className="btn" type="submit" action="submit">
+          <button className={styles.btn} type="submit" action="submit">
             ENVIAR
           </button>
         </div>

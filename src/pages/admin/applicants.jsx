@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import { applicantsAtom } from "../../atoms/applicants";
 import { Grid } from "gridjs-react";
 import { getApplicants } from "@/services/applicants";
-import "./style.css";
+import styles from "./style.module.css";
 
 export const Applicants = () => {
   const [applicants, setApplicants] = useAtom(applicantsAtom);
@@ -23,7 +23,7 @@ export const Applicants = () => {
 
   return (
     <>
-      <div className="gridContainer">
+      <div className={styles.gridContainer}>
         <Grid
           data={applicants}
           fixedHeader={true}
@@ -104,10 +104,10 @@ export const Applicants = () => {
           sort={true}
           resizable={true}
           className={{
-            table: "table",
-            container: "tableContainer",
-            td: "td",
-            th: "th",
+            table: styles.table,
+            container: styles.tableContainer,
+            td: styles.td,
+            th: styles.th,
           }}
         />
       </div>

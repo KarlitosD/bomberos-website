@@ -1,33 +1,31 @@
 import { useState, useEffect } from "react";
 import { Redirect } from "wouter";
-import { supabase } from "@/supabase"
-import { useAuth } from "@/hooks/useAuth.js"
+import { supabase } from "@/supabase";
+import { useAuth } from "@/hooks/useAuth.js";
 import { getAssociate } from "@/services/associates";
-import "./style.css";
+import styles from "./style.module.css";
 
 export function Profile() {
-  const { user = true } = useAuth()
-  const [associate, setAssociate] = useState({})
+  const { user = true } = useAuth();
+  const [associate, setAssociate] = useState({});
 
   useEffect(() => {
-    if(user)
-      getAssociate(user.id).then(associate => setAssociate(associate))
-  }, [])
+    if (user)
+      getAssociate(user.id).then((associate) => setAssociate(associate));
+  }, []);
 
   async function handleSubmit(e) {
-    e.preventDefault()
-    const newPassword = e.target.password.value
+    e.preventDefault();
+    const newPassword = e.target.password.value;
     const { user, error } = await supabase.auth.update({
-      password: newPassword 
-    })
-    console.log({ user })
+      password: newPassword,
+    });
+    console.log({ user });
   }
 
-  if(!!user)
-    return <Redirect to="/admin" />
+  if (!!user) return <Redirect to="/admin" />;
 
-  if(associate?.role === "admin")
-    return <Redirect to="/admin" />
+  if (associate?.role === "admin") return <Redirect to="/admin" />;
 
   return (
     <>
@@ -37,8 +35,12 @@ export function Profile() {
       </div>
       <form onSubmit={handleSubmit}>
         <label>
-          <input type="password" placeholder="Nueva contraseña" name="password" />
-        </label>        
+          <input
+            type="password"
+            placeholder="Nueva contraseña"
+            name="password"
+          />
+        </label>
         <button>Cambiar contraseña</button>
       </form>
       <div>

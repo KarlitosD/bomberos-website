@@ -7,6 +7,7 @@ import {
   updateAssociate,
 } from "@/services/associates";
 import { associatesAtom } from "@/atoms/associates";
+import styles from "./style.module.css";
 
 export const Associates = () => {
   const [associates, setAssociates] = useAtom(associatesAtom);
@@ -23,7 +24,7 @@ export const Associates = () => {
   }
   return (
     <>
-      <div className="gridContainer">
+      <div className={styles.gridContainer}>
         <Grid
           data={associates}
           fixedHeader={true}
@@ -86,9 +87,9 @@ export const Associates = () => {
           sort={true}
           resizable={true}
           className={{
-            table: "table",
-            container: "tableContainer",
-            td: "td",
+            table: styles.table,
+            container: styles.tableContainer,
+            td: styles.td,
           }}
         />
       </div>
