@@ -1,27 +1,22 @@
-import { useEffect, useState, useMemo } from "react";
-import { useAtom } from "jotai";
 import { Grid } from "gridjs-react";
+// import { useAtom } from "jotai";
+// import { associatesAtom } from "@/atoms/associates";
+import { useLoaderData, json } from "react-router-dom";
 import {
   deleteAssociate,
   getAssociates,
   updateAssociate,
 } from "@/services/associates";
-import { associatesAtom } from "@/atoms/associates";
 import styles from "./style.module.css";
 
+export const loader = async () => {
+  const associates = await getAssociates()
+  return json(associates)
+}
+
+
 export const Associates = () => {
-  const [associates, setAssociates] = useAtom(associatesAtom);
-
-  useEffect(() => {
-    if (associates.length === 0) {
-      fetchAssociates();
-    }
-  }, []);
-
-  async function fetchAssociates() {
-    const data = await getAssociates();
-    setAssociates(data);
-  }
+  const associates = useLoaderData() 
   return (
     <>
       <div className={styles.gridContainer}>

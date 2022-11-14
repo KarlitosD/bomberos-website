@@ -1,24 +1,21 @@
-import { useState, useEffect } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { json, Outlet, redirect, useLoaderData } from "react-router-dom";
+import { supabase } from "@/supabase";
 import { LateralMenu } from "@/components/LateralMenu";
-import { useAuth } from "@/hooks/useAuth";
-export { Associates } from "./associates.jsx";
-export { Applicants } from "./applicants.jsx";
+import { getAssociate } from "@/services/associates"
 import styles from "./style.module.css";
 import "gridjs/dist/theme/mermaid.css";
 
-export function Admin() {
-  const { user } = useAuth();
-  const [associate, setAssociate] = useState({});
-  const navigate = useNavigate()
-  useEffect(() => {
-    if (user)
-      getAssociate(user.id).then((associate) => {
-        setAssociate(associate);
-        if (associate?.role !== "associate") navigate("/profile");
-      });
-  }, []);
+export const loader = async () => {
+  const user = supabase.auth.user()
+  // if(!user) return redirect("/login")
+  if(!user) return null
+  const associate = await getAssociate(user?.id)
+  if(associate?.role) return redirect("/profile")
+  return json(associate)
+}
 
+export function Admin() {
+  const associate = useLoaderData()
   return (
     <>
       <section className={styles.adminContainer}>

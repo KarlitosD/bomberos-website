@@ -1,6 +1,6 @@
 import styles from "../form/style.module.css";
-import { useState, useEffect } from "react";
-import { getApplicants, createApplicant } from "@/services/applicants";
+import { useState } from "react";
+import { createApplicant } from "@/services/applicants";
 
 const initNewApplicant = {
   DNI: "",

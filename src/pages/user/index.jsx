@@ -1,19 +1,23 @@
-import React from "react";
-import style from "./style.module.css";
-import { useEffect, useState, useCallback, useRef } from "react";
-import { getAssociate } from "@/services/associates";
-import { useAuth } from "../../hooks/useAuth";
+import { useRef } from "react";
+import { useLoaderData, redirect, json } from "react-router-dom";
 import { toJpeg } from "html-to-image";
+import { getAssociate } from "@/services/associates";
+import { supabase } from "@/supabase";
+// import { useAuth } from "@/hooks/useAuth";
+import style from "./style.module.css";
+
+export const loader = async () => {
+  const user = supabase.auth.user()
+  // if(!user) return redirect("/login")
+  if(!user) return null
+  const associate = await getAssociate(user?.id)
+  if(associate?.role) return redirect("/profile")
+  return json(associate)
+}
 
 export function User() {
-  const { user } = useAuth();
-  const [associate, setAssociate] = useState(null);
+  const associate = useLoaderData()
   const ref = useRef(null);
-
-  useEffect(() => {
-    fetchAssociate();
-  }, []);
-
   const onButtonClick = () => {
     if (ref.current === null) {
       return;
@@ -29,11 +33,6 @@ export function User() {
         console.log("uwu, tuwimos um peweuño ewowsito 👉👈" + err);
       });
   };
-
-  async function fetchAssociate() {
-    const data = await getAssociate(user?.id);
-    setAssociate(data);
-  }
 
   return (
     <>

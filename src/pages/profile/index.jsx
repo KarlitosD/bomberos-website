@@ -1,18 +1,19 @@
-import { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom"; 
+import { useLoaderData, redirect, json } from "react-router-dom"; 
 import { supabase } from "@/supabase";
-import { useAuth } from "@/hooks/useAuth.js";
 import { getAssociate } from "@/services/associates";
 import styles from "./style.module.css";
 
-export function Profile() {
-  const { user = true } = useAuth();
-  const [associate, setAssociate] = useState({});
+export const loader = async () => {
+  const user = supabase.auth.user()
+  // if(!user) return redirect("/login")
+  if(!user) return null
+  const associate = await getAssociate(user?.id)
+  if(associate?.role === "admin") return redirect("/admin")
+  return json(associate)
+}
 
-  useEffect(() => {
-    if (user)
-      getAssociate(user.id).then((associate) => setAssociate(associate));
-  }, []);
+export function Profile() {
+  const associate = useLoaderData()
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -22,11 +23,6 @@ export function Profile() {
     });
     console.log({ user });
   }
-
-  if (!!user) return <Navigate to="/admin" />;
-
-  if (associate?.role === "admin") return <Navigate to="/admin" />;
-
   return (
     <>
       <div>

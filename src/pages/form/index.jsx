@@ -4,7 +4,6 @@ import moneyImage from "@/assets/img/dinero.png";
 import { Modal } from "@/components/Modal";
 import { createAssociate } from "@/services/associates";
 import styles from "./style.module.css";
-import { useEffect } from "react";
 
 const initNewAssociate = {
   dni: "",

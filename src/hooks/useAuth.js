@@ -8,8 +8,8 @@ export const useAuth = () => {
     supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       setUser(supabase.auth.user())
+      console.log("Estado del auth cambio")
     })
-    console.log("Estado del auth cambio")
   }, []);
 
   return { session, user };
