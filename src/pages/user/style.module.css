@@ -1,58 +1,83 @@
-.credencialNicoPuto {
-  background-repeat: rgb(243, 242, 242);
+.credential {
+  background-color: rgb(243, 242, 242);
   border-color: black;
-  margin-top: 50px;
-  margin-left: 40%;
   height: 400px;
   width: 700px;
 }
-.contenedorNicoPuto {
+.container {
+  padding-top: 50px;
   display: flex;
   justify-content: center;
   margin: auto;
 }
-.borderTopNicoPuto {
+.borderT {
+  padding-top: 10px;
+  padding-left: 10px;
   background-color: brown;
   color: bisque;
   font-family: serif;
   text-align: left;
 }
-.fotoNicoPuto {
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+.borderB {
+  padding: 10px 0 0 10px;
+  background-color: brown;
+  height: 30px;
+}
+.photo {
   height: 150px;
   width: 180px;
   background-color: rgb(182, 62, 62);
 }
-.centroNicoPuto {
+.center {
+  margin-top: 20px;
+  margin-left: 20px;
   display: flex;
 }
-.borderRightNicoPuto {
-  margin-top: 20px;
+.rightSide {
   margin-left: 20px;
   height: auto;
   width: auto;
   text-align: left;
 }
-.borderBottomNicoPuto {
-  margin-top: 10px;
-  background-color: brown;
-  height: 30px;
-}
-.certNicoPuto {
+.certi {
   font-size: xx-large;
   color: rgb(163, 56, 56);
   font-family: serif;
 }
-.cert1NicoPuto {
+.isAssociateContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.isAssociate {
+  margin-right: 20px;
   font-size: xx-large;
   color: rgb(163, 56, 56);
   font-family: serif;
-  margin-left: 330px;
 }
-.firmNicoPuto {
+.signature {
   word-spacing: 300px;
   color: brown;
   font-weight: 600;
+}
+.BtnDNLD {
+  padding: 0 10px;
+  margin-top: 10px;
+  padding-block: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: bolder;
+  border-radius: 5px;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: white;
+  cursor: pointer;
+}
+.BtnDNLD:hover {
+  -webkit-box-shadow: 0 0 10px #888888;
+  -moz-box-shadow: 0 0 10px #888888;
+  box-shadow: 0 0 10px #888888;
+}
+.BtnDNLD:active {
+  background-color: rgb(165, 9, 9);
+  box-shadow: none;
 }
