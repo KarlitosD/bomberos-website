@@ -187,8 +187,7 @@ code {
   transition: 0,85s;
 }
 .Dona:hover, .Cade:hover, .Soci:hover{
-  height: 515px;
-  width: 315px;
+  transform: scale(1.1);
 }
 @media (max-width:700px){
   .contenedorSCD{
