@@ -1,14 +1,26 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import Parallax from "../Parallax";
-import styles from "./style.module.css"
+import styles from "./style.module.css";
 
 export function Middle() {
   return (
     <>
       <div className={styles.contenedorSCD}>
-        <Link to="/informacion/socios" className={styles.anima}><div className={styles.Soci}>SOBRE SOCIOS</div></Link>
-        <Link to="/informacion/aspirantes" className={styles.anima}><div className={styles.Cade}>SOBRE ASPIRANTES</div></Link>
-        <Link to="/donaciones" className={styles.anima}><div className={styles.Dona}>DONACIONES</div></Link>
+        <Link to="/informacion/socios" className={styles.anima}>
+          <div className={styles.Soci}>
+            <p className={styles.title}>SOCIOS</p>
+          </div>
+        </Link>
+        <Link to="/informacion/aspirantes" className={styles.anima}>
+          <div className={styles.Cade}>
+            <p className={styles.title}>ASPIRANTES</p>
+          </div>
+        </Link>
+        <Link to="/donaciones" className={styles.anima}>
+          <div className={styles.Dona}>
+            <p className={styles.title}>DONACIONES</p>
+          </div>
+        </Link>
       </div>
       <Parallax />
       <div className={styles.iframes}>
@@ -20,8 +32,7 @@ export function Middle() {
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-        >
-        </iframe>
+        ></iframe>
         <div className={styles.feed}></div>
       </div>
     </>
