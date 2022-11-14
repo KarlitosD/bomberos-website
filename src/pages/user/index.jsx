@@ -33,40 +33,46 @@ export function User() {
         console.log("uwu, tuwimos um peweuño ewowsito 👉👈" + err);
       });
   };
-  console.log(associate)
+  console.log(associate);
   return (
     <>
       <div className={style.container}>
         <div>
-        <div ref={ref} className={style.credential}>
-          <div className={style.borderT}>
-            <h1 className={style.title}>
-              SOCIO
-              <br />
-              del cuerpo activo de la sociedad de Bomberos Voluntarios de Lanús
-            </h1>
-          </div>
-          <div className={style.center}>
-            <div className={style.photo} />
-            <div className={style.rightSide}>
-              <p className={style.certi}>
-                Certifico que el titular de la presente Señor/a
-              </p>
-              <p>Nombre: {associate?.name}</p>
-              <p>Apellido: {associate?.surname}</p>
-              <p>DNI: {associate?.dni}</p>
-              <p>Numero de socio: {associate?.associateNumber}</p>
-              <div className={style.isAssociateContainer}>
-                <p className={style.isAssociate}>es SOCIO</p>
+          <div ref={ref} className={style.credential}>
+            <div className={style.borderT}>
+              <h1 className={style.title}>
+                SOCIO
+                <br />
+                del cuerpo activo de la sociedad de Bomberos Voluntarios de
+                Lanús
+              </h1>
+            </div>
+            <div>
+              <div className={style.center}>
+                <div className={style.photo} />
+                <div className={style.rightSide}>
+                  <p className={style.certi}>
+                    Certifico que el titular de la presente Señor/a
+                  </p>
+                  <p>Nombre: {associate?.name}</p>
+                  <p>Apellido: {associate?.surname}</p>
+                  <p>DNI: {associate?.dni}</p>
+                  <p>Numero de socio: {associate?.associateNumber}</p>
+                  <div className={style.isAssociateContainer}>
+                    <p className={style.isAssociate}>es SOCIO</p>
+                  </div>
+                </div>
+              </div>
+              <div className={style.signaturesContainer}>
+                <p className={style.signature}>Jefe de Cuerpo</p>
+                <p className={style.signature}>Presidente</p>
               </div>
             </div>
+            <div className={style.borderB} />
           </div>
-          <p className={style.signature}>Jefe_de_cuerpo Presidente</p>
-          <div className={style.borderB} />
-        </div>
-        <button onClick={onButtonClick} className={style.BtnDNLD}>
-          DESCARGAR
-        </button>
+          <button onClick={onButtonClick} className={style.BtnDNLD}>
+            DESCARGAR
+          </button>
         </div>
       </div>
     </>
