@@ -2,8 +2,6 @@ import React from "react";
 import style from "./style.module.css";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { getAssociate } from "@/services/associates";
-import { useAtom } from "jotai";
-import { associatesAtom } from "../../atoms/associates";
 import { useAuth } from "../../hooks/useAuth";
 import { toJpeg } from "html-to-image";
 
@@ -28,7 +26,7 @@ export function User() {
         link.click();
       })
       .catch((err) => {
-        console.log("uwu, tuvimos um pequeuño ewowsito 👉👈" + err);
+        console.log("uwu, tuwimos um peweuño ewowsito 👉👈" + err);
       });
   };
 
@@ -42,8 +40,9 @@ export function User() {
       <div className={style.container}>
         <div ref={ref} className={style.credential}>
           <div className={style.borderT}>
-            <h1>SOCIO</h1>
-            <h1>
+            <h1 className={style.title}>
+              SOCIO
+              <br />
               del cuerpo activo de la sociedad de Bomberos Voluntarios de Lanús
             </h1>
           </div>
@@ -57,14 +56,18 @@ export function User() {
               <p>Apellido: {associate?.surname}</p>
               <p>DNI: {associate?.dni}</p>
               <p>Numero de socio: {associate?.associateNumber}</p>
+              <div className={style.isAssociateContainer}>
               <p className={style.isAssociate}>es SOCIO</p>
+              </div>
             </div>
           </div>
           <p className={style.signature}>Jefe_de_cuerpo Presidente</p>
           <div className={style.borderB} />
         </div>
       </div>
-      <button onClick={onButtonClick} className={style.downloadBtn}>DESCARGAR</button>
+      <button onClick={onButtonClick} className={style.BtnDNLD}>
+        DESCARGAR
+      </button>
     </>
   );
 }

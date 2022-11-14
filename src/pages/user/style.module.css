@@ -11,10 +11,17 @@
   margin: auto;
 }
 .borderT {
+  padding-top: 10px;
+  padding-left: 10px;
   background-color: brown;
   color: bisque;
   font-family: serif;
   text-align: left;
+}
+.borderB {
+  padding: 10px 0 0 10px;
+  background-color: brown;
+  height: 30px;
 }
 .photo {
   height: 150px;
@@ -32,28 +39,27 @@
   width: auto;
   text-align: left;
 }
-.borderB {
-  margin-top: 10px;
-  background-color: brown;
-  height: 30px;
-}
 .certi {
   font-size: xx-large;
   color: rgb(163, 56, 56);
   font-family: serif;
 }
+.isAssociateContainer {
+  display: flex;
+  justify-content: flex-end;
+}
 .isAssociate {
+  margin-right: 20px;
   font-size: xx-large;
   color: rgb(163, 56, 56);
   font-family: serif;
-  margin-left: 330px;
 }
 .signature {
   word-spacing: 300px;
   color: brown;
   font-weight: 600;
 }
-.downloadBtn {
+.BtnDNLD {
   padding: 0 10px;
   margin-top: 10px;
   padding-block: 10px;
@@ -65,4 +71,13 @@
   background-color: var(--color-primary);
   color: white;
   cursor: pointer;
+}
+.BtnDNLD:hover {
+  -webkit-box-shadow: 0 0 10px #888888;
+  -moz-box-shadow: 0 0 10px #888888;
+  box-shadow: 0 0 10px #888888;
+}
+.BtnDNLD:active {
+  background-color: rgb(165, 9, 9);
+  box-shadow: none;
 }
