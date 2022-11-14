@@ -1,0 +1,86 @@
+.card {
+    height: 500px;
+    width: 300px;
+    margin-top: 75px;
+    margin-left: 25px;
+    margin-bottom: 75px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    background-position: bottom;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.55);
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.Dona {
+    composes: card;
+    background-image: url("@/assets/img/donaciones.png");
+}
+
+.Cade {
+    composes: card;
+    background-image: url("@/assets/img/bombero.jpg");
+}
+
+.Soci {
+    composes: card;
+    background-image: url("@/assets/img/socios.jpg");
+}
+
+.anima {
+    color: #3b3b3b;
+}
+
+.anima:hover {
+    font-size: x-large;
+    transition: 0, 85s;
+}
+
+.contenedorSCD {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.iframes {
+    display: flex;
+    gap: 50px;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.map {
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 600px;
+    width: min(700px, 50%);
+}
+
+.feed {
+    flex-basis: 50%;
+}
+
+@media (max-width:700px) {
+    .contenedorSCD {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:700px) {
+    .iframes {
+        flex-wrap: wrap;
+    }
+
+    .map {
+        width: 100%;
+    }
+}

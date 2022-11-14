@@ -19,7 +19,7 @@ export function Home() {
         <Middle />
       </section>
       
-      <section className={styles.footerNicoPuto}>
+      <section className={styles.footer}>
         <p>
           Todos los derechos reservados a la{" "}
           <b>Sociedad Bomberos Voluntarios de Lanus</b>

@@ -22,7 +22,7 @@ export function Header() {
   return (
     <>
       <div className={style.blankSpace}></div>
-      <header>
+      <header className={style.header}>
         <Link to="/">
           <img className={style.logo} src={logoUrl} />
         </Link>
