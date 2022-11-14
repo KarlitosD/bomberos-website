@@ -1,12 +1,11 @@
 .credential {
-  background-repeat: rgb(243, 242, 242);
+  background-color: rgb(243, 242, 242);
   border-color: black;
-  margin-top: 50px;
-  margin-left: 40%;
   height: 400px;
   width: 700px;
 }
 .container {
+  padding-top: 50px;
   display: flex;
   justify-content: center;
   margin: auto;
@@ -18,18 +17,16 @@
   text-align: left;
 }
 .photo {
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
   height: 150px;
   width: 180px;
   background-color: rgb(182, 62, 62);
 }
 .center {
+  margin-top: 20px;
+  margin-left: 20px;
   display: flex;
 }
-.borderR {
-  margin-top: 20px;
+.rightSide {
   margin-left: 20px;
   height: auto;
   width: auto;
@@ -55,4 +52,17 @@
   word-spacing: 300px;
   color: brown;
   font-weight: 600;
+}
+.downloadBtn {
+  padding: 0 10px;
+  margin-top: 10px;
+  padding-block: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: bolder;
+  border-radius: 5px;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: white;
+  cursor: pointer;
 }
