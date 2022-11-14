@@ -41,7 +41,7 @@ export function Login() {
       <div className={styles.loginBox}>
         <img src={logoUrl} className={styles.avatar}/>
         <h1>Inicia Sesion</h1>
-          <form onSubmit={handleSubmit}>
+          <form className={styles.formulario} onSubmit={handleSubmit}>
             <label for="username">Email</label>
             <input 
               type="text" 
