@@ -26,35 +26,10 @@ export function Header() {
         <Link to="/">
           <img className={style.logo} src={logoUrl} />
         </Link>
-        <Link to="/" className={style.headerLink}>
-          Inicio
-        </Link>
         <Link to="/formulario/socios" className={style.headerLink}>
           Asociarse
         </Link>
-        <Link to="/admin" className={style.headerLink}>
-          Administración
-        </Link>
-        <Link to="/donaciones" className={style.headerLink}>
-          Donaciones
-        </Link>
-        {
-          /* <div style={{width:"200px", height:"0"}}>
-          <nav>
-            <div className="burguer-menu" onClick={updateMenu}>
-              <div className={burguerClass}></div>
-              <div className={burguerClass}></div>
-              <div className={burguerClass}></div>
-            </div>
-          </nav>
-          <div className={menu_class}>
-
-          </div>
-        </div>   */
-        }
       </header>
     </>
   );
 }
-
-/*        */

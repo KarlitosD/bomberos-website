@@ -3,6 +3,7 @@ import { useState } from "react";
 import { supabase } from "@/supabase.js";
 import { useAuth } from "@/hooks/useAuth";
 import { Navigate } from "react-router-dom"; 
+import logoUrl from "@/assets/img/logo.png"
 
 export function Login() {
   const { session } = useAuth();
@@ -36,29 +37,31 @@ export function Login() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <h1>Iniciar Sesion</h1>
-        <label>
-          Usuario
-          <input
-            type="email"
-            onChange={createHandleChange("email")}
-            name="email"
-            required
-          />
-        </label>
-        <label>
-          Constraseña
-          <input
-            type="password"
-            onChange={createHandleChange("password")}
-            name="password"
-            minLength={6}
-            required
-          />
-        </label>
-        <button disabled={loading}>Entrar</button>
-      </form>
+    <div className={styles.fondo}/>
+      <div className={styles.loginBox}>
+        <img src={logoUrl} className={styles.avatar}/>
+        <h1>Inicia Sesion</h1>
+          <form className={styles.formulario} onSubmit={handleSubmit}>
+            <label for="username">Email</label>
+            <input 
+              type="text" 
+              placeholder="Ingresa tu Email"
+              onChange={createHandleChange("email")}
+              name="email"
+              required
+            />
+              <label for="password">Contraseña</label>
+              <input 
+                type="password" 
+                placeholder="Ingresa tu D.N.I"
+                onChange={createHandleChange("password")}
+                minLength={6}
+                required
+              />
+                  <button className={styles.submit} disabled={loading}>Ingresar</button>
+                  <a className={styles.account} href="#">¿No tenes una cuenta? asociate</a>
+            </form>
+      </div>
     </>
   );
 }

@@ -1,0 +1,107 @@
+.fondo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:#ffffff;
+}
+
+.loginBox {
+    width: 600px;
+    height: 420px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 5px;
+    margin-top: 40px;
+    font-family: sans-serif;
+    box-shadow: 0 5px 20px -3px rgb(0 0 0 / 0.20)
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+.loginBox h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.loginBox label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.logiBox input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginBox input[type="text"],
+.loginBox input[type="password"] {
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+}
+
+.submit {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    width: 100px;
+    height: 40px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    border-radius: 10px;
+}
+.submit:hover {
+    cursor: pointer;
+    background: #000000;
+    color: rgb(255, 255, 255);
+    transition: 1s;
+}
+
+.account {
+
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(0, 0, 0);
+    display: flex;
+}
+
+.account:hover {
+    color: rgb(112, 112, 112);
+}
+
+::placeholder {
+    color: rgb(88, 88, 88);
+    font-family: Helvetica;
+    font-size: small;
+}
+.formulario{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
