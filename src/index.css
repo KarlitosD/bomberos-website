@@ -28,10 +28,10 @@ code {
   background-color: #ffffff;
   background-size: cover;
 } */
+
 .carousel{
   width: 100%;
   height: 380px;
-  max-height: 380px;
   object-fit: cover;
   object-position: 0 35%;
   opacity: 0;
@@ -189,4 +189,17 @@ code {
 .Dona:hover, .Cade:hover, .Soci:hover{
   height: 515px;
   width: 315px;
+}
+@media (max-width:700px){
+  .contenedorSCD{
+     flex-wrap:wrap;
+   }
+}
+@media (max-width:700px){
+  .iframes{
+     flex-wrap:wrap;
+   }
+   .map{
+    width: 100%;
+   }
 }
