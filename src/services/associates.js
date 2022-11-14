@@ -12,8 +12,11 @@ export async function getAssociate(userId) {
 
 export async function createAssociate(newAssociates) {
   try {
+    const body = JSON.stringify(newAssociates.map(({ email, dni: password }) => ({ email, password })))
     const { data, error } = await supabase.from("associates").insert(newAssociates)
-    if(error) throw error
+    const { data: user, error: createUserError } = await supabase.functions.invoke("associates", { body })
+    console.log({ user, createUserError })
+    if(error || createUserError) throw error || createUserError
     return { error: false }
   } catch (error) {
     console.log(error.message)

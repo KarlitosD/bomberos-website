@@ -2,46 +2,44 @@
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
 
-import { serve } from "https://deno.land/std@0.131.0/http/server.ts"
+import { serve } from "https://deno.land/std@0.131.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.0.0";
+import { corsHeaders } from "../_shared/index.ts";
 
+console.log("Hello from Functions!");
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey",
-};
-
-const fetcher = (path: string, body: any) => {
-  return fetch(`https://api.mercadopago.com/${path}`, {
-    method: "POST",
-    headers: {
-      "Authorization":
-        "Bearer TEST-1839098910176710-082902-f69e3e11fc965211f3498373d61e35d9-1188140767",
-    },
-    body: JSON.stringify(body),
-  }).then((res) => res.json());
-};
-
-serve(async (req) => {
-  // CORS
+serve(async (req: Request) => {
+  // This is needed if you're planning to invoke your function from a browser.
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
   }
-  try {
-    const bodyRequest = await req.json();
-    console.log(bodyRequest)
 
-    return new Response(JSON.stringify("Hola"), {
+  try {
+    console.log(Deno.env.get("SUPABASE_SERVICE_ROLE_KEY"))
+    const supabaseClient = createClient(
+      Deno.env.get("SUPABASE_URL") !,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") !    
+    );
+    console.log(supabaseClient)
+    const newUsers = await req.json()
+    for(const { email, password } of newUsers){
+      console.log({ email, password })
+      const { data: { user }, error } = await supabaseClient.auth.admin.createUser({ email, password, email_confirm: false })
+      if (error) throw error;
+    }
+
+    return new Response(JSON.stringify({ message: "UwU" }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
+      status: 200,
     });
   } catch (error) {
-    console.log(error?.message || error);
-    return new Response("Algo salio mal :(", {
-      headers: { ...corsHeaders },
+    console.log(error.message)
+    return new Response(JSON.stringify({ error: error.message }), {
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+      status: 400,
     });
   }
 });
-
-console.log("Hello from Functions!")
 
 // To invoke:
 // curl -i --location --request POST 'http://localhost:54321/functions/v1/' \
