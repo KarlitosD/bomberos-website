@@ -55,8 +55,12 @@
   color: rgb(163, 56, 56);
   font-family: serif;
 }
+.signaturesContainer{ 
+  display: flex;
+  justify-content: space-between;
+  margin: 0 40px;
+}
 .signature {
-  word-spacing: 300px;
   color: brown;
   font-weight: 600;
 }
