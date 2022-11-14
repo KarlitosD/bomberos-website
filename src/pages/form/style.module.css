@@ -114,3 +114,12 @@ display: flex;
   display: flex;
   justify-content: center;
 }
+@media (max-width:700px){
+  .mainForm{
+     width:100%;
+     flex-wrap:wrap;
+   }
+   .titleBox{
+    width: 100%;
+   }
+}
