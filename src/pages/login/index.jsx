@@ -2,7 +2,7 @@ import styles from "./style.module.css";
 import { useState } from "react";
 import { supabase } from "@/supabase.js";
 import { useAuth } from "@/hooks/useAuth";
-import { Redirect } from "wouter";
+import { Navigate } from "react-router-dom"; 
 
 export function Login() {
   const { session } = useAuth();
@@ -32,7 +32,7 @@ export function Login() {
     }));
   };
 
-  if (session) return <Redirect to="/" />;
+  if (session) return <Navigate to="/" />;
 
   return (
     <>

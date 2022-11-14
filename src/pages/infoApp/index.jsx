@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import style from "./style.module.css";
 
 const Card = ({ title, description }) => {

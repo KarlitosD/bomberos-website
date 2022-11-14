@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import styles from "./style.module.css";
 
 export function InfoAss() {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Redirect } from "wouter";
+import { Navigate } from "react-router-dom"; 
 import { supabase } from "@/supabase";
 import { useAuth } from "@/hooks/useAuth.js";
 import { getAssociate } from "@/services/associates";
@@ -23,9 +23,9 @@ export function Profile() {
     console.log({ user });
   }
 
-  if (!!user) return <Redirect to="/admin" />;
+  if (!!user) return <Navigate to="/admin" />;
 
-  if (associate?.role === "admin") return <Redirect to="/admin" />;
+  if (associate?.role === "admin") return <Navigate to="/admin" />;
 
   return (
     <>

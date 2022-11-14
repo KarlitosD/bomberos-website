@@ -1,13 +1,13 @@
-import { Link } from "wouter"
+import { Link } from "react-router-dom"
 import * as styles from "./style.module.css"
 
 export const LateralMenu = () => {
     return (
         <>
             <div className={styles.menu}>
-                <Link to="/" className={styles.link}>Mi perfil</Link>
-                <Link to="/socios" className={styles.link}>Socios</Link>
-                <Link to="/aspirantes" className={styles.link}>Aspirantes</Link>
+                <Link to="/admin" className={styles.link}>Mi perfil</Link>
+                <Link to="/admin/socios" className={styles.link}>Socios</Link>
+                <Link to="/admin/aspirantes" className={styles.link}>Aspirantes</Link>
                 {/* <Link to="/pagos" className={link}>Pagos</Link> */}
             </div>
         </>

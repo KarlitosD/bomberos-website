@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import logoUrl from "@/assets/img/logo.png";
 import style from "./index.module.css";
 
@@ -24,31 +24,22 @@ export function Header() {
       <div className={style.blankSpace}></div>
       <header>
         <Link to="/">
-          <a>
-            <img className={style.logo} src={logoUrl} />
-          </a>
+          <img className={style.logo} src={logoUrl} />
         </Link>
-        <Link to="/">
-          <a className={style.headerLink}>
-            <span>Inicio</span>
-          </a>
+        <Link to="/" className={style.headerLink}>
+          Inicio
         </Link>
-        <Link to="/formulario/socios">
-          <a className={style.headerLink}>
-            <span>Asociarse</span>
-          </a>
+        <Link to="/formulario/socios" className={style.headerLink}>
+          Asociarse
         </Link>
-        <Link to="/admin">
-          <a className={style.headerLink}>
-            <span>Administración</span>
-          </a>
+        <Link to="/admin" className={style.headerLink}>
+          Administración
         </Link>
-        <Link to="/donaciones">
-          <a className={style.headerLink}>
-            <span>Donaciones</span>
-          </a>
+        <Link to="/donaciones" className={style.headerLink}>
+          Donaciones
         </Link>
-        {/* <div style={{width:"200px", height:"0"}}>
+        {
+          /* <div style={{width:"200px", height:"0"}}>
           <nav>
             <div className="burguer-menu" onClick={updateMenu}>
               <div className={burguerClass}></div>
@@ -57,9 +48,10 @@ export function Header() {
             </div>
           </nav>
           <div className={menu_class}>
-            
+
           </div>
-        </div>   */}
+        </div>   */
+        }
       </header>
     </>
   );

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "wouter";
 import { Carousel } from "@/components/Carousel";
 import { Middle } from "@/components/Middle";
 import styles from "./style.module.css";

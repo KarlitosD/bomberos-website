@@ -1,15 +1,16 @@
 import React from "react";
 import { getImgUrl } from "../utils/getImgUrl";
 import Parallax from "./parallax";
-import { Link } from "wouter"
+import { Link } from "react-router-dom"
+
 
 export function Middle() {
   return (
     <>
       <div className="contenedorSCD">
-      <Link to="/informacion/socios"><a className="anima"><div className="Soci">SOBRE SOCIOS</div></a></Link>
-      <Link to="/informacion/aspirantes"><a className="anima"><div className="Cade">SOBRE ASPIRANTES</div></a></Link>
-      <Link to="/donaciones"><a className="anima"><div className="Dona">DONACIONES</div></a></Link>
+      <Link to="/informacion/socios" className="anima"><div className="Soci">SOBRE SOCIOS</div></Link>
+      <Link to="/informacion/aspirantes" className="anima"><div className="Cade">SOBRE ASPIRANTES</div></Link>
+      <Link to="/donaciones" className="anima"><div className="Dona">DONACIONES</div></Link>
       </div>
       <Parallax />
       <div className="iframes">
