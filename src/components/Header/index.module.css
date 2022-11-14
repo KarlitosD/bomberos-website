@@ -1,11 +1,3 @@
-*{
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  text-decoration-color:none;
-  list-style: none;
-  box-sizing: 0;
-}
 .header{
   position: fixed;
   top:0;
@@ -16,7 +8,7 @@
   transition: 0.7s;
   z-index: 10;
   padding: 15px 10px;
-  /* background-color: red; */
+  background-color: #ffffff;
 }
 .abajo{
   background-color:#ffffff;
