@@ -22,7 +22,9 @@ export function Faq() {
       <div className={styles.container}>
         <div className={styles.acordion}>
           <Question
-            question={"¿Qué diferencia hay entre ser Socio y simplemente Donar?"}
+            question={
+              "¿Qué diferencia hay entre ser Socio y simplemente Donar?"
+            }
             answer={
               "La diferencia radica en que la Donación es voluntaria y sin obligación de renovación mensual, mientras que el Socio abona mensualmente un monto fijo establecido con anterioridad por la Asociación de Bomberos Voluntarios de Lanús, con posibilidades de participar en actividades y elecciones de la Asociación de B.V.L al cumplir un minimo de tiempo establecido de 2 (dos) años continuos."
             }
