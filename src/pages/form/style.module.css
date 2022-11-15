@@ -10,7 +10,7 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .titleBox {
-  background-color: var(--color-primary);
+  background: linear-gradient(var(--color-primary), rgb(228, 51, 51));
   border-top-left-radius: 14px;
   border-bottom-left-radius: 14px;
   text-align: center;
@@ -75,7 +75,7 @@
   font-weight: bolder;
   border-radius: 5px;
   border: 1px solid var(--color-primary);
-  background-color: var(--color-primary);
+  background: linear-gradient(var(--color-primary), rgb(228, 51, 51));
   color: white;
   cursor: pointer;
 }
@@ -83,7 +83,7 @@
 .btnAdd {
   composes: btn;
   color: var(--color-primary);
-  background-color: transparent;
+  background: transparent;
 }
 
 .btnSend {
