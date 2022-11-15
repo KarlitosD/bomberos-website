@@ -1,26 +1,33 @@
+.container{
+  margin-top: 85px;
+  height: calc(90vh - 85px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .loginBox {
   width: 600px;
-  height: 420px;
+  height: fit-content;
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
-  transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 70px 30px;
   border-radius: 5px;
-  margin-top: 40px;
   font-family: sans-serif;
   box-shadow: 0 5px 20px -3px rgb(0 0 0 / 0.2);
+  gap: 5px;
+
 }
 .avatar {
   width: 100px;
   height: 100px;
-  top: -50px;
-  left: calc(50% - 50px);
+  margin: 0 auto;
+  display: block;
 }
 
 .loginBox h1 {
-  margin: 0;
-  padding: 0 0 20px;
+  margin: 15px;
   text-align: center;
   font-size: 22px;
 }
@@ -91,4 +98,5 @@
   text-align: center;
   align-items: center;
   flex-direction: column;
+  gap: 5px
 }

@@ -37,33 +37,35 @@ export function Login() {
 
   return (
     <>
-      <div className={styles.loginBox}>
-        <img src={logoUrl} className={styles.avatar} />
-        <h1>Inicia Sesion</h1>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <label for="username">Email</label>
-          <input
-            type="text"
-            placeholder="Ingresa tu Email"
-            onChange={createHandleChange("email")}
-            name="email"
-            required
-          />
-          <label for="password">Contraseña</label>
-          <input
-            type="password"
-            placeholder="Ingresa tu D.N.I"
-            onChange={createHandleChange("password")}
-            minLength={6}
-            required
-          />
-          <button className={styles.submit} disabled={loading}>
-            Ingresar
-          </button>
-          <a className={styles.account} href="#">
-            ¿No tenes una cuenta? Asociate
-          </a>
-        </form>
+      <div className={styles.container}>
+        <div className={styles.loginBox}>
+          <img src={logoUrl} className={styles.avatar} />
+          <h1>Inicia Sesion</h1>
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <label for="username">Email</label>
+            <input
+              type="text"
+              placeholder="Ingresa tu Email"
+              onChange={createHandleChange("email")}
+              name="email"
+              required
+            />
+            <label for="password">Contraseña</label>
+            <input
+              type="password"
+              placeholder="Ingresa tu D.N.I"
+              onChange={createHandleChange("password")}
+              minLength={6}
+              required
+            />
+            <button className={styles.submit} disabled={loading}>
+              Ingresar
+            </button>
+            <a className={styles.account} href="#">
+              ¿No tenes una cuenta? Asociate
+            </a>
+          </form>
+        </div>
       </div>
     </>
   );
