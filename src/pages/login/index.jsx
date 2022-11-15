@@ -64,7 +64,7 @@ export function Login() {
               Ingresar
             </button>
             <p className={styles.account}>
-              ¿No tenes una cuenta? <a className={styles.link} href="#">Asociate</a>
+              ¿No tenes una cuenta? <a className={styles.link} href="/formulario/socios">Asociate</a>
             </p>
           </form>
         </div>
