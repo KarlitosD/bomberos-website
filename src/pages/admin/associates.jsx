@@ -1,7 +1,7 @@
-import { Grid } from "gridjs-react";
+import { _, Grid } from "gridjs-react";
 // import { useAtom } from "jotai";
 // import { associatesAtom } from "@/atoms/associates";
-import { json, useLoaderData } from "react-router-dom";
+import { json, useLoaderData, useNavigation } from "react-router-dom";
 import { getAssociates, updateAssociate } from "@/services/associates";
 import styles from "./style.module.css";
 
@@ -18,20 +18,39 @@ const COLUMNS = [
   { id: "paymentMethod", name: "Método de Pago" },
   { id: "approved", name: "Aprobado" },
   { id: "role", name: "Rol" },
+  { id: "action", name: "Acccion" },
 ];
 
+
 export const loader = async () => {
+  // if (cache.has("associates")) {
+    // const associates = cache.get("associates");
+    // return json(associates);
+  // }
   const associates = await getAssociates();
+  // cache.set("associates", associates);
   return json(associates);
 };
 
 export const Associates = () => {
   const associates = useLoaderData();
+  const navigation = useNavigation()
+  const handleChange = (id) => {
+    updateAssociate(id);
+  };
+
+  const associatesWithAction = associates.map((associate) => ({
+    ...associate,
+    action: _(
+      <button onClick={() => handleChange(associate.id)}>Aprobar</button>,
+    ),
+  }));
+
   return (
     <>
       <div className={styles.gridContainer}>
         <Grid
-          data={associates}
+          data={navigation.state === "loading" ? [] : associatesWithAction}
           fixedHeader={true}
           columns={COLUMNS}
           search={true}
