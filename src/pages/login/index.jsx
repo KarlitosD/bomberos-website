@@ -40,30 +40,32 @@ export function Login() {
       <div className={styles.container}>
         <div className={styles.loginBox}>
           <img src={logoUrl} className={styles.avatar} />
-          <h1>Inicia Sesion</h1>
+          <h1>Inicia Sesión</h1>
           <form className={styles.form} onSubmit={handleSubmit}>
-            <label for="username">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               type="text"
-              placeholder="Ingresa tu Email"
+              placeholder="Ingresá tu Email"
               onChange={createHandleChange("email")}
               name="email"
+              id="email"
               required
             />
-            <label for="password">Contraseña</label>
+            <label htmlFor="password">Contraseña</label>
             <input
               type="password"
-              placeholder="Ingresa tu D.N.I"
+              placeholder="Ingresá tu DNI"
               onChange={createHandleChange("password")}
               minLength={6}
+              id="password"
               required
             />
             <button className={styles.submit} disabled={loading}>
               Ingresar
             </button>
-            <a className={styles.account} href="#">
-              ¿No tenes una cuenta? Asociate
-            </a>
+            <p className={styles.account}>
+              ¿No tenes una cuenta? <a className={styles.link} href="#">Asociate</a>
+            </p>
           </form>
         </div>
       </div>

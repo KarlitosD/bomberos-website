@@ -1,4 +1,4 @@
-.container{
+.container {
   margin-top: 85px;
   height: calc(90vh - 85px);
   display: flex;
@@ -17,7 +17,6 @@
   font-family: sans-serif;
   box-shadow: 0 5px 20px -3px rgb(0 0 0 / 0.2);
   gap: 5px;
-
 }
 .avatar {
   width: 100px;
@@ -76,11 +75,17 @@
 }
 
 .account {
-  text-decoration: none;
   font-size: 12px;
   line-height: 20px;
+  text-decoration: none;
   color: rgb(0, 0, 0);
-  display: flex;
+}
+
+.link {
+  font-size: 12px;
+  line-height: 20px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 
 .account:hover {
@@ -98,5 +103,5 @@
   text-align: center;
   align-items: center;
   flex-direction: column;
-  gap: 5px
+  gap: 5px;
 }
