@@ -21,13 +21,12 @@ export function Header() {
 
   return (
     <>
-      <div className={style.blankSpace}></div>
       <header className={style.header}>
         <Link to="/">
           <img className={style.logo} src={logoUrl} />
         </Link>
-        <Link to="/formulario/socios" className={style.headerLink}>
-          Asociarse
+        <Link to="/login" className={style.headerLink}>
+          Iniciar Sesión
         </Link>
       </header>
     </>
