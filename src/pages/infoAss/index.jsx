@@ -48,7 +48,7 @@ export function InfoAss() {
             }
           />
           <Question
-            question={"Me interesa la cuestion de ser socio. ¿Pero como me inscribo?"}
+            question={"Me interesa ser socio. ¿Pero como me inscribo?"}
             answer={
               <p>
               El formulario es este:{" "}
