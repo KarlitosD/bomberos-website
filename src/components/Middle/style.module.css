@@ -29,7 +29,6 @@
 }
 .anima {
     margin-top: 75px;
-    margin-left: 25px;
     margin-bottom: 75px;
     color: #3b3b3b;
     text-decoration: none;
@@ -77,6 +76,9 @@
 @media (max-width:700px) {
     .contenedorSCD {
         flex-wrap: wrap;
+    }
+    .card{
+        width: 350px;
     }
 }
 

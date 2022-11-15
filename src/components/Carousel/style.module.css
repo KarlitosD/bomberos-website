@@ -34,9 +34,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .conteinerIcon, .avatar{
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   align-items: center;
 }
