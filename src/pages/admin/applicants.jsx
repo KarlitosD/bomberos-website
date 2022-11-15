@@ -3,7 +3,7 @@
 import { Grid } from "gridjs-react";
 import { getApplicants } from "@/services/applicants";
 import styles from "./style.module.css";
-import { json, useLoaderData } from "react-router-dom";
+import { json, useLoaderData, useNavigation } from "react-router-dom";
 
 export const loader = async () => {
   const applicants = await getApplicants()
@@ -12,12 +12,12 @@ export const loader = async () => {
 
 export const Applicants = () => {
   const applicants = useLoaderData()
-  console.log(applicants)
+  const navigation = useNavigation()
   return (
     <>
       <div className={styles.gridContainer}>
         <Grid
-          data={applicants}
+          data={navigation.state === "loading" ? [] : applicants}
           fixedHeader={true}
           columns={[
             {
