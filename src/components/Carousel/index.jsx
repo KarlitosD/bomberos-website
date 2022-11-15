@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getImgUrl } from "@/utils/getImgUrl";
 import styles from "./style.module.css"
+import logoUrl from "@/assets/img/logo.png";
 
 const images = ["c1.jpg", "c2.jpg", "c3.jpg"];
 
@@ -54,7 +55,10 @@ export function Carousel(props) {
           height="380"
         />
         <div className={styles.decorationCs}>
-          <h1 className={styles.fontCS}>Junto a vos, por mas de 100 años</h1>
+          <div className={styles.conteinerIcon}>
+            <img src={logoUrl} className={styles.avatar} />
+          </div>
+          <h1 className={styles.fontCS}>Junto a vos <br/> por más de 100 años</h1>
         </div>
       </div>
     </>

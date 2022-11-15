@@ -2,6 +2,7 @@ import React from "react";
 import { Carousel } from "@/components/Carousel";
 import { Middle } from "@/components/Middle";
 import styles from "./style.module.css";
+import logoUrl from "@/assets/img/logo.png";
 
 window.addEventListener("scroll", function () {
   const header = document.querySelector("header");
@@ -18,13 +19,35 @@ export function Home() {
       <section className={styles.mid}>
         <Middle />
       </section>
-      
-      <section className={styles.footer}>
-        <p>
-          Todos los derechos reservados a la{" "}
-          <b>Sociedad Bomberos Voluntarios de Lanus</b>
-        </p>
-      </section>
+
+      <footer className={styles.footer}>
+        <div className={styles.group1}>
+          <div className={styles.box}>
+            <figure>
+              <div>
+                <img src={logoUrl} className={styles.avatar} />
+              </div>
+            </figure>
+          </div>
+          <div className={styles.box}>
+            <h2>SOBRE NOSOTROS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+          </div>
+          <div className={styles.box}>
+            <h2>SIGUENOS</h2>
+            <div className={styles.social}>
+              <a href="#" className="fa fa-facebook"></a>
+              <a href="#" className="fa fa-instagram"></a>
+              <a href="#" className="fa fa-twitter"></a>
+              <a href="#" className="fa fa-youtube"></a>
+            </div>
+          </div>
+        </div>
+        <div className={styles.group2}>
+          <small>&copy; <b>Bomberos Voluntarios de Lanus</b> - Todos los Derechos Reservados.</small>
+        </div>
+      </footer>
     </>
   );
 }
