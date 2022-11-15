@@ -10,7 +10,7 @@ const Question = (props) => {
         {isClicked ? <h2>-</h2> : <h2>+</h2>}
       </div>
       <div className={styles.barra2}>
-        {isClicked ? <p>{props.answer}</p> : <p></p>}
+        {isClicked ? <p className={styles.answer}>{props.answer}</p> : <p></p>}
       </div>
     </div>
   );
@@ -19,41 +19,39 @@ const Question = (props) => {
 export function Faq() {
   return (
     <>
-      <div>
+      <div className={styles.container}>
         <div className={styles.acordion}>
           <Question
+            question={"¿Qué diferencia hay entre ser Socio y simplemente Donar?"}
+            answer={
+              "La diferencia radica en que la Donación es voluntaria y sin obligación de renovación mensual, mientras que el Socio abona mensualmente un monto fijo establecido con anterioridad por la Asociación de Bomberos Voluntarios de Lanús, con posibilidades de participar en actividades y elecciones de la Asociación de B.V.L al cumplir un minimo de tiempo establecido de 2 (dos) años continuos."
+            }
+          />
+          <Question
+            question={"Como bombero ¿Puedo contar con otro oficio?"}
+            answer={
+              'Si! Bomberos Voluntarios de Lanús es una institución conformada por vecinos capacitados e instruidos en la labor de incendio y rescate, que realizan la profesión "Ad Honorem" y quienes realizan en su vida cotidiana diferentes actividades laborales no necesariamente referiada a Bomberos.'
+            }
+          />
+          <Question
+            question={"¿Qué horarios tiene un bombero?"}
+            answer={
+              "Bomberos brinda un servicio ininterrumido los 365 dias del año, sin embargo, se realizan diferentes agrupaciones del personal quienes cumpliran por un lapso de una semana consecutiva el servicio de guardia (servicios a la comunidad, salidas de emergencias y de no emergencia, mantenimiento y puesta en valor de unidades y materiales, etc.) siendo relevados por sus pares al finalizar el período, asegurando la rápida y eficaz atención ante una emergencia. Sin embargo, el personal que tenga inconveniencia al cumplimiento de guardia (por motivo laboral o personal), puede hacerse cubrir por un par."
+            }
+          />
+          <Question
+            question={"¿En dónde se encuentran los destacamentos?"}
+            answer={
+              'Bomberos Voluntarios de Lanús cuenta su cede central en Raul Alfonsin N° 1039, y posee dos destacamentos: El primero de ellos "Destacamento N°1 Villa Mauricio" ubicado en la calle Matanza N° 2798 Y El segundo "Destacamento N°2 Escuadra de Reserva" ubicado en la calle Tte. Cnel. Bueras Nº 4341'
+            }
+          />
+          <Question
             question={
-              "¿Que diferencia hay entre ser Socio, y  solamente Donar?"
+              "¿Existen restricciones por sexo o edad para inscribirse a los bomberos voluntarios?"
             }
             answer={
-              "A la hora de ser un socio, estas inscribiendote a pagar una suscripcion mensual o anual de dinero con la cual estas apoyando directamente a los bomberos voluntarios de Lanus. Ademas de que volverte socio te permite tener algunos beneficios. Por otra parte, Donar al cuartel de bomberos, tambien ayuda a el cuartel a la hora de sus gastos en mejores equipamientos o infraestructura. Con un monto personalizable que puedes elegir completamente a tu gusto."
+              "No hay distinción de sexo para ingresar a Bomberos Voluntarios de Lanús, aunque si se estableció el límite de edad de 39 Años para ingresar."
             }
-          />
-          <Question
-            question={"Al inscribirme como bombero ¿Tengo un salario o pago?"}
-            answer={"No, La realidad es que a la hora de inscribirte como un bombero con nosotros, estas haciendolo de una manera voluntaria por tu cuenta. Sin contar con una remuneracion o dinero por tu trabajo. Por otra parte, mientras mas años de servicios tengas, los bomberos cuentan con una jubilacion diferente y mejor que la de ciudadanos comunes. Premiando a su servicio"}
-          />
-          <Question
-            question={"¿Con que beneficios cuenta un bombero?"}
-            answer={"Mencionado antes, Los bomberos si cuentan con una cobertura medica en caso de accidentes, con asistencia medica, farmaceutica, traslados, rehabilitacion, etc. Como tambien una prestacion economica en caso de incapacidad laboral. Como tambien una pension por tu retiro tras completar años de servicio"}
-          />
-          <Question
-            question={"¿Como bombero, puedo contar con otro oficio?"}
-            answer={"Asi es. Como sabemos que tus cuentas no se pagaran solas, puedes contar con tantos empleos quieras. Esto siempre y cuando para ti no te perjudique en tus horarios para prestar tu servicio al cuartel. Asi que piensalo con cautela."}
-          />
-          <Question
-            question={
-              "¿Que diferencia hay entre un bombero voluntario, y de la ciudad?"
-            }
-            answer={"respuesta"}
-          />
-          <Question
-            question={"¿Los bomberos se manejan con horarios de trabajo?"}
-            answer={"respuesta"}
-          />
-          <Question
-            question={"¿En donde se encuentran repartido los destacamentos?"}
-            answer={"respuesta"}
           />
         </div>
       </div>
