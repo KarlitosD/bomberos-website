@@ -31,7 +31,7 @@ export function Home() {
           </div>
           <div className={styles.box}>
             <h2>SOBRE NOSOTROS</h2>
-            <p className={styles.info}>Fecha de fundación: ??/??/??<br/>Av. Pres. Raúl Alfonsín 1035<br/>Lanús - CP: (1824)<br/>Buenos Aires - Argentina<br/><br/>Numero de telefono<br/>Gmail</p>
+            <p className={styles.info}>Fecha de fundación: 20 / 09 / 1913<br/>Av. Pres. Raúl Alfonsín 1035<br/>Lanús - CP: (1824)<br/>Buenos Aires - Argentina<br/><br/>11 5570-0703<br/>Correo Electrónico:</p>
           </div>
           <div className={styles.box}>
             <h2>SIGUENOS</h2>
