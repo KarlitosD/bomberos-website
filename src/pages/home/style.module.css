@@ -26,6 +26,7 @@ input:checked + ul {
     grid-template-columns: repeat(3, 1fr);
     grid-gap:50px;
     padding: 45px 0px;
+    height: 250px;
 }
 .footer .group1 .box figure{
     width: 100%;
@@ -35,7 +36,7 @@ input:checked + ul {
     align-items: center;
 }
 .footer .group1 .box figure img{
-    width: 250px;
+    width: 100px;
 }
 .footer .group1 .box h2{
     color: #fff;
@@ -71,8 +72,12 @@ input:checked + ul {
     font-size: 15px;
 }
 .conteinerIcon, .avatar{
-  height: 250px;
+  height: 100px;
   align-items: center;
+}
+.info{
+    letter-spacing: 1px;
+    line-height: 22px;
 }
 @media screen and (max-width:800px){
     .footer .group1{
@@ -80,5 +85,6 @@ input:checked + ul {
         grid-template-columns: repeat(1, 1fr);
         grid-gap:30px;
         padding: 35px 0px;
+        height: 520px;
     }
 }
