@@ -121,5 +121,8 @@ display: flex;
    }
    .titleBox{
     width: 100%;
+    border-bottom-left-radius: 0px;
+    flex: none;
+    height: 180px;
    }
 }
