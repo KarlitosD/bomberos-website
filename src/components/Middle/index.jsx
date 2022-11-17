@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Parallax from "../Parallax";
+import Parallax from "../../Parallax";
 import styles from "./style.module.css";
 
 export function Middle() {
