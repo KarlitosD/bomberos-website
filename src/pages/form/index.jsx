@@ -14,8 +14,8 @@ const initNewAssociate = {
   address: "",
   email: "",
   paymentMethod: "mercadopago",
-  plan: "monthly"
-}
+  plan: "monthly",
+};
 
 export function Form() {
   const [newAssociates, setNewAssociates] = useState([]);
@@ -26,22 +26,21 @@ export function Form() {
   const handleForm = async (e) => {
     e.preventDefault();
     const action = e.nativeEvent.submitter.getAttribute("action");
-    console.log({ action })
+    console.log({ action });
     if (action === "add") {
       setNewAssociates([...newAssociates, newAssociate]);
     } else if (action === "submit") {
       const { error } = await createAssociate([...newAssociates, newAssociate]);
       setOpenModal(true);
       setError(error);
-      setNewAssociates([])
+      setNewAssociates([]);
     }
-    setNewAssociate(initNewAssociate)
+    setNewAssociate(initNewAssociate);
   };
 
-  const createHandleChange = (property) =>
-    (event) => {
-      setNewAssociate({ ...newAssociate, [property]: event.target.value });
-    };
+  const createHandleChange = (property) => (event) => {
+    setNewAssociate({ ...newAssociate, [property]: event.target.value });
+  };
 
   return (
     <>
@@ -145,14 +144,14 @@ export function Form() {
                 required
               >
                 <option value="monthly">Mensual (Recurrente)</option>
-                <option value="annually">Anual (Un solo pago no recurrente)</option>
+                <option value="annually">
+                  Anual (Un solo pago no recurrente)
+                </option>
               </select>
             </label>
           </div>
           <div className={styles.row}>
-            <label className={styles.rowLabel}>
-              Metodo de pago:
-            </label>
+            <label className={styles.rowLabel}>Metodo de pago:</label>
             <div className={styles.rowPayment}>
               <input
                 className={styles.rowCheckbox}
@@ -161,8 +160,13 @@ export function Form() {
                 value="mercadopago"
                 checked={true}
                 onChange={createHandleChange("paymentMethod")}
-                />
-              <img className={styles.rowImageIcon} src={mpImage} width={50} height={50} />
+              />
+              <img
+                className={styles.rowImageIcon}
+                src={mpImage}
+                width={50}
+                height={50}
+              />
               <input
                 className={styles.rowCheckbox}
                 type="radio"
@@ -170,20 +174,36 @@ export function Form() {
                 value="fisico"
                 onChange={createHandleChange("paymentMethod")}
               />
-              <img className={styles.rowImageIcon} src={moneyImage} width={50} height={50} />
+              <img
+                className={styles.rowImageIcon}
+                src={moneyImage}
+                width={50}
+                height={50}
+              />
             </div>
           </div>
           <button className={styles.btnAdd} type="submit" action="add">
             Agregar otro socio
           </button>
-          <button className={styles.btn} type="submit" action="submit">
+          <button className={styles.btnSend} type="submit" action="submit">
             ENVIAR
           </button>
         </div>
       </form>
       <Modal open={openModal}>
-        <h1>{error ? "Oh no, parece que hubo un error" :  "Perfecto, ahora tiene que esperar a ser aceptado"}</h1>
-        <button onClick={() => setOpenModal(false)}>Cerrar</button>
+        <div className={styles.modalContainer}>
+          <h1 className={styles.modalMessage}>
+            {error
+              ? "Oh no, parece que hubo un error"
+              : "Perfecto, te contactaremos por whatsapp cuando seas aceptado"}
+          </h1>
+          <button
+            onClick={() => setOpenModal(false)}
+            className={styles.modalBtn}
+          >
+            Cerrar
+          </button>
+        </div>
       </Modal>
     </>
   );
