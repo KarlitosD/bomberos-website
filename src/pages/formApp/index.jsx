@@ -257,6 +257,21 @@ export function FormApp() {
           </button>
         </div>
       </form>
+      {/* <Modal open={openModal}>
+        <div className={styles.modalContainer}>
+          <h1 className={styles.modalMessage}>
+            {error
+              ? "Oh no, parece que hubo un error."
+              : "Datos Enviados."}
+          </h1>
+          <button
+            onClick={() => setOpenModal(false)}
+            className={styles.modalBtn}
+          >
+            Cerrar
+          </button>
+        </div>
+      </Modal> */}
     </>
   );
 }

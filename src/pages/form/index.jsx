@@ -64,7 +64,7 @@ export function Form() {
           </div>
           <div className={styles.row}>
             <label className={styles.rowLabel}>
-              Apellido:
+              Apellido/s:
               <input
                 className={styles.rowInput}
                 value={newAssociate.surname}
@@ -99,7 +99,7 @@ export function Form() {
           </div>
           <div className={styles.row}>
             <label className={styles.rowLabel}>
-              Número de celular:
+              Número de Celular:
               <input
                 className={styles.rowInput}
                 value={newAssociate.cellphoneNumber}
@@ -143,7 +143,9 @@ export function Form() {
                 onChange={createHandleChange("plan")}
                 required
               >
-                <option value="monthly">Mensual (Recurrente)</option>
+                <option value="monthly">
+                  Mensual (Recurrente)
+                </option>
                 <option value="annually">
                   Anual (Un solo pago no recurrente)
                 </option>
@@ -151,7 +153,7 @@ export function Form() {
             </label>
           </div>
           <div className={styles.row}>
-            <label className={styles.rowLabel}>Metodo de pago:</label>
+            <label className={styles.rowLabel}>Método de Pago:</label>
             <div className={styles.rowPayment}>
               <input
                 className={styles.rowCheckbox}
