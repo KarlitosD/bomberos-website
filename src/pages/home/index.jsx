@@ -31,15 +31,13 @@ export function Home() {
           </div>
           <div className={styles.box}>
             <h2>SOBRE NOSOTROS</h2>
-            <p className={styles.info}>Fecha de fundación: 20 / 09 / 1913<br/>Av. Pres. Raúl Alfonsín 1035<br/>Lanús - CP: (1824)<br/>Buenos Aires - Argentina<br/><br/>11 5570-0703<br/>Correo Electrónico:</p>
+            <p className={styles.info}>Fecha de fundación: 20 / 09 / 1913<br/>Av. Pres. Raúl Alfonsín 1035<br/>Lanús - CP: (1824)<br/>Buenos Aires - Argentina<br/><br/>11 5570-0703<br/>bomberosvoluntariosdelanus1913@gmail.com</p>
           </div>
           <div className={styles.box}>
-            <h2>SIGUENOS</h2>
+            <h2>SEGUINOS</h2>
             <div className={styles.social}>
               <a href="#" className="fa fa-facebook"></a>
               <a href="#" className="fa fa-instagram"></a>
-              <a href="#" className="fa fa-twitter"></a>
-              <a href="#" className="fa fa-youtube"></a>
             </div>
           </div>
         </div>
