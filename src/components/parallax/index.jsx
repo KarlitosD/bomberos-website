@@ -6,12 +6,12 @@ export default function Parallax() {
     <div>
       <div className={style.parallax}>
         <div className={style.caption}>
-          <span className={style.border}>
+          <p className={style.border}>
             Dirección: Av. Pres. Raúl Alfonsín 1035
             <br />
             <br />
             Teléfono de Emergencia: 4241-2211
-          </span>
+          </p>
         </div>
       </div>
     </div>

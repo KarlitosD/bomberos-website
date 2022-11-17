@@ -4,7 +4,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(rgba(5, 7, 12, 0.75),  rgba(5, 7, 12, 0.75)), url('/src/assets/img/bomb.jpg');
+  background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)),
+    url("/src/assets/img/bomb.jpg");
   height: 300px;
 }
 .caption {
@@ -27,4 +28,9 @@
   font-weight: 900;
   font-family: sans-serif;
   text-transform: uppercase;
+}
+@media screen and (max-width: 800px) {
+  .caption .border {
+    font-size: x-large;
+  }
 }
