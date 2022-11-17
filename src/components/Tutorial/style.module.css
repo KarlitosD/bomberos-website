@@ -31,3 +31,13 @@
 .imgTitle {
   font-family: sans-serif;
 }
+
+@media (max-width:700px) {
+  .outsideContainer {
+      flex-wrap: wrap;
+  }
+  .imgContainer{
+    margin-top: 25px;
+    height: 300px;
+  }
+}

@@ -80,13 +80,10 @@
     .card{
         width: 350px;
     }
-}
-
-@media (max-width:700px) {
     .iframes {
         flex-wrap: wrap;
     }
-
+    
     .map {
         width: 100%;
     }
