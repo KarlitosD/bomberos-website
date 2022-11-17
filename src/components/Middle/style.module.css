@@ -1,6 +1,7 @@
 .card {
     height: 500px;
     width: 300px;
+    background-color: #f6f6f6;
     background-repeat: no-repeat;
     background-size: 100%;
     cursor: pointer;
@@ -25,7 +26,7 @@
 
 .Soci {
     composes: card;
-    background-image: url("@/assets/img/socios.jpg");
+    background-image: url("@/assets/img/socios.png");
 }
 .anima {
     margin-top: 75px;

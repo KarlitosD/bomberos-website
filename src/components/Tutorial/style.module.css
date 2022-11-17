@@ -8,7 +8,7 @@
 }
 .imgContainer {
   padding-top: 10px;
-  height: 375px;
+  height: 400px;
   width: 400px;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -32,12 +32,12 @@
   font-family: sans-serif;
 }
 
-@media (max-width:700px) {
+@media (max-width:930px) {
   .outsideContainer {
       flex-wrap: wrap;
   }
   .imgContainer{
     margin-top: 25px;
-    height: 300px;
+    height: 370px;
   }
 }
