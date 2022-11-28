@@ -10,14 +10,15 @@ export const loader = async () => {
   const user = supabase.auth.user();
   // if(!user) return redirect("/login")
   if (!user) return null;
-  const associate = await getAssociate(user?.id);
-  if (associate?.role) return redirect("/profile");
+  const [associate] = await getAssociate(user?.id);
+  // if (!associate?.role) return redirect("/profile");
   return json(associate);
 };
 
 export function User() {
   const associate = useLoaderData();
   const ref = useRef(null);
+
   const onButtonClick = () => {
     if (ref.current === null) {
       return;
@@ -33,7 +34,6 @@ export function User() {
         console.log("uwu, tuwimos um peweuño ewowsito 👉👈" + err);
       });
   };
-  console.log(associate);
   return (
     <>
       <div className={style.container}>

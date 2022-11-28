@@ -12,11 +12,14 @@ export async function getAssociate(userId) {
 
 export async function createAssociate(newAssociates) {
   try {
-    const body = JSON.stringify(newAssociates.map(({ email, dni: password }) => ({ email, password })))
-    const { data, error } = await supabase.from("associates").insert(newAssociates)
-    const { data: user, error: createUserError } = await supabase.functions.invoke("associates", { body })
-    console.log({ user, createUserError })
-    if(error || createUserError) throw error || createUserError
+    const { data: { associates }, error: createUserError } = await supabase.functions.invoke("associates", { body: JSON.stringify(newAssociates) })
+    if(createUserError) throw createUserError
+    
+    console.log(associates)
+
+    const { data, error: createAssociateError } = await supabase.from("associates").insert(associates)
+    if(createAssociateError) throw createAssociateError
+    
     return { error: false }
   } catch (error) {
     console.log(error.message)
