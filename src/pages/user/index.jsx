@@ -19,7 +19,7 @@ export function User() {
   const associate = useLoaderData();
   const ref = useRef(null);
 
-  const onButtonClick = () => {
+  const onBtnDNLDClick = () => {
     if (ref.current === null) {
       return;
     }
@@ -33,6 +33,12 @@ export function User() {
       .catch((err) => {
         console.log("uwu, tuwimos um peweuño ewowsito 👉👈" + err);
       });
+  };
+
+  let toggleForm = false;
+  const onBtnEditClick = () => {
+    toggleForm = !toggleForm;
+    console.log(toggleForm);
   };
   return (
     <>
@@ -54,10 +60,20 @@ export function User() {
                   <p className={style.certi}>
                     Certifico que el titular de la presente Señor/a
                   </p>
-                  <p>Nombre: {associate?.name}</p>
-                  <p>Apellido: {associate?.surname}</p>
-                  <p>DNI: {associate?.dni}</p>
-                  <p>Numero de socio: {associate?.associateNumber}</p>
+                  <div className={style.dataContainer}>
+                    <p className={style.data}>
+                      <b>Nombre/s:</b> {associate?.name}
+                    </p>
+                    <p>
+                      <b>Apellido/s:</b> {associate?.surname}
+                    </p>
+                    <p>
+                      <b>DNI:</b> {associate?.dni}
+                    </p>
+                    <p>
+                      <b>Número de socio:</b> {associate?.associateNumber}
+                    </p>
+                  </div>
                   <div className={style.isAssociateContainer}>
                     <p className={style.isAssociate}>es SOCIO</p>
                   </div>
@@ -70,8 +86,11 @@ export function User() {
             </div>
             <div className={style.borderB} />
           </div>
-          <button onClick={onButtonClick} className={style.BtnDNLD}>
+          <button onClick={onBtnDNLDClick} className={style.btnDNLD}>
             DESCARGAR
+          </button>
+          <button onClick={onBtnEditClick} className={style.btnEdit}>
+            Editar
           </button>
         </div>
       </div>

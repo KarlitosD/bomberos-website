@@ -1,14 +1,17 @@
-.credential {
-  background-color: rgb(243, 242, 242);
-  border-color: black;
-  /* height: 400px; */
-  width: 700px;
-}
 .container {
   padding-top: 50px;
   display: flex;
   justify-content: center;
   margin: auto;
+  margin-top: 80px;
+}
+.credential {
+  background-color: rgb(243, 242, 242);
+  border-color: black;
+  /* height: 400px; */
+  width: 700px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .borderT {
   padding-top: 10px;
@@ -19,13 +22,12 @@
   text-align: left;
 }
 .borderB {
-  padding: 10px 0 0 10px;
   background-color: brown;
   height: 30px;
 }
 .photo {
-  height: 150px;
-  width: 180px;
+  height: 190px;
+  width: 150px;
   background-color: rgb(182, 62, 62);
 }
 .center {
@@ -45,6 +47,9 @@
   font-family: serif;
   margin-top: 0;
 }
+.dataContainer{
+  margin-top: 10px;
+}
 .isAssociateContainer {
   display: flex;
   justify-content: flex-end;
@@ -58,13 +63,13 @@
 .signaturesContainer{ 
   display: flex;
   justify-content: space-between;
-  margin: 0 40px;
+  padding: 10px 40px 80px;
 }
 .signature {
   color: brown;
   font-weight: 600;
 }
-.BtnDNLD {
+.btnDNLD {
   padding: 0 10px;
   margin-top: 10px;
   padding-block: 10px;
@@ -77,12 +82,12 @@
   color: white;
   cursor: pointer;
 }
-.BtnDNLD:hover {
+.btnDNLD:hover {
   -webkit-box-shadow: 0 0 10px #888888;
   -moz-box-shadow: 0 0 10px #888888;
   box-shadow: 0 0 10px #888888;
 }
-.BtnDNLD:active {
+.btnDNLD:active {
   background-color: rgb(165, 9, 9);
   box-shadow: none;
 }
