@@ -14,6 +14,7 @@
     width: 1000px;
 }
 .gridContainer{
+    padding-top: 80px;
     display: flex;
     justify-content: center;
     width: 100%;
