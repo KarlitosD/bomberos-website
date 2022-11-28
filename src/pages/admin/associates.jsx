@@ -1,7 +1,7 @@
 import { _, Grid } from "gridjs-react";
 // import { useAtom } from "jotai";
 // import { associatesAtom } from "@/atoms/associates";
-import { json, useLoaderData, useNavigation } from "react-router-dom";
+import { Form, json, useFetcher, useLoaderData, useNavigation } from "react-router-dom";
 import { getAssociates, updateAssociate } from "@/services/associates";
 import styles from "./style.module.css";
 
@@ -21,28 +21,29 @@ const COLUMNS = [
   { id: "action", name: "Acccion" },
 ];
 
-
 export const loader = async () => {
-  // if (cache.has("associates")) {
-    // const associates = cache.get("associates");
-    // return json(associates);
-  // }
   const associates = await getAssociates();
-  // cache.set("associates", associates);
   return json(associates);
 };
+
+const ApprovedButton = ({ dni, refresh }) => {
+  const handleApproved = async () => {
+    await updateAssociate(dni, { approved: true })
+  }
+  return <button onClick={handleApproved}>Aprobar</button>
+}
 
 export const Associates = () => {
   const associates = useLoaderData();
   const navigation = useNavigation()
-  const handleChange = (id) => {
-    updateAssociate(id);
-  };
+  const fetcher = useFetcher()
 
   const associatesWithAction = associates.map((associate) => ({
     ...associate,
     action: _(
-      <button onClick={() => handleChange(associate.id)}>Aprobar</button>,
+      associate.approved
+        ? <button>Hola</button>
+        : <ApprovedButton dni={associate.dni} refresh={() => fetcher.load("/admin/socios")} />
     ),
   }));
 

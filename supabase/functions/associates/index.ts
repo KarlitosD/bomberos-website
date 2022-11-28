@@ -22,9 +22,9 @@ serve(async (req) => {
     const newAssociates = await req.json()
     console.log({ newAssociates })
     for(const associate of newAssociates){
-      const { email, password } = associate
+      const { email, dni: password } = associate
       console.log({ email, password })
-      const { data: { user }, error } = await supabaseClient.auth.admin.createUser({ email, password })
+      const { data: { user }, error } = await supabaseClient.auth.admin.createUser({ email, password, email_confirm: true })
       if (error) throw error;
       associate.userId = user.id
     }
