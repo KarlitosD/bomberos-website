@@ -26,9 +26,9 @@
   height: 30px;
 }
 .photo {
-  height: 190px;
-  width: 150px;
+  padding: 2px;
   background-color: rgb(182, 62, 62);
+  justify-content: center;
 }
 .center {
   margin-top: 20px;
@@ -37,7 +37,6 @@
 }
 .rightSide {
   margin-left: 20px;
-  height: auto;
   width: auto;
   text-align: left;
 }
