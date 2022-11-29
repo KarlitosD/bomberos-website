@@ -18,7 +18,7 @@ export async function createAssociate(newAssociates) {
     const { data: [group], error: createGroupError } = await supabase.from("groups").insert({ responsable: associates[0].dni })
     if(createGroupError) throw createGroupError
 
-    const { data, error: createAssociateError } = await supabase.from("associates").insert(
+    const { error: createAssociateError } = await supabase.from("associates").insert(
       associates.map(associate => ({ ...associate, groupId: group.id }))
     )
     if(createAssociateError) throw createAssociateError
