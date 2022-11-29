@@ -19,6 +19,7 @@ import {
   Applicants,
   loader as loaderApplicants,
 } from "@/pages/admin/applicants";
+import { Payments } from "@/pages/admin/payments";
 
 const Root = () => (
   <>
@@ -56,11 +57,8 @@ export const router = createBrowserRouter([
         children: [
           { path: "", element: <h2>Perfil de admin</h2> },
           { path: "socios", element: <Associates />, loader: loaderAssociates },
-          {
-            path: "aspirantes",
-            element: <Applicants />,
-            loader: loaderApplicants,
-          },
+          { path: "aspirantes", element: <Applicants />, loader: loaderApplicants },
+          { path: "pagos", element: <Payments /> }
         ],
       },
     ],

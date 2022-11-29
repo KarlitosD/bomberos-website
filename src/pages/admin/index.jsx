@@ -20,7 +20,9 @@ export function Admin() {
     <>
       <section className={styles.adminContainer}>
         <LateralMenu />
-        <Outlet />
+        <div className={styles.outletContainer}>
+          <Outlet />
+        </div>
       </section>
     </>
   );
