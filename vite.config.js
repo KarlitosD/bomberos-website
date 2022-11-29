@@ -10,5 +10,5 @@ export default defineConfig({
        "@": path.resolve(__dirname, "./src")
     }
   },
-  plugins: [react(), ViteFaviconsPlugin("src/assets/img/logo.png") ]
+  plugins: [react()]
 })
