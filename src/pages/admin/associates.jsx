@@ -2,7 +2,7 @@ import { _, Grid } from "gridjs-react";
 // import { useAtom } from "jotai";
 // import { associatesAtom } from "@/atoms/associates";
 import { Form, json, useFetcher, useLoaderData, useNavigation } from "react-router-dom";
-import { getAssociates, updateAssociate } from "@/services/associates";
+import { getAssociates, approveAssociate } from "@/services/associates";
 import styles from "./style.module.css";
 
 const COLUMNS = [
@@ -16,7 +16,11 @@ const COLUMNS = [
   { id: "plan", name: "Plan" },
   { id: "associateNumber", name: "Número de Socio" },
   { id: "paymentMethod", name: "Método de Pago" },
-  { id: "approved", name: "Aprobado" },
+  { 
+    id: "approved", 
+    name: "Aprobado", 
+    formatter: isApproved => _(<div className={styles.checkbox}><input type="checkbox" checked={isApproved} readOnly /></div>)
+  },
   { id: "role", name: "Rol" },
   { id: "action", name: "Acccion" },
 ];
@@ -27,9 +31,7 @@ export const loader = async () => {
 };
 
 const ApprovedButton = ({ dni, refresh }) => {
-  const handleApproved = async () => {
-    await updateAssociate(dni, { approved: true })
-  }
+  const handleApproved = () => approveAssociate(dni)
   return <button onClick={handleApproved}>Aprobar</button>
 }
 

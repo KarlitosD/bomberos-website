@@ -14,6 +14,11 @@
     width: 1000px;
 }
 
+.checkbox {
+    width: 100%;
+    text-align: center;
+}
+
 .outletContainer {
     width: 100%;
     margin: 0 auto;
