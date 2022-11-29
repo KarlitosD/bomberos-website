@@ -59,19 +59,28 @@ export const Payments = () => {
                     }}
                 />
             </div>
-            <Form method="post">
-                <select name="dni">
-                    {associates.map(associate =>  <option value={associate.dni} key={associate.dni}>{associate.name}</option>)}
-                </select>
-                <select name="method" required>
-                    <option value="Efectivo">Efectivo</option>
-                    <option value="MercadoPago">MercadoPago</option>
-                </select>
-                <select name="duration">
-                    {Array.from({ length: 12 }).map((_, index) => (
-                        <option name="duration" value={index + 1} key={index}>{index + 1}</option>
-                    ))}
-                </select>
+            <Form method="post" className={styles.addPayment}>
+                <label>
+                    Socios
+                    <select name="dni">
+                        {associates.map(associate => <option value={associate.dni} key={associate.dni}>{associate.associateNumber} | {associate.name}</option>)}
+                    </select>
+                </label>
+                <label>
+                    Metodo de pago
+                    <select name="method" required>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="MercadoPago">MercadoPago</option>
+                    </select>
+                </label>
+                <label>
+                    Meses
+                    <select name="duration">
+                        {Array.from({ length: 12 }).map((_, index) => (
+                            <option name="duration" value={index + 1} key={index}>{index + 1}</option>
+                        ))}
+                    </select>
+                </label>
                 <button>Agregar pago</button>
             </Form>
         </>
@@ -81,11 +90,10 @@ export const Payments = () => {
 export const action = async ({ request }) => {
     const formData = await request.formData()
     const body = Object.fromEntries(formData)
-    const { data, error } = await supabase.from("payments").insert({ 
+    const { data, error } = await supabase.from("payments").insert({
         associate_dni: body.dni,
         method_payment: body.method,
         duration: body.duration
-     })
-    console.log(error)
+    })
     return error
 }
