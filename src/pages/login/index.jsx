@@ -1,12 +1,15 @@
 import styles from "./style.module.css";
 import { useState } from "react";
 import { supabase } from "@/supabase.js";
-import { useAuth } from "@/hooks/useAuth";
-import { Navigate } from "react-router-dom";
 import logoUrl from "@/assets/img/logo.png";
+import { redirect } from "react-router-dom";
+
+export const loader = () => {
+  const user = supabase.auth.user()
+  if(user) return redirect("/user")
+}
 
 export function Login() {
-  const { session } = useAuth();
   const [loading, setLoading] = useState(false);
   const [credentials, setCredentials] = useState({
     email: "",
@@ -33,7 +36,6 @@ export function Login() {
     }));
   };
 
-  if (session) return <Navigate to="/" />;
 
   return (
     <>

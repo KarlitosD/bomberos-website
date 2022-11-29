@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { Home } from "@/pages/home";
 import { Donations } from "@/pages/donations";
 import { Form } from "@/pages/form";
-import { Login } from "@/pages/login";
+import { Login, loader as loaderLogin } from "@/pages/login";
 import { Faq } from "@/pages/faqPage";
 import { Profile, loader as loaderProfile } from "@/pages/profile";
 import { FormApp } from "@/pages/formApp";
@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/donaciones", element: <Donations /> },
-      { path: "/login", element: <Login /> },
+      { path: "/login", element: <Login />, loader: loaderLogin  },
       { path: "/profile", element: <Profile />, loader: loaderProfile },
       { path: "/informacion/socios", element: <InfoAss /> },
       { path: "/informacion/aspirantes", element: <InfoApp /> },
