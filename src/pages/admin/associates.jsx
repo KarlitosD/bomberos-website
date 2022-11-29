@@ -2,7 +2,7 @@ import { _, Grid } from "gridjs-react";
 // import { useAtom } from "jotai";
 // import { associatesAtom } from "@/atoms/associates";
 import { Form, json, useFetcher, useLoaderData, useNavigation } from "react-router-dom";
-import { getAssociates, updateAssociate } from "@/services/associates";
+import { getAssociates, approveAssociate } from "@/services/associates";
 import styles from "./style.module.css";
 
 const COLUMNS = [
@@ -27,9 +27,7 @@ export const loader = async () => {
 };
 
 const ApprovedButton = ({ dni, refresh }) => {
-  const handleApproved = async () => {
-    await updateAssociate(dni, { approved: true })
-  }
+  const handleApproved = () => approveAssociate(dni)
   return <button onClick={handleApproved}>Aprobar</button>
 }
 
