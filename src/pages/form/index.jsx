@@ -21,10 +21,12 @@ export function Form() {
   const [newAssociates, setNewAssociates] = useState([]);
   const [newAssociate, setNewAssociate] = useState(initNewAssociate);
   const [openModal, setOpenModal] = useState(false);
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null);
 
   const handleForm = async (e) => {
     e.preventDefault();
+    setLoading(true)
     const action = e.nativeEvent.submitter.getAttribute("action");
     console.log({ action });
     if (action === "add") {
@@ -36,6 +38,7 @@ export function Form() {
       setNewAssociates([]);
     }
     setNewAssociate(initNewAssociate);
+    setLoading(false)
   };
 
   const createHandleChange = (property) => (event) => {
@@ -202,6 +205,7 @@ export function Form() {
           <button
             onClick={() => setOpenModal(false)}
             className={styles.modalBtn}
+            disabled={loading}
           >
             Cerrar
           </button>
