@@ -19,7 +19,9 @@ export function User() {
   const associate = useLoaderData();
   const ref = useRef(null);
   const [image, setImage] = useState(null);
-  const [imageUrl, setImageUrl] = useState("");
+  const [associateImage, setAssociateImage] = useState(
+    associate?.imageUrl || ""
+  );
 
   const onBtnDNLDClick = () => {
     if (ref.current === null) {
@@ -38,7 +40,6 @@ export function User() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let imageUrl = "";
 
     if (image) {
       const { data, error } = await supabase.storage
@@ -48,21 +49,31 @@ export function User() {
       if (error) {
         console.log(error);
       }
-      if (data) {
-        setImageUrl(data.Key);
-        imageUrl = data.Key;
+
+      if (associate.imageUrl) {
+        const { data, error } = await supabase.storage
+          .from("associate-image")
+          .remove([`${associate.imageUrl.substring(16)}`]);
+        console.log(data)
+        if (error) {
+          console.log(error);
+        }
       }
-    }
 
-    const [data, error] = await supabase.from("associates").upsert({
-      imageUrl: imageUrl,
-    });
+      const { data:miniData, error:miniError } = await supabase
+        .from("associates")
+        .update({
+          imageUrl: data.Key,
+        })
+        .match({ dni: associate.dni });
 
-    if (error) {
-      console.log(error);
-    }
-    if (data) {
-      console.log("Imagen actualizada");
+      if (miniError) {
+        console.log(miniError);
+      }
+      if (miniData) {
+        setAssociateImage(data.Key);
+        console.log("Imagen actualizada");
+      }
     }
   };
 
@@ -83,7 +94,10 @@ export function User() {
               <div>
                 <div className={style.center}>
                   <div className={style.photo}>
-                    {/* {imageUrl ? <img src={ [LINK] imageUrl}/> : <h2>Sin Imagen</h2>} */}
+                    <img
+                      src={`https://seappncbmvautcaltduu.supabase.co/storage/v1/object/public/${associateImage}`}
+                      width={150}
+                    />
                   </div>
                   <div className={style.rightSide}>
                     <p className={style.certi}>
