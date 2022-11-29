@@ -1,6 +1,4 @@
 import { _, Grid } from "gridjs-react";
-// import { useAtom } from "jotai";
-// import { associatesAtom } from "@/atoms/associates";
 import { Form, json, useFetcher, useLoaderData, useNavigation } from "react-router-dom";
 import { getAssociates, approveAssociate } from "@/services/associates";
 import styles from "./style.module.css";
