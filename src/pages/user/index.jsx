@@ -38,7 +38,7 @@ export function User() {
         console.log("uwu, tuwimos um peweuño ewowsito 👉👈" + err);
       });
   };
-  const handleSubmit = async (e) => {
+  const handleUpdatePicture = async (e) => {
     e.preventDefault();
 
     if (image) {
@@ -54,13 +54,13 @@ export function User() {
         const { data, error } = await supabase.storage
           .from("associate-image")
           .remove([`${associate.imageUrl.substring(16)}`]);
-        console.log(data)
+        console.log(data);
         if (error) {
           console.log(error);
         }
       }
 
-      const { data:miniData, error:miniError } = await supabase
+      const { data: miniData, error: miniError } = await supabase
         .from("associates")
         .update({
           imageUrl: data.Key,
@@ -76,10 +76,51 @@ export function User() {
       }
     }
   };
+  async function handleChangePass(e) {
+    e.preventDefault();
+    const newPassword = e.target.password.value;
+    const { user, error } = await supabase.auth.update({
+      password: newPassword,
+    });
+    console.log({ user });
+  }
 
   return (
     <>
       <div className={style.container}>
+        <div className={style.configContainer}>
+          <button
+            className={style.btnCloseSession}
+            onClick={() => supabase.auth.signOut()}
+          >
+            Cerrar sesión
+          </button>
+          <form onSubmit={handleUpdatePicture} className={style.updatePicture}>
+            <label className={style.lblPicture}>
+              Seleccionar archivo
+              <input className={style.inputPicture}
+                type="file"
+                accept="image/jpeg image/png"
+                onChange={(e) => setImage(e.target.files[0])}
+              />
+            </label>
+            <button type={"submit"} className={style.btnPicture}>
+              Actualizar Foto
+            </button>
+          </form>
+          <form onSubmit={handleChangePass} className={style.changePass}>
+            <label className={style.lblPass}>
+              Cambiar Contraseña:
+              <input
+                className={style.inputPass}
+                type="password"
+                placeholder="Nueva contraseña"
+                name="password"
+              />
+            </label>
+            <button className={style.btnChangePass}>Cambiar contraseña</button>
+          </form>
+        </div>
         <div className={style.credentialContainer}>
           <div>
             <div ref={ref} className={style.credential}>
@@ -134,16 +175,6 @@ export function User() {
             </button>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className={style.updatePicture}>
-          <input
-            type="file"
-            accept="image/jpeg image/png"
-            onChange={(e) => setImage(e.target.files[0])}
-          />
-          <button type={"submit"} className={style.btnEdit}>
-            Actualizar Foto
-          </button>
-        </form>
       </div>
     </>
   );
