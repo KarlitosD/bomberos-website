@@ -3,15 +3,14 @@ import { json, redirect, useLoaderData } from "react-router-dom";
 import { toJpeg } from "html-to-image";
 import { getAssociate } from "@/services/associates";
 import { supabase } from "@/supabase";
-// import { useAuth } from "@/hooks/useAuth";
 import style from "./style.module.css";
+import { useNavigate } from "react-router-dom/dist";
 
 export const loader = async () => {
   const user = supabase.auth.user();
-  // if(!user) return redirect("/login")
-  if (!user) return null;
+  if(!user) return redirect("/login")
   const [associate] = await getAssociate(user?.id);
-  // if (!associate?.role) return redirect("/profile");
+  if (!associate.role == "admin") return redirect("/admin/socios");
   return json(associate);
 };
 
@@ -22,6 +21,8 @@ export function User() {
   const [associateImage, setAssociateImage] = useState(
     associate?.imageUrl || ""
   );
+
+  const navigate = useNavigate()
 
   const onBtnDNLDClick = () => {
     if (ref.current === null) {
@@ -82,7 +83,11 @@ export function User() {
     const { user, error } = await supabase.auth.update({
       password: newPassword,
     });
-    console.log({ user });
+  }
+
+  const logout = async () => {
+    await supabase.auth.signOut()
+    navigate("/")
   }
 
   return (
@@ -91,7 +96,7 @@ export function User() {
         <div className={style.configContainer}>
           <button
             className={style.btnCloseSession}
-            onClick={() => supabase.auth.signOut()}
+            onClick={logout}
           >
             Cerrar sesión
           </button>

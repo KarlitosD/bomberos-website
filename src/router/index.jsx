@@ -5,7 +5,6 @@ import { Donations } from "@/pages/donations";
 import { Form } from "@/pages/form";
 import { Login, loader as loaderLogin } from "@/pages/login";
 import { Faq } from "@/pages/faqPage";
-import { Profile, loader as loaderProfile } from "@/pages/profile";
 import { FormApp } from "@/pages/formApp";
 import { InfoApp } from "@/pages/infoApp";
 import { InfoAss } from "@/pages/infoAss";
@@ -18,6 +17,7 @@ import {
   loader as loaderPayments,
   action as actionPayments
 } from "@/pages/admin/payments";
+import { redirect } from "react-router-dom/dist";
 
 const Root = () => (
   <>
@@ -41,7 +41,6 @@ export const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/donaciones", element: <Donations /> },
       { path: "/login", element: <Login />, loader: loaderLogin  },
-      { path: "/profile", element: <Profile />, loader: loaderProfile },
       { path: "/informacion/socios", element: <InfoAss /> },
       { path: "/informacion/aspirantes", element: <InfoApp /> },
       { path: "/faq", element: <Faq /> },
@@ -52,8 +51,9 @@ export const router = createBrowserRouter([
         path: "/admin/",
         element: <Admin />,
         loader: loaderAdmin,
+        errorElement: () => (<h1>Esta pagina no existe para los administradores</h1>),
         children: [
-          { path: "", element: <h2>Perfil de admin</h2> },
+          { path: "", loader: () => redirect("/admin/socios") },
           { path: "socios", element: <Associates />, loader: loaderAssociates, action: actionAssociates },
           { path: "aspirantes", element: <Applicants />, loader: loaderApplicants },
           { path: "pagos", element: <Payments />, loader: loaderPayments, action: actionPayments }

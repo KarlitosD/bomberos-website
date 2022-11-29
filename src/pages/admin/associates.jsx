@@ -28,7 +28,7 @@ const translates = {
   "associate": "Socio",
   "monthly": "Mensual",
   "annually": "Anual",
-  "admin": "Admin"
+  "admin": "Administrador"
 }
 
 export const loader = async () => {
