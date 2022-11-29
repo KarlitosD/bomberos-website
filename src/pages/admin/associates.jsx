@@ -16,7 +16,11 @@ const COLUMNS = [
   { id: "plan", name: "Plan" },
   { id: "associateNumber", name: "Número de Socio" },
   { id: "paymentMethod", name: "Método de Pago" },
-  { id: "approved", name: "Aprobado" },
+  { 
+    id: "approved", 
+    name: "Aprobado", 
+    formatter: isApproved => _(<div className={styles.checkbox}><input type="checkbox" checked={isApproved} readOnly /></div>)
+  },
   { id: "role", name: "Rol" },
   { id: "action", name: "Acccion" },
 ];
