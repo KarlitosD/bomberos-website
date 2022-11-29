@@ -1,9 +1,8 @@
 import { _, Grid } from "gridjs-react";
-// import { useAtom } from "jotai";
-// import { associatesAtom } from "@/atoms/associates";
-import { json, useLoaderData, useNavigation } from "react-router-dom";
-import { getAssociates, updateAssociate } from "@/services/associates";
+import { Form,json, useLoaderData, useNavigation } from "react-router-dom";
+import { getAssociates, approveAssociate, disapproveAssociate } from "@/services/associates";
 import styles from "./style.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const COLUMNS = [
   { id: "dni", name: "DNI" },
@@ -13,37 +12,49 @@ const COLUMNS = [
   { id: "address", name: "Dirección" },
   { id: "phoneNumber", name: "Número de Teléfono" },
   { id: "cellphoneNumber", name: "Número de Celular" },
-  { id: "plan", name: "Plan" },
+  { id: "plan", name: "Plan", formatter: cell => translates[cell] },
   { id: "associateNumber", name: "Número de Socio" },
   { id: "paymentMethod", name: "Método de Pago" },
-  { id: "approved", name: "Aprobado" },
-  { id: "role", name: "Rol" },
+  {
+    id: "approved",
+    name: "Aprobado",
+    formatter: isApproved => _(<div className={styles.checkbox}><input type="checkbox" checked={isApproved} readOnly /></div>)
+  },
+  { id: "role", name: "Rol", formatter: cell => translates[cell] },
   { id: "action", name: "Acccion" },
 ];
 
+const translates = {
+  "associate": "Socio",
+  "monthly": "Mensual",
+  "annually": "Anual",
+  "admin": "Administrador"
+}
 
 export const loader = async () => {
-  // if (cache.has("associates")) {
-    // const associates = cache.get("associates");
-    // return json(associates);
-  // }
   const associates = await getAssociates();
-  // cache.set("associates", associates);
   return json(associates);
 };
+
+const ActionButton = ({ associate }) => {
+  const handleApproved = () => approveAssociate(associate.dni)
+
+  const handleDisapproved = () => disapproveAssociate(associate.dni)
+
+  return (
+    associate?.approved
+      ? <button onClick={handleDisapproved}>Dar de baja</button>
+      : <button dni={associate.dni} onClick={handleApproved}>Aprobar</button>
+    )
+}
 
 export const Associates = () => {
   const associates = useLoaderData();
   const navigation = useNavigation()
-  const handleChange = (id) => {
-    updateAssociate(id);
-  };
 
   const associatesWithAction = associates.map((associate) => ({
     ...associate,
-    action: _(
-      <button onClick={() => handleChange(associate.id)}>Aprobar</button>,
-    ),
+    action: _(<ActionButton associate={associate} />),
   }));
 
   return (
@@ -68,6 +79,13 @@ export const Associates = () => {
           }}
         />
       </div>
+      <Form>
+        <button className={styles.refreshBtn}>Refrescar</button>
+      </Form>
     </>
   );
 };
+
+export const action = async => {
+  console.log("hola")
+}

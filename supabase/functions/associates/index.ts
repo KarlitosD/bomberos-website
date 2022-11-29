@@ -8,27 +8,28 @@ import { corsHeaders } from "../_shared/index.ts";
 
 console.log("Hello from Functions!");
 
-serve(async (req: Request) => {
+serve(async (req) => {
   // This is needed if you're planning to invoke your function from a browser.
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
   }
 
   try {
-    console.log(Deno.env.get("SUPABASE_SERVICE_ROLE_KEY"))
     const supabaseClient = createClient(
-      Deno.env.get("SUPABASE_URL") !,
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") !    
+      Deno.env.get("SUPABASE_URL"),
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") 
     );
-    console.log(supabaseClient)
-    const newUsers = await req.json()
-    for(const { email, password } of newUsers){
+    const newAssociates = await req.json()
+    console.log({ newAssociates })
+    for(const associate of newAssociates){
+      const { email, dni: password } = associate
       console.log({ email, password })
-      const { data: { user }, error } = await supabaseClient.auth.admin.createUser({ email, password, email_confirm: false })
+      const { data: { user }, error } = await supabaseClient.auth.admin.createUser({ email, password, email_confirm: true })
       if (error) throw error;
+      associate.userId = user.id
     }
-
-    return new Response(JSON.stringify({ message: "UwU" }), {
+    console.log("hola")
+    return new Response(JSON.stringify({ associates: newAssociates }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });

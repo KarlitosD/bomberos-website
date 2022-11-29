@@ -8,7 +8,7 @@ export const LateralMenu = () => {
                 <Link to="/admin" className={styles.link}>Mi perfil</Link>
                 <Link to="/admin/socios" className={styles.link}>Socios</Link>
                 <Link to="/admin/aspirantes" className={styles.link}>Aspirantes</Link>
-                {/* <Link to="/pagos" className={link}>Pagos</Link> */}
+                <Link to="/admin/pagos" className={styles.link}>Pagos</Link>
             </div>
         </>
     )
