@@ -3,6 +3,8 @@ import { Carousel } from "@/components/Carousel";
 import { Middle } from "@/components/Middle";
 import styles from "./style.module.css";
 import logoUrl from "@/assets/img/logo.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faSquareInstagram, faSquareFacebook} from '@fortawesome/free-brands-svg-icons'
 
 window.addEventListener("scroll", function () {
   const header = document.querySelector("header");
@@ -36,8 +38,8 @@ export function Home() {
           <div className={styles.box}>
             <h2>SEGUINOS</h2>
             <div className={styles.social}>
-              <a href="#" className="fa fa-facebook"></a>
-              <a href="#" className="fa fa-instagram"></a>
+              <a href="https://www.instagram.com/bomberosvoluntariosdelanus/?hl=es" className="icon"><FontAwesomeIcon icon={faSquareInstagram}></FontAwesomeIcon></a>
+              <a href="https://es-la.facebook.com/bvlanusoficial/" className="icon"><FontAwesomeIcon icon={faSquareFacebook}></FontAwesomeIcon></a>
             </div>
           </div>
         </div>

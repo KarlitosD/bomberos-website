@@ -79,6 +79,9 @@ input:checked + ul {
     letter-spacing: 1px;
     line-height: 22px;
 }
+.icon{
+    font-size: 5px;
+}
 @media screen and (max-width:800px){
     .footer .group1{
         width: 90%;
