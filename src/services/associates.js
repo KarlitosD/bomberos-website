@@ -43,3 +43,11 @@ export async function approveAssociate(dni){
     updateAssociate(dni, { approved: true })
   ])
 }
+
+export async function disapproveAssociate(dni){
+  await Promise.all([
+    supabase.from("actions").insert({ type: "Baja", associate_dni: dni }),
+    updateAssociate(dni, { approved: false })
+  ])
+}
+

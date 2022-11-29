@@ -11,7 +11,7 @@ import { InfoApp } from "@/pages/infoApp";
 import { InfoAss } from "@/pages/infoAss";
 import { User, loader as loaderUser } from "@/pages/user";
 import { Admin, loader as loaderAdmin } from "@/pages/admin";
-import { Associates, loader as loaderAssociates } from "@/pages/admin/associates";
+import { Associates, loader as loaderAssociates, action as actionAssociates } from "@/pages/admin/associates";
 import { Applicants, loader as loaderApplicants } from "@/pages/admin/applicants";
 import { 
   Payments, 
@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
         loader: loaderAdmin,
         children: [
           { path: "", element: <h2>Perfil de admin</h2> },
-          { path: "socios", element: <Associates />, loader: loaderAssociates },
+          { path: "socios", element: <Associates />, loader: loaderAssociates, action: actionAssociates },
           { path: "aspirantes", element: <Applicants />, loader: loaderApplicants },
           { path: "pagos", element: <Payments />, loader: loaderPayments, action: actionPayments }
         ],

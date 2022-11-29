@@ -14,6 +14,15 @@
     width: 1000px;
 }
 
+.td button {
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: var(--color-primary);
+    color: white;
+    cursor: pointer;
+}
+
 .checkbox {
     width: 100%;
     text-align: center;
@@ -24,18 +33,20 @@
     margin: 0 auto;
     margin-top: 85px;
     padding: 1px;
+    height: calc(100% - 85px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .gridContainer{
     display: flex;
     justify-content: center;
     width: 100%;
-    border-bottom: 1px solid rgb(156, 156, 156);
     padding-bottom: 15px;
 }
 
 .addPayment{
-    /* border-top: 1px solid rgb(133, 133, 133); */
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -44,7 +55,6 @@
     gap: 15px;
     font-size: 1.1rem;
     align-items: center;
-    /* border: 1px solid black; */
     border-radius: 10px;
     /* box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); */
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 26%);
@@ -72,5 +82,17 @@
     border-radius: 8px;
     border: none;
     padding: 10px 12px;
-    font-size: 20px; 
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.refreshBtn {
+    padding: 10px;
+    border: none;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    cursor: pointer;
 }

@@ -1,7 +1,8 @@
 import { _, Grid } from "gridjs-react";
-import { Form, json, useFetcher, useLoaderData, useNavigation } from "react-router-dom";
-import { getAssociates, approveAssociate } from "@/services/associates";
+import { Form,json, useLoaderData, useNavigation } from "react-router-dom";
+import { getAssociates, approveAssociate, disapproveAssociate } from "@/services/associates";
 import styles from "./style.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const COLUMNS = [
   { id: "dni", name: "DNI" },
@@ -11,40 +12,49 @@ const COLUMNS = [
   { id: "address", name: "Dirección" },
   { id: "phoneNumber", name: "Número de Teléfono" },
   { id: "cellphoneNumber", name: "Número de Celular" },
-  { id: "plan", name: "Plan" },
+  { id: "plan", name: "Plan", formatter: cell => translates[cell] },
   { id: "associateNumber", name: "Número de Socio" },
   { id: "paymentMethod", name: "Método de Pago" },
-  { 
-    id: "approved", 
-    name: "Aprobado", 
+  {
+    id: "approved",
+    name: "Aprobado",
     formatter: isApproved => _(<div className={styles.checkbox}><input type="checkbox" checked={isApproved} readOnly /></div>)
   },
-  { id: "role", name: "Rol" },
+  { id: "role", name: "Rol", formatter: cell => translates[cell] },
   { id: "action", name: "Acccion" },
 ];
+
+const translates = {
+  "associate": "Socio",
+  "monthly": "Mensual",
+  "annually": "Anual",
+  "admin": "Admin"
+}
 
 export const loader = async () => {
   const associates = await getAssociates();
   return json(associates);
 };
 
-const ApprovedButton = ({ dni, refresh }) => {
-  const handleApproved = () => approveAssociate(dni)
-  return <button onClick={handleApproved}>Aprobar</button>
+const ActionButton = ({ associate }) => {
+  const handleApproved = () => approveAssociate(associate.dni)
+
+  const handleDisapproved = () => disapproveAssociate(associate.dni)
+
+  return (
+    associate?.approved
+      ? <button onClick={handleDisapproved}>Dar de baja</button>
+      : <button dni={associate.dni} onClick={handleApproved}>Aprobar</button>
+    )
 }
 
 export const Associates = () => {
   const associates = useLoaderData();
   const navigation = useNavigation()
-  const fetcher = useFetcher()
 
   const associatesWithAction = associates.map((associate) => ({
     ...associate,
-    action: _(
-      associate.approved
-        ? <button>Hola</button>
-        : <ApprovedButton dni={associate.dni} refresh={() => fetcher.load("/admin/socios")} />
-    ),
+    action: _(<ActionButton associate={associate} />),
   }));
 
   return (
@@ -69,6 +79,13 @@ export const Associates = () => {
           }}
         />
       </div>
+      <Form>
+        <button className={styles.refreshBtn}>Refrescar</button>
+      </Form>
     </>
   );
 };
+
+export const action = async => {
+  console.log("hola")
+}
