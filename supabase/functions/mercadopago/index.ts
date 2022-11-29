@@ -9,17 +9,6 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey",
 };
 
-const fetcher = (path: string, body: any) => {
-  return fetch(`https://api.mercadopago.com/${path}`, {
-    method: "POST",
-    headers: {
-      "Authorization":
-        "Bearer TEST-1839098910176710-082902-f69e3e11fc965211f3498373d61e35d9-1188140767",
-    },
-    body: JSON.stringify(body),
-  }).then((res) => res.json());
-};
-
 serve(async (req) => {
   // CORS
   if (req.method === "OPTIONS") {
@@ -50,7 +39,7 @@ serve(async (req) => {
       body: JSON.stringify(body)
     };
 
-    let pago = await fetch("https://api.mercadopago.com/preapproval", options)
+    const pago = await fetch("https://api.mercadopago.com/preapproval", options)
       .then((response) => response.json())
       .catch((err) => console.error(err));
 
